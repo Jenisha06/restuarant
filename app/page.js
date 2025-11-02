@@ -15,12 +15,13 @@ function HeroSection() {
   return (
     <div className="relative h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/restan.jpg')" }}>
      
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
 
       
       <div className="relative z-10 text-white">
        <Header/>
        <Navbar/>
+       <Heading/>
       </div>
     </div>
   );
@@ -65,6 +66,13 @@ function Navbar() {
     <a href="#contact">Contact Us</a>
     </div>
     
+    </div>
+  )
+}
+function Heading() {
+  return (
+    <div>
+      <h1 className="text-8xl font-bold text-center mt-46 font-merriweather">Best Restaurant</h1>
     </div>
   )
 }
