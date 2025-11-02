@@ -20,6 +20,7 @@ function HeroSection() {
       
       <div className="relative z-10 text-white">
        <Header/>
+       <Navbar/>
       </div>
     </div>
   );
@@ -29,7 +30,7 @@ function HeroSection() {
 function Header() {
   return (
     
-<div className="flex justify-evenly font-medium  pt-4">
+<div className="flex justify-evenly font-medium  pt-4 border-b border-white pb-3">
   <div className="flex gap-9 ">
 
       <img src="call-icon.webp" className="h-5"></img>
@@ -46,4 +47,24 @@ function Header() {
 
 </div>
   );
+}
+
+function Navbar() {
+  return (
+    <div className="flex flex-row justify-between items-center text-white font-semibold text-lg pt-6 px-20 ">
+    <div className="flex gap-9">  
+    <a href="#home">Home</a>
+    <a href="#page">Pages</a>
+    <a href="#menu">Menu</a>
+    </div>
+ 
+    <img src="restanLogo.webp" className="h-14 "></img>
+    <div className="flex gap-9">
+    <a href="#blog">Blog</a>
+    <a href="#shop">Shop</a>
+    <a href="#contact">Contact Us</a>
+    </div>
+    
+    </div>
+  )
 }
