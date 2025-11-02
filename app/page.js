@@ -2,9 +2,9 @@ export default function Restan() {
   return (
  
     <div >
-      <link
+<link
   rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
   <HeroSection/>
     </div>
@@ -73,6 +73,12 @@ function Heading() {
   return (
     <div>
       <h1 className="text-8xl font-bold text-center mt-46 font-merriweather">Best Restaurant</h1>
+      <div className="w-46 h-46 rounded-full   border-2 border-yellow-100 flex items-center justify-center mt-15 mx-auto">
+<i class="fas fa-arrow-up-right-from-square text-yellow-100 text-2xl"></i>
+
+
+      </div>
+      
     </div>
   )
 }
