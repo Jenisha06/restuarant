@@ -22,6 +22,7 @@ function HeroSection() {
        <Header/>
        <Navbar/>
        <Heading/>
+       <Booking/>
       </div>
     </div>
   );
@@ -81,4 +82,63 @@ function Heading() {
       
     </div>
   )
+}
+
+function Booking() {
+  return (
+
+  <div className="bg-white w-full h-[500px] mt-10">
+<div className="flex-row flex gap-10">
+    <div className="flex flex-col flex-wrap justify-start pl-30 items-start gap-10 md:flex-row">
+      <div className="bg-white -mt-10 items-start rounded-[10%] text-black min-h-[300px] min-w-[350px] flex flex-col justify-center items-start p-5 shadow-md">
+        <h2 className="font-bold self-start text-lg pb-3 pl-3 mt-15">Book a Table</h2>
+        <form className="flex-col flex items-start gap-5 text-left pl-5 w-full">
+          <input
+          type="tel"
+          placeholder="Phone"
+          className="bg-white outline-gray-500 p-2 "
+          />
+
+          <select className="border-gray-300 p-2 text-gray-500">
+          <option value="1">1 Person</option>
+          <option value="2">2 Person</option>
+          <option value="3">3 Person</option>
+          <option value="4">4 Person</option>
+          <option value="5">5 Person</option>
+          </select>
+
+          <input
+          type="date"
+          placeholder="Date"
+          className="bg-white p-2 text-gray-500 outline-gray-500"
+          />
+
+          <select className="border-gray-300 p-2 text-gray-500">
+          <option value="1">10:00 PM</option>
+          <option value="2">11:00 PM</option>
+          <option value="3">12:00 PM</option>
+          <option value="4">1:00 PM</option>
+          <option value="5">2:00 PM</option>
+          </select>
+
+          <div className="flex justify-center items-center w-full">
+          <button className="bg-[hsla(32,28%,40%,1.00)] hover:bg-[hsla(32, 56%, 9%, 1.00)] text-white px-4 py-2 rounded w-500px">
+            Book A Table
+          </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div className="text-black font-medium text-3xl mt-20">Our Popular Category
+        <section>
+          <div className="bg-gray-500 w-[200px] h-[250px] mt-10 rounded-[5%]">
+            <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F26.jpg&w=1920&q=75" className="rounded-[10%]"/>
+            
+          </div>
+        </section>
+    </div>
+</div>
+    </div>
+  );
 }
