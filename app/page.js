@@ -229,9 +229,3 @@ function WhyOurRestaurant() {
     </div>
   );
 }
-
-function promo() {
-  return(
-    <div></div>
-  )
-}
