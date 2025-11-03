@@ -238,7 +238,7 @@ function WhyOurRestaurant() {
 
 function MeetOurChef() {
   return (
-    <div className="bg-[#ebe9e6] py-20 px-10 text-center pb-100 -mt-20">
+    <div className="bg-[#ebe9e6] py-20 px-10 text-center pb-40 -mt-20">
       <div className="flex items-center justify-center gap-4">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
       <p className="text-[#836849] text-2xl font-medium 
