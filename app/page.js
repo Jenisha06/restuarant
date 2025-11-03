@@ -10,6 +10,7 @@ export default function Restan() {
   <Booking/>
   <WhyOurRestaurant/>
      <MeetOurChef/>
+    <Footer/>
     </div>
   );
 }
@@ -305,4 +306,82 @@ className="rounded-full w-72 h-72 object-cover"
  </div>
 
 )
+}
+
+function Footer() {
+  return(
+    <div className="bg-zinc-800 w-full -mt-30">
+      <div className="justify-center items-center flex ">
+      <div className="bg-zinc-900 h-flex max-w-[900px] min-w-[900px] justify-start p-20 items-center flex pt-15 -mt-10">
+        <div className="flex justify-start flex-row">
+          <div className="flex flex-col text-white">
+          <div className="border-r pr-10 border-gray-400">
+          <h2 className="font-mono font-medium text-xl -mr-10 mb-2">About Us</h2>
+            <p className="opacity-[70%] text-xs font-thin -mr-10 leading-relaxed mb-4">Continued at zealously <br /> necessary is Surrounded sir <br/>
+            motionless she end literature.<br />
+            Gay direction neglected.</p>
+
+            <div className="flex-row flex gap-3">
+            <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center flex-row items-center">
+            <img src="https://cdn-icons-png.flaticon.com/128/20/20837.png" className="object-contain invert h-4"/>
+            </div>
+            <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center flex-row items-center">
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733635.png" className="object-contain invert h-4"/>
+            </div>
+            <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center flex-row items-center">
+            <img src="https://cdn-icons-png.flaticon.com/128/1384/1384028.png" className="object-contain invert h-4"/>
+            </div>
+            <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center flex-row items-center">
+            <img src="https://cdn-icons-png.flaticon.com/128/2111/2111532.png" className="object-contain invert h-4"/>
+            </div>
+            </div>   
+          </div>
+          </div>
+
+<div className="flex flex-col ml-5">
+  <h2 className="font-mono font-medium text-xl ml-7 mb-2 flex-col">Contact Info</h2>
+  <p className="opacity-[70%] text-xs font-thin ml-7 leading-loose mb-4">Company Profile<br />About<br/>Help Center<br/>Career<br/>Features<br/>Contact</p>
+  </div>
+
+  <div className="flex flex-col ml-3">
+  <h2 className="font-mono font-medium text-xl ml-7 mb-2">Explore</h2>
+  <div className="text-xs font-thin ml-7 leading-relaxed mb-4">
+
+    <div className="flex flex-row gap-2">
+    <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center rounded-[20%]">
+    <img src="https://cdn-icons-png.flaticon.com/128/484/484167.png" className="object-contain invert h-4"/>
+    </div>
+      <p className="-mt-1 opacity-70">175 10h Street, Office 375<br/> Berlin, De 21562</p>
+    </div>
+
+<div className="flex flex-row gap-2">
+    <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center mt-5 rounded-[20%]">
+    <img src="https://cdn-icons-png.flaticon.com/128/484/484167.png" className="object-contain invert h-4"/>
+    </div>
+      <p className="opacity-70 mt-4">+123 34598768<br/> +554 34598734</p>
+    </div>
+
+<div className="flex flex-row gap-2">
+    <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center mt-5 rounded-[20%]">
+    <img src="https://cdn-icons-png.flaticon.com/128/646/646135.png" className="object-contain invert h-4"/>
+    </div>
+      <p className="opacity-70 mt-6">food@restan.com</p>
+    </div>
+
+  </div>
+  
+  </div>
+
+        </div>
+        </div>
+      </div>
+
+
+      <div className="flex flex-row justify-start gap-12 pt-7 items-start">
+        <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F9.png&w=1920&q=75" className="h-25 opacity-[50%]"/>
+        <img src="restanLogo.webp" className="h-12 mt-5"></img>
+        <p className="ml-auto flex-right pr-10 text-sm mt-7 opacity-[90%]">© Copyright 2025. Restan. All Rights Reserved</p>
+      </div>
+    </div>
+  );
 }
