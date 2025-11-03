@@ -46,7 +46,7 @@ function Header() {
   Email:food@restan.com
 </a>
 </div>
-<p><i class="fas fa-map-marker-alt"></i> 175 10h Street, Office 375 Berlin, De 21562</p>
+<p><i className="fas fa-map-marker-alt"></i> 175 10h Street, Office 375 Berlin, De 21562</p>
 
 
 </div>
@@ -86,20 +86,14 @@ function Heading() {
   )
 }
 
-
-
-
-
-
 function Booking() {
   return (
 
- <div className="relative z-20 flex flex-col -mt-9 ">
+ <div className="relative z-20 flex flex-col mt-40 bg-white w-max">
 <div className="flex-row flex gap-10">
     <div className="flex flex-col flex-wrap justify-start pl-30 items-start gap-10 md:flex-row ">
-      <div className="bg-white -mt-1  rounded-3xl text-black w-[430px] flex flex-col justify-center items-start p-5 shadow-md -ml-6">
+      <div className="bg-white -mt-15  rounded-3xl text-black w-[430px] flex flex-col justify-center items-start p-5 shadow-md -ml-6">
         
-
 
 <div className="rounded-full bg-[hsla(32,28%,40%,1.00)]  z-60 w-20 h-20 flex items-center justify-center -mt-12 mb-3 ml-4 ">
 <img src="https://cdn-icons-png.flaticon.com/512/33/33899.png"
@@ -120,7 +114,7 @@ alt="spoon and fork icon"
           <input
           type="text"
           placeholder="Name"
-          className="bg-white border border-gray-300 rounded-sm  outline-gray-500 p-3 w-[90%] "
+          className="bg-white border border-gray-300 rounded-sm outline-gray-500 p-3 w-[90%] "
           />
 
           <select className=" p-3 text-gray-950 border border-gray-300 rounded-sm w-[90%]">
@@ -188,12 +182,6 @@ alt="spoon and fork icon"
 </div>
 
 
-
- 
-
-
-
-
  <div className="bg-gray-500 w-[220px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F25.jpg&w=828&q=75"
@@ -216,29 +204,34 @@ alt="spoon and fork icon"
 
 function WhyOurRestaurant() {
   return (
-    <div className="flex flex-row  p-30 my-15 gap-35 justify-center">
+    <div className="bg-white, mt-20">
+    <div className="bg-white -mt-20 flex flex-row p-30 my-15 gap-35 justify-center">
       <div className="flex flex-col w-[23%]  ">
       <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F13.png&w=256&q=75" className="h-26 w-26 mb-8"></img>
-      <h2 className="text-2xl font-medium">Quality foods</h2>
+      <h2 className="text-2xl font-medium text-black">Quality foods</h2>
       <p className="text-gray-500 py-6 w-[70%]">Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.</p>
       </div>
 
 
         <div className="flex flex-col w-[23%]">
       <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F14.png&w=256&q=75" className="h-26 w-26 mb-8"></img>
-      <h2 className="text-2xl font-medium">Fast Delivery</h2>
+      <h2 className="text-2xl font-medium text-black">Fast Delivery</h2>
       <p className="text-gray-500 py-6 w-[70%]">Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.</p>
       </div>
 
 
         <div className="flex flex-col w-[23%]">
       <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F15.png&w=256&q=75" className="h-26 w-26 mb-8"></img>
-      <h2 className="text-2xl font-medium">Delicious Recipes</h2>
+      <h2 className="text-2xl font-medium text-black">Delicious Recipes</h2>
       <p className="text-gray-500 py-6 w-[70%]">Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.</p>
       </div>
     </div>
-  )
+    </div>
+  );
 }
 
-
-
+function promo() {
+  return(
+    <div></div>
+  )
+}
