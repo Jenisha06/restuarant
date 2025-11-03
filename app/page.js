@@ -7,6 +7,8 @@ export default function Restan() {
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
   <HeroSection/>
+  <Booking/>
+  <WhyOurRestaurant/>
     </div>
   );
 }
@@ -22,7 +24,7 @@ function HeroSection() {
        <Header/>
        <Navbar/>
        <Heading/>
-       <Booking/>
+       
       </div>
     </div>
   );
@@ -92,10 +94,10 @@ function Heading() {
 function Booking() {
   return (
 
- <div className="relative z-20 flex flex-col -mt-2 ">
+ <div className="relative z-20 flex flex-col -mt-9 ">
 <div className="flex-row flex gap-10">
     <div className="flex flex-col flex-wrap justify-start pl-30 items-start gap-10 md:flex-row ">
-      <div className="bg-white -mt-1  rounded-3xl text-black w-[430px] flex flex-col justify-center items-start p-5 shadow-md">
+      <div className="bg-white -mt-1  rounded-3xl text-black w-[430px] flex flex-col justify-center items-start p-5 shadow-md -ml-6">
         
 
 
@@ -106,7 +108,7 @@ alt="spoon and fork icon"
 />
 </div>
        
-        <h2 className="font-bold self-start text-2xl ml-2 pb-3 pl-3 mt-8">Book a Table</h2>
+        <h2 className="font-bold self-start text-2xl ml-2 pb-3 pl-3 mt-8 font-playfair">Book a Table</h2>
         <form className="flex-col flex items-start gap-5 text-left pl-5 w-full">
           <input
           type="tel"
@@ -156,12 +158,53 @@ alt="spoon and fork icon"
         </form>
       </div>
     </div>
-    <div className="text-black font-medium text-3xl mt-20">Our Popular Category
-        <section>
-          <div className="bg-gray-500 w-[200px] h-[250px] mt-10 rounded-[5%]">
-            <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F26.jpg&w=1920&q=75" className="rounded-[10%]"/>
-            
-          </div>
+    
+    <div className="text-black font-medium text-3xl mt-45 font-playfair ml-18 ">Our Popular Category
+
+ 
+
+        <section className="flex gap-6">
+      <div className="bg-gray-500 w-[220px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
+  <img
+    src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F26.jpg&w=1920&q=75"
+    className="rounded-2xl w-full h-full object-cover "
+  />
+  <div className="absolute bottom-2 left-2 text-white ml-2">
+    <h2 className="text-[55%] font-bold text-amber-500">Desserts</h2>
+    <h1 className="text-lg font-bold text-[70%]">Cheesecake</h1>
+  </div>
+</div>
+
+
+ <div className="bg-gray-500 w-[220px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
+  <img
+    src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F27.jpg&w=828&q=75"
+    className="rounded-2xl w-full h-full object-cover"
+  />
+  <div className="absolute bottom-2 left-2 text-white ml-2">
+    <h2 className="text-[55%] font-bold text-amber-500">Seafood</h2>
+    <h1 className="text-lg font-bold text-[70%]">Salmon fry</h1>
+  </div>
+</div>
+
+
+
+ 
+
+
+
+
+ <div className="bg-gray-500 w-[220px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
+  <img
+    src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F25.jpg&w=828&q=75"
+    className="rounded-2xl w-full h-full object-cover"
+  />
+  <div className="absolute bottom-2 left-2 text-white ml-2">
+    <h2 className="text-[55%] font-bold text-amber-500">Main Dishes</h2>
+    <h1 className="text-lg font-bold text-[70%]">Chicken Alfredo</h1>
+  </div>
+</div>
+
         </section>
     </div>
 </div>
@@ -169,3 +212,33 @@ alt="spoon and fork icon"
   );
 
 }
+
+
+function WhyOurRestaurant() {
+  return (
+    <div className="flex flex-row  p-30 my-15 gap-35 justify-center">
+      <div className="flex flex-col w-[23%]  ">
+      <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F13.png&w=256&q=75" className="h-26 w-26 mb-8"></img>
+      <h2 className="text-2xl font-medium">Quality foods</h2>
+      <p className="text-gray-500 py-6 w-[70%]">Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.</p>
+      </div>
+
+
+        <div className="flex flex-col w-[23%]">
+      <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F14.png&w=256&q=75" className="h-26 w-26 mb-8"></img>
+      <h2 className="text-2xl font-medium">Fast Delivery</h2>
+      <p className="text-gray-500 py-6 w-[70%]">Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.</p>
+      </div>
+
+
+        <div className="flex flex-col w-[23%]">
+      <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F15.png&w=256&q=75" className="h-26 w-26 mb-8"></img>
+      <h2 className="text-2xl font-medium">Delicious Recipes</h2>
+      <p className="text-gray-500 py-6 w-[70%]">Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.</p>
+      </div>
+    </div>
+  )
+}
+
+
+
