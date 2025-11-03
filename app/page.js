@@ -10,6 +10,7 @@ export default function Restan() {
   <Booking/>
   <WhyOurRestaurant/>
      <MeetOurChef/>
+     <NewsAndBlogs/>
     <Footer/>
     </div>
   );
@@ -308,6 +309,119 @@ className="rounded-full w-72 h-72 object-cover"
 )
 }
 
+function NewsAndBlogs() {
+  return (
+    <div className="flex flex-col justify-center  py-20 px-10 text-center">
+       <div className="flex items-center justify-center gap-4">
+      <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
+      <p className="text-[#836849] text-2xl font-medium 
+      font-merriweather">NEWS & BLOG</p>
+      <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img>
+
+      </div>
+    <h1 className="text-5xl font-serif font-bold text-black mt-6 mb-9 items-center"> Our Latest News & Blog </h1>
+
+
+<div className="flex mx-auto gap-10 justify-center mt-10">
+<div className="relative w-[600px]  mx-auto">
+  
+  <img
+    src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F1.jpg&w=1920&q=75"
+    className="w-full h-[510px] object-cover "
+    alt="Blog Image"
+  />
+
+
+  <div className="relative bg-white shadow-md p-8 w-[92%] mx-auto -mt-20 text-left">
+
+    <div className="absolute top-0 right-6 -translate-y-1/2 bg-[#836849]  text-white text-center py-4 px-6 ">
+      <p className="text-lg font-bold leading-none">24</p>
+      <p className="text-[10px] tracking-wider">DEC</p>
+    </div>
+
+   
+    <p className="text-sm text-gray-600 tracking-wide mb-2">
+      <span className="font-medium">BY MD SOHAG</span> • BURGER , FOOD
+    </p>
+
+    <h2 className="text-2xl font-semibold text-black leading-snug mb-4">
+      Picked up a Brussels burger<br />Sprouts with ham
+    </h2>
+
+    <a
+      href="#blog"
+      className="flex items-center gap-2 text-[15px] font-medium text-gray-800 hover:text-black"
+    >
+      READ MORE
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <path d="M6 2a1 1 0 0 0 0 2h5.586L2.293 13.293a1 1 0 0 0 1.414 1.414L13 5.414V11a1 1 0 0 0 2 0V2H6z" />
+      </svg>
+    </a>
+  </div>
+  
+</div>
+<div className="relative w-[600px] mx-auto">
+  
+  <img
+  src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F2.jpg&w=1920&q=75"
+    className="w-full h-[510px] object-cover"
+    alt="Blog Image"
+  />
+
+
+  <div className="relative bg-white shadow-md p-8 w-[92%] mx-auto -mt-20 text-left">
+
+    <div className="absolute top-0 right-6 -translate-y-1/2 bg-[#836849]  text-white text-center py-4 px-6">
+      <p className="text-lg font-bold leading-none">18</p>
+      <p className="text-[10px] tracking-wider">NOV</p>
+    </div>
+
+   
+    <p className="text-sm text-gray-600 tracking-wide mb-2">
+      <span className="font-medium">BY MD SOHAG</span> • BURGER , FOOD
+    </p>
+
+    <h2 className="text-2xl font-semibold text-black leading-snug mb-4">
+    This prefabricated passive <br />house is highly sustainable
+    </h2>
+
+    <a
+      href="#blog"
+      className="flex items-center gap-2 text-[15px] font-medium text-gray-800 hover:text-black"
+    >
+      READ MORE
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <path d="M6 2a1 1 0 0 0 0 2h5.586L2.293 13.293a1 1 0 0 0 1.414 1.414L13 5.414V11a1 1 0 0 0 2 0V2H6z" />
+      </svg>
+    </a>
+  </div>
+  
+</div>
+
+
+
+
+</div>
+
+</div>
+  )
+}
+
+
+
+
 function Footer() {
   return(
     <div className="bg-zinc-800 w-full -mt-30">
@@ -400,3 +514,6 @@ function Footer() {
     </div>
   );
 }
+
+
+
