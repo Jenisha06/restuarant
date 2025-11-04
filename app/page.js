@@ -63,15 +63,26 @@ function Navbar() {
   return (
     <div className="flex flex-row justify-between items-center text-white font-semibold text-lg pt-6 px-20 ">
     <div className="flex gap-9">  
-    <a href="#home">Home</a>
-    <a href="#page">Pages</a>
-    <a href="#menu">Menu</a>
+    <a href="#home" >Home
+      <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
+
+    </a>
+    <a href="#page">Pages
+       <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
+    </a>
+    <a href="#menu">Menu
+       <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
+    </a>
     </div>
  
     <img src="restanLogo.webp" className="h-14 "></img>
     <div className="flex gap-9">
-    <a href="#blog">Blog</a>
-    <a href="#shop">Shop</a>
+    <a href="#blog">Blog
+       <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
+    </a>
+    <a href="#shop">
+      Shop
+       <i className="fa fa-chevron-down text-[15px] px-1.5"></i></a>
     <a href="#contact">Contact Us</a>
     </div>
     
@@ -81,12 +92,29 @@ function Navbar() {
 function Heading() {
   return (
     <div>
-      <h1 className="text-8xl font-bold text-center mt-46 font-merriweather">Best Restaurant</h1>
-      <div className="w-46 h-46 rounded-full   border-2 border-yellow-100 flex items-center justify-center mt-15 mx-auto">
-<i className="fas fa-arrow-up-right-from-square text-yellow-100 text-2xl"></i>
+      <h1 className="text-8xl font-bold text-center mt-48 font-marcellus ">Best Restaurant</h1>
+     <div className="relative w-[180px] h-[180px] rounded-full border-2 border-white mx-auto flex items-center justify-center mt-16">
+  
+   <svg viewBox="0 0 200 200" className="absolute top-0 left-0 w-full h-full">
+    <defs>
+      <path
+        id="circlePath"
+        d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
+      />
+    </defs>
+    <text fill="white" fontSize="16" fontWeight="bold">
+      <textPath href="#circlePath" startOffset="50%" textAnchor="middle">
+        BEST FOOD SINCE · 1869
+      </textPath>
+    </text>
+  </svg>
 
 
-      </div>
+
+  <i className="fas fa-arrow-right text-[20px]" style={{ transform: "rotate(-45deg)" }}></i>
+
+ 
+</div>
       
     </div>
   )
