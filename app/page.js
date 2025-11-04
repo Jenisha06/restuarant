@@ -1,3 +1,4 @@
+
 export default function Restan() {
   return (
  
@@ -10,6 +11,7 @@ export default function Restan() {
   <Booking/>
   <WhyOurRestaurant/>
     <OrderCard/>
+    <Opening/>
      <MeetOurChef/>
      <NewsAndBlogs/>
     <Footer/>
@@ -81,7 +83,7 @@ function Heading() {
     <div>
       <h1 className="text-8xl font-bold text-center mt-46 font-merriweather">Best Restaurant</h1>
       <div className="w-46 h-46 rounded-full   border-2 border-yellow-100 flex items-center justify-center mt-15 mx-auto">
-<i class="fas fa-arrow-up-right-from-square text-yellow-100 text-2xl"></i>
+<i className="fas fa-arrow-up-right-from-square text-yellow-100 text-2xl"></i>
 
 
       </div>
@@ -93,7 +95,7 @@ function Heading() {
 function Booking() {
   return (
 
- <div className="relative z-20 flex flex-col mt-40 bg-white w-max">
+ <div className="relative z-20 flex flex-col bg-white w-max">
 <div className="flex-row flex gap-10">
     <div className="flex flex-col flex-wrap justify-start pl-30 items-start gap-10 md:flex-row ">
       <div className="bg-white -mt-15  rounded-3xl text-black w-[430px] flex flex-col justify-center items-start p-5 shadow-md -ml-6">
@@ -157,12 +159,12 @@ alt="spoon and fork icon"
       </div>
     </div>
     
-    <div className="text-black font-medium text-3xl mt-45 font-playfair ml-18 ">Our Popular Category
+    <div className="text-black font-medium text-3xl mt-45 font-playfair  ">Our Popular Category
 
  
 
         <section className="flex gap-6">
-      <div className="bg-gray-500 w-[220px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
+      <div className="bg-gray-500 w-[210px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F26.jpg&w=1920&q=75"
     className="rounded-2xl w-full h-full object-cover "
@@ -174,7 +176,7 @@ alt="spoon and fork icon"
 </div>
 
 
- <div className="bg-gray-500 w-[220px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
+ <div className="bg-gray-500 w-[210px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F27.jpg&w=828&q=75"
     className="rounded-2xl w-full h-full object-cover"
@@ -186,7 +188,7 @@ alt="spoon and fork icon"
 </div>
 
 
- <div className="bg-gray-500 w-[220px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
+ <div className="bg-gray-500 w-[210px] h-[270px] mt-10 rounded-[5%] relative overflow-hidden">
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F25.jpg&w=828&q=75"
     className="rounded-2xl w-full h-full object-cover"
@@ -210,21 +212,21 @@ function WhyOurRestaurant() {
   return (
     <div className="bg-white, mt-20">
     <div className="bg-white -mt-20 flex flex-row p-30 my-15 gap-35 justify-center">
-      <div className="flex flex-col w-[23%]  ">
+      <div className="flex flex-col w-[20%]  ">
       <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F13.png&w=256&q=75" className="h-26 w-26 mb-8"></img>
       <h2 className="text-2xl font-medium text-black">Quality foods</h2>
       <p className="text-gray-500 py-6 w-[70%]">Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.</p>
       </div>
 
 
-        <div className="flex flex-col w-[23%]">
+        <div className="flex flex-col w-[20%]">
       <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F14.png&w=256&q=75" className="h-26 w-26 mb-8"></img>
       <h2 className="text-2xl font-medium text-black">Fast Delivery</h2>
       <p className="text-gray-500 py-6 w-[70%]">Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.</p>
       </div>
 
 
-        <div className="flex flex-col w-[23%]">
+        <div className="flex flex-col w-[20%]">
       <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F15.png&w=256&q=75" className="h-26 w-26 mb-8"></img>
       <h2 className="text-2xl font-medium text-black">Delicious Recipes</h2>
       <p className="text-gray-500 py-6 w-[70%]">Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.</p>
@@ -297,7 +299,47 @@ function OrderCard() {
 
 
 
+function Opening() {
+  return (
+    <div className="bg-white flex justify-start items-center md:flex-row w-full overflow-x-hidden min-h-[500px] mb-">
+      <div className="flex justify-start ml-45 h-[350px] w-[500px]">
+        <iframe className="w-full max-w-4xl aspect-video shadow-lg"src="https://www.youtube.com/embed/F3zw1Gvn4Mk"></iframe>
+      </div>
+      <div className="flex flex-col text-black pt-20 bg-white -mt-60 ml-15 text-3xl font-medium font-mono">
+        <h2>Opening Hours</h2>
+        <p className="text-xs font-sans pt-3 opacity-50">
+          A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails.<br /> 
+          The Patio Time Bar opens in the center..
+        </p>
 
+        <div>
+          <div className="text-xs pt-3 font-mono leading-loose">
+            <div className="flex items-center w-[80%]">
+              <span>Sunday to Tuesday:</span>
+              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
+              <div>10:00 - 09:00</div>
+            </div>
+
+            <div className="flex items-center w-[80%]">
+              <span>Wednesday to Thursday:</span>
+              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
+              <div>11:30 - 10:30</div>
+            </div>
+
+            <div className="flex items-center w-[80%]">
+              <span>Friday & Saturday:</span>
+              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
+              <div>10:30 - 12:00</div>
+            </div>
+            <div>
+              <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F6.png&w=128&q=75"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 
 
@@ -379,8 +421,8 @@ className="rounded-full w-72 h-72 object-cover"
 
 function NewsAndBlogs() {
   return (
-    <div className="flex flex-col justify-center  py-20 px-10 text-center">
-       <div className="flex items-center justify-center gap-4">
+    <div className="bg-white flex flex-col justify-center mb-50 py-20 px-10 text-center">
+       <div className="flex items-center justify-center gap-2">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
       <p className="text-[#836849] text-2xl font-medium 
       font-merriweather">NEWS & BLOG</p>
@@ -395,7 +437,7 @@ function NewsAndBlogs() {
   
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F1.jpg&w=1920&q=75"
-    className="w-full h-[510px] object-cover "
+    className="w-[full] h-[510px] object-cover "
     alt="Blog Image"
   />
 
@@ -438,7 +480,7 @@ function NewsAndBlogs() {
   
   <img
   src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F2.jpg&w=1920&q=75"
-    className="w-full h-[510px] object-cover"
+    className="w-[90%] h-[510px] object-cover"
     alt="Blog Image"
   />
 
@@ -494,7 +536,7 @@ function Footer() {
   return(
     <div className="bg-zinc-800 w-full -mt-30">
       <div className="justify-center items-center flex ">
-      <div className="bg-zinc-900 h-flex max-w-[900px] min-w-[900px] justify-start p-20 items-center flex pt-15 -mt-10">
+      <div className="bg-zinc-900 h-flex max-w-[900px] mx-auto justify-start p-20 items-center flex pt-15 -mt-10">
         <div className="flex justify-start flex-row">
           <div className="flex flex-col text-white">
           <div className="border-r pr-10 border-gray-400">
@@ -582,6 +624,3 @@ function Footer() {
     </div>
   );
 }
-
-
-
