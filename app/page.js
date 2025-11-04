@@ -491,7 +491,7 @@ function NewsAndBlogs() {
   
   <img
   src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F2.jpg&w=1920&q=75"
-    className="w-[90%] h-[510px] object-cover"
+    className="w-[full] h-[510px] object-cover"
     alt="Blog Image"
   />
 
