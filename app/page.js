@@ -545,9 +545,12 @@ function NewsAndBlogs() {
 
 function Footer() {
   return(
-    <div className="bg-zinc-800 w-full -mt-30">
+    <div className="bg-white -mt-50 pt-50">
+    <div className="bg-zinc-800 w-full w-auto">
+      <div className="ml-46 justify-center items-center h-15 w-[900px] -mt-20 flex">
+      <img src="https://restan-nextjs.vercel.app/_next/static/media/8.264d6d61.png"className="-mt-50"/></div>
       <div className="justify-center items-center flex ">
-      <div className="bg-zinc-900 h-flex max-w-[900px] mx-auto justify-start p-20 items-center flex pt-15 -mt-10">
+      <div className="bg-[#1B1B1B] h-flex max-w-[900px] mx-auto justify-start p-20 items-center flex pt-15 -mt-30 flex">
         <div className="flex justify-start flex-row">
           <div className="flex flex-col text-white">
           <div className="border-r pr-10 border-gray-400">
@@ -632,6 +635,7 @@ function Footer() {
         <img src="restanLogo.webp" className="h-12 mt-5"></img>
         <p className="ml-auto flex-right pr-10 text-sm mt-7 opacity-[90%]">© Copyright 2025. Restan. All Rights Reserved</p>
       </div>
+    </div>
     </div>
   );
 }
