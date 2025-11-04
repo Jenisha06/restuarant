@@ -133,7 +133,7 @@ Pages
     <a href="#shop">
       Shop
        <i className="fa fa-chevron-down text-[15px] px-1.5"></i></a>
-    <a href="#contact">Contact Us</a>
+    <a href="/contact">Contact Us</a>
     </div>
     
     </div>
