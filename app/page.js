@@ -63,16 +63,66 @@ function Navbar() {
   return (
     <div className="flex flex-row justify-between items-center text-white font-semibold text-lg pt-6 px-20 ">
     <div className="flex gap-9">  
+
+
+
+
     <a href="#home" >Home
       <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
 
     </a>
-    <a href="#page">Pages
-       <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
-    </a>
-    <a href="#menu">Menu
-       <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
-    </a>
+
+
+
+    
+    <div className="group relative inline-block">
+  
+  <a href="#pages" className="flex items-center text-white">
+Pages
+    <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
+  </a>
+
+
+  <div className="absolute  left-0 mt-2 w-70 ml-10  bg-white text-black rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
+    <ul className="py-2 ml-5 text-[16px]">
+      <li><a href="#about" className="block px-4 py-2 ">About Us</a></li>
+      <li><a href="#chef" className="block px-4 py-2 ">Chef</a></li>
+      <li><a href="#chefdetails" className="block px-4 py-2 ">Chef Details</a></li>
+      <li><a href="#reservation" className="block px-4 py-2 ">Reservation</a></li>
+      <li><a href="#Contact" className="block px-4 py-2 ">Contact us</a></li>
+        <li><a href="#Register" className="block px-4 py-2 ">Register</a></li>
+          <li><a href="#login" className="block px-4 py-2 ">Login</a></li>
+            <li><a href="#erropage" className="block px-4 py-2 ">Error page</a></li>
+              <li><a href="#Dark" className="block px-4 py-2 ">Dark version</a></li>
+    </ul>
+  </div>
+</div>
+    
+
+    <div className="group relative inline-block">
+
+  <a href="#menu" className="flex items-center text-white">
+    Menu
+    <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
+  </a>
+
+
+  <div className="absolute left-0 mt-2 w-65 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
+    <ul className="py-2 ml-5 text-[16px]">
+      <li><a href="#style1" className="block px-4 py-2 ">Menu Style One</a></li>
+      <li><a href="#style2" className="block px-4 py-2 ">Menu Style Two</a></li>
+      <li><a href="#style3" className="block px-4 py-2 ">Menu Style Three</a></li>
+      <li>
+        <a href="#dark" className="block px-4 py-2 hover:bg-yellow-100 flex justify-between items-center">
+          Dark Version
+          <i className="fa fa-chevron-right text-[12px]"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    
     </div>
  
     <img src="restanLogo.webp" className="h-14 "></img>
@@ -119,7 +169,6 @@ function Heading() {
     </div>
   )
 }
-
 function Booking() {
   return (
 
