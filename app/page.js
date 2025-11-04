@@ -239,6 +239,7 @@ function WhyOurRestaurant() {
 
 function OrderCard() {
   return (
+    <div className="bg-white -mt-20 -mb-50">
     <div
       className="relative flex items-center justify-between bg-cover bg-center py-24 px-32 overflow-hidden w-[80%] mx-auto my-20 rounded-4xl mb-50"
       style={{
@@ -291,6 +292,7 @@ function OrderCard() {
           Order Today
         </button>
       </div>
+    </div>
     </div>
   );
 }
