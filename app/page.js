@@ -9,6 +9,7 @@ export default function Restan() {
   <HeroSection/>
   <Booking/>
   <WhyOurRestaurant/>
+    <OrderCard/>
      <MeetOurChef/>
      <NewsAndBlogs/>
     <Footer/>
@@ -232,6 +233,73 @@ function WhyOurRestaurant() {
     </div>
   );
 }
+
+
+function OrderCard() {
+  return (
+    <div
+      className="relative flex items-center justify-between bg-cover bg-center py-24 px-32 overflow-hidden w-[80%] mx-auto my-20 rounded-4xl mb-50"
+      style={{
+        backgroundImage:
+          "url('https://restan-nextjs.vercel.app/assets/img/shape/4.jpg')",
+      }}
+    >
+      <div className="relative w-1/2 flex items-center justify-center">
+        <div className="relative">
+          <img
+            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F15.png&w=1080&q=75"
+            alt="Main Dish"
+            className="w-[330px] rounded-full "
+          />
+          <div className="absolute -top-10 -right-10 bg-white w-[120px] h-[120px] rounded-full flex flex-col items-center justify-center shadow-md">
+            <p className="text-black text-lg font-medium">Save</p>
+            <p className="text-black text-3xl font-bold">55%</p>
+          </div>
+
+          <img
+            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F1.png&w=1080&q=75"
+            alt="Dish 1"
+            className="absolute -top-24 -left-20 w-[170px] rounded-full "
+          />
+
+          <img
+            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F12.png&w=1080&q=75"
+            alt="Dish 2"
+            className="absolute -bottom-15 -left-10 w-[120px] rounded-full shadow-lg"
+          />
+        </div>
+      </div>
+
+      <div className="w-1/2 pl-16">
+     
+        <p className="text-black tracking-wide mb-2 text-lg font-medium flex items-center">
+          TODAY SPECIAL OFFER <span className="ml-3"> <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img></span>
+          
+        </p>
+        
+        <h2 className="text-5xl font-semibold leading-tight mb-5 text-black">
+          Explore Irresistible <br /> Promotions!
+        </h2>
+        <p className="text-gray-800 leading-relaxed mb-8 text-[17px]">
+          Contrasted dissimilar get joy you instrument out reasonably. Again
+          keeps at no meant stuff. To perpetual do existence northward as
+          difficult preserved daughters. Continued at up to zealously necessary.
+        </p>
+        <button className="bg-[#4c3b2a] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#3b2a1f] transition">
+          Order Today
+        </button>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
 
 
 
