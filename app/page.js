@@ -193,7 +193,7 @@ Pages
   </div>
 </div>
 
-<a href="#contact" className="text-white ml-6">Contact Us</a>
+<a href="/contact" className="text-white ml-6">Contact Us</a>
 
     </div>
     
