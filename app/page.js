@@ -129,10 +129,10 @@ Pages
     router.push("/Reservation")
   }} className="block px-4 py-2 ">Reservation</a></li>
       <li><a href="#Contact" className="block px-4 py-2 ">Contact us</a></li>
-        <li><a <a onClick={() => {
+        <li><a onClick={() => {
     router.push("/Register")
   }}  className="block px-4 py-2 ">Register</a></li>
-          <li><a <a onClick={() => {
+          <li><a onClick={() => {
     router.push("/login")
   }}  className="block px-4 py-2 ">Login</a></li>
            
