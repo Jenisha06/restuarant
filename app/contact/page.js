@@ -3,15 +3,31 @@ export default function ContactPage() {
 <div>
 
 <header>
-    <div className="bg-[#826A45] flex flex-col justify-start itens-center pl-50 h-10 md:flex-row">
-    <img src="call-icon.webp" className="p-2"/><p className="p-2">Phone: +4733378901</p>
-    <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F7.png&w=128&q=75" className="p-2 pl-5"/><p className="p-2">Email: food@restan.com</p>
+    <div className="bg-[#826A45] dark:bg-[#5c492f] flex flex-col md:flex-row justify-start items-center gap-2 md:gap-6 px-4 py-2 pl-50 pr-50 text-white text-sm md:text-base">
+    <img src="call-icon.webp" className="h-4 w-4"/>
+    <p className="p-2">Phone: +4733378901</p>
+    <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F7.png&w=128&q=75" className="h-4 w-4"/><p className="p-2">Email: food@restan.com</p>
+    
+<div className="w-full flex justify-end">
+  <div className="flex flex-row items-center gap-2">
+    <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2Fflag.png&w=128&q=75" className="h-5 w-5"/>
+    <p className="text-white dark:text-gray-200 text-sm sm:text-base">English</p>
+    <img src="https://cdn-icons-png.flaticon.com/128/2985/2985150.png" className="h-4 w-4 invert"/>
+    <div className="border-l border-white pl-4 flex flex-row gap-2">
+  <img src="https://cdn-icons-png.flaticon.com/128/20/20837.png" className="invert h-4 w-4"/>
+  <img src="https://cdn-icons-png.flaticon.com/128/733/733635.png" className="invert h-4 w-4"/>
+  <img src="https://cdn-icons-png.flaticon.com/128/1384/1384028.png" className="invert h-4 w-4"/>
+  <img src="https://cdn-icons-png.flaticon.com/128/3128/3128219.png" className="invert h-4 w-4"/>
+</div>
+  </div>
+</div>
+
     </div>
 </header>
 
 <header>
-  <div className="bg-black flex flex-col md:flex-row justify-center items-center p-2 md:p-4 border-b-1 border-neutral-400">
-    <div className="flex-grow flex justify-center md:justify-center p-2 md:p-4">
+  <div className="bg-black dark:bg-zinc-900 flex flex-col md:flex-row justify-center items-center p-2 md:p-4 border-b-1 border-neutral-400 dark:border-neutral-700">
+    <div className="flex-grow flex flex-col md:flex-row justify-center md:justify-center items-center gap-4 p-2 md:p-4 w-full">
       <img src="restanLogo.webp"className="h-8 sm:h-10 md:h-12 object-contain"/>
       <div className="flex gap-7 p-5 pl-20 pr-20 font-semibold text-white">  
     <a href="/">Home</a>
@@ -33,14 +49,17 @@ export default function ContactPage() {
 </header>
 
 <section className="bg-black">
-    <div className="flex-col items-center flex justify-center md:justify-center p-20 md:p-24 text-5xl">
-        <h1>Contact Us</h1>
+  <div className="relative">
+    <img src="https://restan-nextjs.vercel.app/assets/img/shape/5.jpg" className="w-full h-[300px] object-cover"/>
+    <div className="absolute inset-0 flex flex-col items-center justify-center p-20 md:p-24 text-white">
+        <h1 className="text-5xl">Contact Us</h1>
         <div className="flex flex-row text-sm pt-5">
             <img src="https://cdn-icons-png.flaticon.com/128/20/20176.png" className="invert h-4 pr-1"/>
             <a href="/">Home</a>
             <img src="https://cdn-icons-png.flaticon.com/128/2985/2985179.png" className="invert h-5"/>
             <p>Contact</p>
         </div>
+    </div>
     </div>
 </section>
 
@@ -76,8 +95,8 @@ export default function ContactPage() {
 </section>
 
 <section>
-    <div className="flex flex-col items-center justify-center gap-4 bg-white p-10">
-    <div className="flex flex-row">
+    <div className="flex flex-col items-center justify-center gap-4 bg-white p-10 ">
+    <div className="bg-white flex flex-row ">
         <img src="https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
     </div>
       <p className="text-[#836849] text-2xl font-medium 
@@ -90,6 +109,7 @@ export default function ContactPage() {
 <section>
     <div className="bg-white ">
   <div className="flex flex-col items-center gap-5 text-left px-5 w-full">
+    
     <input
       type="text"
       placeholder="Name"
@@ -115,6 +135,20 @@ export default function ContactPage() {
   <img src="https://cdn-icons-png.flaticon.com/128/9333/9333991.png" className="invert h-6" alt="icon"/>
   <span>Get in Touch</span>
 </button>
+
+<section className="w-full flex items-center justify-center py-10">
+  <div className="w-full px-5">
+
+    <div className="shadow-lg dark:shadow-none">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.080977236561!2d76.35092177502736!3d9.993575673853808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0872b2b9bfb4c3%3A0xdbc5c7e68c3ff12b!2sEmpire%20Mall!5e0!3m2!1sen!2sin!4v1731268000000"
+        width="100%"
+        height="350"
+        allowFullScreen=""
+      ></iframe>
+    </div>
+  </div>
+</section>
 
 <section>
   <div className="bg-white flex flex-col md:flex-row justify-start items-center w-full overflow-x-hidden min-h-[800px]">
