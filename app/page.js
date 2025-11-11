@@ -70,7 +70,8 @@ function Header() {
     <a href="" target="_blank"  >
  Phone: +4733378901
 </a>
-<img src="call-icon.webp" className="h-5"></img>
+<img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F7.png&w=64&q=75
+" className="h-5"></img>
 <a href="" target="_blank" >
   Email:food@restan.com
 </a>
@@ -111,19 +112,26 @@ Pages
   <div className="absolute  left-0 mt-2 w-70 ml-10  bg-white text-black rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
     <ul className="py-2 ml-5 text-[16px]">
 <li>
-  <Link href="/AboutUs" className="block px-4 py-2 cursor-pointer">
+  <a onClick={() => {
+    router.push("/AboutUs")
+  }} className="block px-4 py-2 cursor-pointer">
   About Us
-</Link>
+</a>
 </li>
 
-      <li><a href="#chef" className="block px-4 py-2 ">Chef</a></li>
-      <li><a href="#chefdetails" className="block px-4 py-2 ">Chef Details</a></li>
-      <li><a href="#reservation" className="block px-4 py-2 ">Reservation</a></li>
+      <li><a onClick={() => {
+    router.push("/Chef")
+  }} className="block px-4 py-2 ">Chef</a></li>
+      <li><a onClick={() => {
+    router.push("/ChefDetails")
+  }}  className="block px-4 py-2 ">Chef Details</a></li>
+      <li><a onClick={() => {
+    router.push("/Reservation")
+  }} className="block px-4 py-2 ">Reservation</a></li>
       <li><a href="#Contact" className="block px-4 py-2 ">Contact us</a></li>
         <li><a href="#Register" className="block px-4 py-2 ">Register</a></li>
           <li><a href="#login" className="block px-4 py-2 ">Login</a></li>
-            <li><a href="#erropage" className="block px-4 py-2 ">Error page</a></li>
-              <li><a href="#Dark" className="block px-4 py-2 ">Dark version</a></li>
+           
     </ul>
   </div>
 </div>
@@ -193,7 +201,7 @@ Pages
   </div>
 </div>
 
-<a href="/contact" className="text-white ml-6">Contact Us</a>
+<a href="#contact" className="text-white ml-6">Contact Us</a>
 
     </div>
     
@@ -206,14 +214,14 @@ function Heading() {
       <h1 className="text-8xl font-bold text-center mt-48 font-marcellus ">Best Restaurant</h1>
      <div className="relative w-[180px] h-[180px] rounded-full border-2 border-white mx-auto flex items-center justify-center mt-16">
   
-   <svg viewBox="0 0 200 200" className="absolute top-0 left-0 w-full h-full">
+   <svg viewBox="0 0 200 200" className="absolute top-0 left-0 w-full h-full p-3">
     <defs>
       <path
         id="circlePath"
         d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
       />
     </defs>
-    <text fill="white" fontSize="16" fontWeight="bold">
+    <text fill="white" fontSize="22"  fontWeight="bold">
       <textPath href="#circlePath" startOffset="50%" textAnchor="middle">
         BEST FOOD SINCE · 1869
       </textPath>
@@ -222,7 +230,7 @@ function Heading() {
 
 
 
-  <i className="fas fa-arrow-right text-[20px]" style={{ transform: "rotate(-45deg)" }}></i>
+  
 
  
 </div>
@@ -240,7 +248,7 @@ function Booking() {
       <div className="bg-white -mt-15  rounded-3xl text-black w-[425px] flex flex-col justify-center items-start p-3 shadow-md -ml-6">
         
 
-<div className="rounded-full bg-[hsla(32,28%,40%,1.00)]  z-60 w-20 h-20 flex items-center justify-center -mt-12 mb-3 ml-4 ">
+<div className="rounded-full bg-[#836849]  z-60 w-20 h-20 flex items-center justify-center -mt-12 mb-3 ml-4 ">
 <img src="https://cdn-icons-png.flaticon.com/512/33/33899.png"
 alt="spoon and fork icon"
   className="w-6 h-6 filter invert"
@@ -284,7 +292,7 @@ alt="spoon and fork icon"
 
 
           <div className="flex justify-center items-center w-full">
-          <button className="bg-[hsla(32,28%,40%,1.00)] hover:bg-black text-white px-4 py-4 rounded-sm w-[50%] font-medium mt-5 mb-8">
+          <button className="bg-[#836849] hover:bg-black text-white px-4 py-4 rounded-sm w-[50%] font-medium mt-5 mb-8">
 
             Book A Table
           </button>
@@ -502,7 +510,7 @@ function Menu() {
           
 
 <div className="flex flex-wrap justify-center gap-6">
-  {/* Card 1 */}
+
   <div className="max-w-sm bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
     <img
       src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F1.jpg&w=1920&q=75"
@@ -536,7 +544,6 @@ function Menu() {
     </div>
   </div>
 
-  {/* Card 2 */}
   <div className="max-w-sm bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
     <img
       src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F2.jpg&w=1920&q=75"
@@ -1076,8 +1083,3 @@ function Footer() {
     </div>
   );
 }
-
-
-
-
- 
