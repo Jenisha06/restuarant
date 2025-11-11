@@ -15,6 +15,7 @@ export default function MenuPage() {
  <MainImage/>
  <MenuBreakfast/>
 <MenuLunch/>
+<OrderNow/>
  <Footer/>
 
  
@@ -254,3 +255,35 @@ function MenuLunch(){
         </div>
     )
 }
+
+function OrderNow() {
+  return (
+    <div className='bg-black mt-15 mb-25 flex justify-center items-center h-120'>
+   
+      <div className="text-white max-w-xl">
+        <h1 className="text-6xl font-bold font-marcellus mb-6 leading-tight">
+          30 MINUTES <br /> DELIVERY!
+        </h1>
+        <p className="text-gray-300 mb-8 leading-relaxed">
+          A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails. The
+          Patio Time Bar opens in the center of Florence. The only bar inspired by
+          the 1960s, it will give you an experience that you'll have a hard time
+          forgetting.
+        </p>
+        <button className="bg-[#826a45] text-white font-semibold py-3 px-8 rounded-none  flex items-center gap-2">
+          <i className="fas fa-shopping-cart"></i> Order Now
+        </button>
+      </div>
+      <img
+        src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F11.png&w=750&q=75"
+       
+        className="w-[370px] ml-30 mt-60 md:w-[420px]  "
+      />
+
+     
+   
+    </div>
+  )
+}
+
+
