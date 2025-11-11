@@ -464,11 +464,6 @@ function OrderCard() {
 }
 
 
-
-
-
-
-
 function Menu() {
  
     const categories = ['MAIN DISHES', 'DESSERTS', 'SEA FOOD', 'BEVERAGE'];
@@ -491,7 +486,7 @@ function Menu() {
         />
       </div>
 
-      <h1 className="text-5xl font-marcellus font-bold text-black mt-6 mb-9">
+      <h1 className="text-5xl font-marcellus font-bold text-black dark:text-white mt-6 mb-9">
         Our Specials Menu
       </h1>
 
@@ -1389,12 +1384,9 @@ function Menu() {
 
 
 
-
-
-
 function Opening() {
   return (
-    <div className="bg-white dark:bg-gray-900 flex flex-col md:flex-row justify-start items-center w-full overflow-x-hidden min-h-[800px] px-6 py-12 -mt-60">
+    <div className="bg-white dark:bg-gray-900 flex flex-col md:flex-row justify-start items-center w-full overflow-x-hidden min-h-[800px] px-6 py-12 ">
       <div className="flex justify-start ml-45 h-[350px] w-[500px]">
         <iframe className="w-full max-w-4xl aspect-video shadow-lg"src="https://www.youtube.com/embed/F3zw1Gvn4Mk"></iframe>
       </div>
@@ -1639,7 +1631,7 @@ function Footer() {
     <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 pt-12 px-6 md:px-12 pt-70 -mt-70">
     <div className="bg-zinc-800 w-full w-auto">
       <div className="ml-46 justify-center items-center h-15 w-[900px] -mt-20 flex">
-      <img src="https://restan-nextjs.vercel.app/_next/static/media/8.264d6d61.png"className="-mt-50"/></div>
+      </div>
       <div className="justify-center items-center flex ">
       <div className="bg-[#1B1B1B] h-flex max-w-[900px] mx-auto justify-start p-20 items-center flex pt-15 -mt-30 flex">
         <div className="flex justify-start flex-row">
