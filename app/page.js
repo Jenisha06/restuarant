@@ -1025,12 +1025,12 @@ function Footer() {
           </div>
 
 <div className="flex flex-col ml-5">
-  <h2 className="font-mono font-medium text-xl ml-7 mb-2 flex-col">Contact Info</h2>
-  <p className="opacity-[70%] text-xs font-thin ml-5 leading-loose mb-4">Company Profile<br />About<br/>Help Center<br/>Career<br/>Features<br/>Contact</p>
+  <h2 className="font-mono font-medium text-xl ml-7 mb-2 flex-col text-white">Contact Info</h2>
+  <p className="opacity-[70%] text-xs font-thin ml-5 leading-loose mb-4 text-white">Company Profile<br />About<br/>Help Center<br/>Career<br/>Features<br/>Contact</p>
   </div>
 
   <div className="flex flex-col ml-3">
-  <h2 className="font-mono font-medium text-xl ml-7 mb-2">Explore</h2>
+  <h2 className="font-mono font-medium text-xl ml-7 mb-2 text-white">Explore</h2>
   <div className="text-xs font-thin ml-7 leading-relaxed mb-4">
     
 
@@ -1038,38 +1038,38 @@ function Footer() {
     <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center rounded-[20%]">
     <img src="https://cdn-icons-png.flaticon.com/128/484/484167.png" className="object-contain invert h-4"/>
     </div>
-      <p className="-mt-1 opacity-70">175 10h Street, Office 375<br/> Berlin, De 21562</p>
+      <p className="-mt-1 opacity-70 text-white">175 10h Street, Office 375<br/> Berlin, De 21562</p>
     </div>
 
 <div className="flex flex-row gap-2">
     <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center mt-5 rounded-[20%]">
     <img src="https://cdn-icons-png.flaticon.com/128/484/484167.png" className="object-contain invert h-4"/>
     </div>
-      <p className="opacity-70 mt-4">+123 34598768<br/> +554 34598734</p>
+      <p className="opacity-70 mt-4 text-white">+123 34598768<br/> +554 34598734</p>
     </div>
 
 <div className="flex flex-row gap-2">
     <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center mt-5 rounded-[20%]">
     <img src="https://cdn-icons-png.flaticon.com/128/646/646135.png" className="object-contain invert h-4"/>
     </div>
-      <p className="opacity-70 mt-6">food@restan.com</p>
+      <p className="opacity-70 mt-6 text-white">food@restan.com</p>
     </div>
 
   </div>
   
   </div>
 <div className="flex flex-col ml-5">
-  <h2 className="font-mono font-medium text-xl ml-7 mb-2 flex-col">Newsletter</h2>
-  <p className="o-[70%] text-xs font-thin ml-7 leading-loose mb-4">Join our subscribers list to get the latest news and special offers.</p>
+  <h2 className="font-mono font-medium text-xl ml-7 mb-2 flex-col text-white">Newsletter</h2>
+  <p className="o-[70%] text-xs font-thin ml-7 leading-loose mb-4 text-white">Join our subscribers list to get the latest news and special offers.</p>
   <div className="">
     <input
           type="text"
           placeholder="Your Email"
-          className="border-b border-gray-300 outline-gray-500 ml-5 text-sm border-opacity-[70%] w-[90%] "
+          className="border-b border-gray-300 outline-gray-500 ml-5 text-white text-sm border-opacity-[70%] w-[90%] "
           />
 <div className="flex items-center pt-2">
   <input type="checkbox" id="agree" className="h-3 w-3 ml-5 accent-blue-600"/>
-  <p className="text-xs ml-2">I agree to the Privacy Policy</p>
+  <p className="text-xs text-white ml-2">I agree to the Privacy Policy</p>
 </div>
   </div>
   </div>
