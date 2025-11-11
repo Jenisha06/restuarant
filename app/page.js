@@ -10,7 +10,7 @@ import Link from 'next/link';
 export default function Restan() {
   return (
  
-    <div >
+    <div className="overflow-x-hidden">
    
 <link
   rel="stylesheet"
