@@ -33,6 +33,7 @@ export default function Restan() {
   <WhyOurRestaurant/>
     <OrderCard/>
     <Menu/>
+          <OnlineOrder/>
     <Opening/>
      <MeetOurChef/>
      <NewsAndBlogs/>
@@ -1379,6 +1380,98 @@ function Menu() {
     </div>
   )
 }
+
+
+
+function OnlineOrder() {
+  return (
+    <div className="bg-[#131313] mt-25 w-[90%]  text-white flex flex-col  md:flex-row items-center justify-center mx-auto px-8 md:px-20 py-18 overflow-hidden gap-10">
+      <div className="flex justify-center items-center">
+        <img
+          src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F16.png&w=1080&q=75"
+          alt="Phones"
+          className="w-[380px] md:w-[480px]"
+        />
+      </div>
+      <div className="max-w-xl mt-10 md:mt-0 md:ml-10">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-marcellus leading-snug">
+          Are you Ready to Start <br /> your online Order?
+        </h2>
+        <p className="text-white opacity-70 mb-8 leading-relaxed">
+          Bndulgence diminution so discovered mr apartments. Are off under folly
+          death wrote cause her way spite. Plan upon yet way get cold spot its
+          week. Almost do am or limits hearts. Resolve parties but why she
+          shewing. She sang know now
+        </p>
+        <div className="flex gap-4">
+          <button className="flex items-center gap-2 bg-white text-black font-semibold py-3 px-5 rounded-full ">
+            <i className="fab fa-apple"></i> App Store
+          </button>
+          <button className="flex items-center gap-2 bg-[#b48b57] text-white font-semibold py-3 px-5 rounded-full ">
+            <i className="fab fa-google-play"></i> Play Store
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+
+
+function Opening() {
+  return (
+    <div className="bg-white flex justify-start items-center md:flex-row w-full overflow-x-hidden min-h-[800px]">
+      <div className="flex justify-start ml-45 h-[350px] w-[500px]">
+        <iframe className="w-full max-w-4xl aspect-video shadow-lg"src="https://www.youtube.com/embed/F3zw1Gvn4Mk"></iframe>
+      </div>
+      <div className="flex flex-col text-black pt-20 bg-white  ml-15 text-3xl font-medium font-mono">
+        <h2>Opening Hours</h2>
+        <p className="text-xs font-sans pt-3 opacity-50">
+          A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails.<br /> 
+          The Patio Time Bar opens in the center..
+        </p>
+        <div className="flex flex-row">
+
+        <div>
+          <div className="text-xs pt-3 font-mono leading-loose">
+            <div className="flex items-center w-[80%]">
+              <span>Sunday to Tuesday:</span>
+              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
+              <div>10:00 - 09:00</div>
+            </div>
+
+            <div className="flex items-center w-[80%]">
+              <span>Wednesday to Thursday:</span>
+              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
+              <div>11:30 - 10:30</div>
+            </div>
+
+            <div className="flex items-center w-[80%] mb-7">
+              <span>Friday & Saturday:</span>
+              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
+              <div>10:30 - 12:00</div>
+            </div>
+            <div className="flex flex-row items-center space-x-3">
+            <div className="bg-[#826a45] flex justify-start items-center p-4 rounded-full object-cover h-15 w-15">
+              <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F6.png&w=128&q=75" className="h-7"/>
+            </div>
+            <div className="flex flex-col leading-relaxed">
+            <h4 className="text-black font-sans -mt-5 text-sm opacity-[50%]">Call Anytime</h4>
+            <p className="justify-start text-xl -mb-4">+964733-378901</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+      
+        <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F4.png&w=3840&q=75" className="h-50 opacity-[20%] mt-7"/>
+      </div>
+    </div>
+  );
+}
+
+
+
 
 
 
