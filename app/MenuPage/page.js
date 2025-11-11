@@ -1,0 +1,256 @@
+import Aboutusnav from '../components/Aboutusnav';
+import CommonNavbar from '../components/CommonNavbar';
+import Footer from '../components/Footer';
+
+
+export default function MenuPage() {
+  return (<div>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+   
+ <Aboutusnav/>
+ <CommonNavbar/>
+ <MainImage/>
+ <MenuBreakfast/>
+<MenuLunch/>
+ <Footer/>
+
+ 
+ 
+  </div>)
+}
+
+
+
+function MainImage() {
+  return (
+ <div className="relative w-full h-96">
+ 
+  <img
+    src="https://restan-nextjs.vercel.app/assets/img/shape/5.jpg"
+    alt="About Us Background"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+
+
+  
+  <div className="relative z-20 flex flex-col justify-center items-center h-full text-white text-center">
+    <h1 className="text-5xl font-bold mb-4 font-marcellus">Food Menu</h1>
+    <div className="flex items-center font-medium text-sm">
+      <i className="fas fa-home text-white text-base "></i>
+      <p className="ml-2">Home</p>
+      <i className="fa fa-chevron-right text-white text-xs px-1.5 "></i>
+      <p>about-us</p>
+    </div>
+  </div>
+</div>
+
+
+  )
+}
+
+function MenuBreakfast(){
+    return(
+        <div className='flex flex-row  '>
+            <img src="https://restan-nextjs.vercel.app/assets/img/banner/10.jpg" className='h-[600px] ml-20 mt-20'></img>
+            <div
+      className="bg-[#826a45] text-white w-46 h-46 flex flex-col items-center justify-center text-center -ml-20 mt-40 "
+      style={{
+        clipPath:
+          'polygon(45% 1.33975%, 46.5798% .60307%, 48.2635% .15192%, 50% 0%, 51.7365% .15192%, 53.4202% .60307%, 55% 1.33975%, 89.641% 21.3398%, 91.0689% 22.3396%, 92.3015% 23.5721%, 93.3013% 25%, 94.0379% 26.5798%, 94.4891% 28.2635%, 94.641% 30%, 94.641% 70%, 94.4891% 71.7365%, 94.0379% 73.4202%, 93.3013% 75%, 92.3015% 76.4279%, 91.0689% 77.6604%, 89.641% 78.6603%, 55% 98.6603%, 53.4202% 99.3969%, 51.7365% 99.8481%, 50% 100%, 48.2635% 99.8481%, 46.5798% 99.3969%, 45% 98.6603%, 10.359% 78.6603%, 8.93111% 77.6604%, 7.69854% 76.4279%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.7365%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.2635%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.5721%, 8.93111% 22.3396%, 10.359% 21.3398%)',
+      }}
+    >
+      <h3 className="text-orange-400 text-3xl font-bold font-marcellus">Menu</h3>
+      <p className="text-white text-[20px] font-marcellus">Breakfast</p>
+    </div>
+
+
+
+  <div className="bg-white text-black px-20 py-20  ">
+      <div className="flex justify-end gap-2 mb-6 ml-100">
+        <button className="border border-gray-400 text-gray-600 font-medium px-3 py-1">Half</button>
+        <button className="border border-gray-400 text-gray-600 font-medium px-3 py-1">Full</button>
+      </div>
+
+      <div className="space-y-10">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F1.jpg&w=256&q=75" className="rounded-full w-25 h-25" />
+            <div>
+                <div className='flex'>
+              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Chicken Alfredo
+                <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-32 "></span>
+              <span className="border-t border-gray-300 flex-1 w-32 "></span>
+              
+              </div>
+             
+            <p className="text-lg font-bold text-[#8a6a40] ml-5">$44 <span className="ml-2">$85</span></p>
+          
+              </h3>
+              </div>
+              <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
+              <p className="text-gray-500 text-sm">Free Drinks</p>
+            </div>
+          </div>
+          
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F2.jpg&w=256&q=75" className="rounded-full w-25 h-25" />
+            <div>
+              <h3 className="font-semibold text-xl flex items-center gap-2 font-marcellus">Fish Chips  <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-46 "></span>
+              <span className="border-t border-gray-300 flex-1 w-46  "></span>
+              </div>
+              <p className="text-lg font-bold text-[#8a6a40] ml-5">$36 <span className="ml-2">$70</span></p></h3>
+              <p className="text-gray-600">Atlantic / Chips / Salad / Tartare</p>
+              <p className="text-gray-500 text-sm">Free Drinks</p>
+            </div>
+          </div>
+          
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F3.jpg&w=256&q=75" className="rounded-full w-25 h-25" />
+            <div>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Ebony Fillet Steak  <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-30 "></span>
+              <span className="border-t border-gray-300 flex-1 w-30 "></span>
+              </div>
+               <p className="text-lg font-bold text-[#8a6a40] ml-4">$44 <span className="ml-2">$85</span></p>
+              </h3>
+              <p className="text-gray-600">Truffle Mash / Pepper Sauce</p>
+              <p className="text-gray-500 text-sm">Free Drinks</p>
+            </div>
+          </div>
+         
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F4.jpg&w=256&q=75" className="rounded-full w-25 h-25" />
+            <div>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Chicken Grill  <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-37 "></span>
+              <span className="border-t border-gray-300 flex-1 w-37 "></span>
+              </div>
+               <p className="text-lg font-bold text-[#8a6a40] ml-6">$20 <span className="ml-2">$40</span></p>
+              </h3>
+              <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
+              <p className="text-gray-500 text-sm">Free Drinks</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    
+
+        </div>
+    )
+}
+
+
+function MenuLunch(){
+    return(
+         <div className='flex flex-row  '>
+ <div className="bg-white text-black px-20 py-20  ">
+      <div className="flex justify-end gap-2 mb-6 ml-100">
+        <button className="border border-gray-400 text-gray-600 font-medium px-3 py-1">Half</button>
+        <button className="border border-gray-400 text-gray-600 font-medium px-3 py-1">Full</button>
+      </div>
+
+      <div className="space-y-10">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F6.jpg&w=256&q=75" className="rounded-full w-25 h-25" />
+            <div>
+                <div className='flex'>
+              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Brownies
+                <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-45 "></span>
+              <span className="border-t border-gray-300 flex-1 w-45 "></span>
+              
+              </div>
+             
+            <p className="text-lg font-bold text-[#8a6a40] ml-8">$34 <span className="ml-2">$65</span></p>
+          
+              </h3>
+              </div>
+              <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
+              <p className="text-gray-500 text-sm">Free Drinks</p>
+            </div>
+          </div>
+          
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F8.jpg&w=256&q=75" className="rounded-full w-25 h-25" />
+            <div>
+              <h3 className="font-semibold text-xl flex items-center gap-2 font-marcellus">Cheesecakes<div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-38 "></span>
+              <span className="border-t border-gray-300 flex-1 w-38  "></span>
+              </div>
+              <p className="text-lg font-bold text-[#8a6a40] ml-6">$36 <span className="ml-2">$70</span></p></h3>
+              <p className="text-gray-600">Atlantic / Chips / Salad / Tartare</p>
+              <p className="text-gray-500 text-sm">Free Drinks</p>
+            </div>
+          </div>
+          
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F7.jpg&w=256&q=75" className="rounded-full w-25 h-25" />
+            <div>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Muffins<div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-48 "></span>
+              <span className="border-t border-gray-300 flex-1 w-48 "></span>
+              </div>
+               <p className="text-lg font-bold text-[#8a6a40] ml-7">$44 <span className="ml-2">$85</span></p>
+              </h3>
+              <p className="text-gray-600">Truffle Mash / Pepper Sauce</p>
+              <p className="text-gray-500 text-sm">Free Drinks</p>
+            </div>
+          </div>
+         
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F5.jpg&w=256&q=75" className="rounded-full w-25 h-25" />
+            <div>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Cupcakes <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-43 "></span>
+              <span className="border-t border-gray-300 flex-1 w-43 "></span>
+              </div>
+               <p className="text-lg font-bold text-[#8a6a40] ml-7">$20 <span className="ml-2">$40</span></p>
+              </h3>
+              <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
+              <p className="text-gray-500 text-sm">Free Drinks</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+     <div
+      className="bg-[#826a45] text-white w-46 h-46 flex flex-col items-center justify-center text-center -mr-40 mt-40 "
+      style={{
+        clipPath:
+          'polygon(45% 1.33975%, 46.5798% .60307%, 48.2635% .15192%, 50% 0%, 51.7365% .15192%, 53.4202% .60307%, 55% 1.33975%, 89.641% 21.3398%, 91.0689% 22.3396%, 92.3015% 23.5721%, 93.3013% 25%, 94.0379% 26.5798%, 94.4891% 28.2635%, 94.641% 30%, 94.641% 70%, 94.4891% 71.7365%, 94.0379% 73.4202%, 93.3013% 75%, 92.3015% 76.4279%, 91.0689% 77.6604%, 89.641% 78.6603%, 55% 98.6603%, 53.4202% 99.3969%, 51.7365% 99.8481%, 50% 100%, 48.2635% 99.8481%, 46.5798% 99.3969%, 45% 98.6603%, 10.359% 78.6603%, 8.93111% 77.6604%, 7.69854% 76.4279%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.7365%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.2635%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.5721%, 8.93111% 22.3396%, 10.359% 21.3398%)',
+      }}
+    >
+      <h3 className="text-orange-400 text-3xl font-bold font-marcellus">Menu</h3>
+      <p className="text-white text-[20px] font-marcellus">Breakfast</p>
+    </div>
+
+<img src="https://restan-nextjs.vercel.app/assets/img/banner/11.jpg" className='h-[600px] mt-25 ml-20'></img>    
+
+
+
+        </div>
+    )
+}
