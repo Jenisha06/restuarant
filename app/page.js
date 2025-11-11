@@ -144,25 +144,15 @@ Pages
 
     <div className="group relative inline-block">
 
-  <a href="#menu" className="flex items-center text-white">
+  <a onClick={() => {
+    router.push("/MenuPage")
+  }} className="flex items-center text-white">
     Menu
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
 
 
-  <div className="absolute left-0 mt-2 w-65 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
-    <ul className="py-2 ml-5 text-[16px]">
-      <li><a href="#style1" className="block px-4 py-2 ">Menu Style One</a></li>
-      <li><a href="#style2" className="block px-4 py-2 ">Menu Style Two</a></li>
-      <li><a href="#style3" className="block px-4 py-2 ">Menu Style Three</a></li>
-      <li>
-        <a href="#dark" className="block px-4 py-2 hover:bg-yellow-100 flex justify-between items-center">
-          Dark Version
-          <i className="fa fa-chevron-right text-[12px]"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
+
 </div>
 
     
