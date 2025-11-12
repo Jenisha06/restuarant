@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 
@@ -10,7 +11,7 @@ import Link from 'next/link';
 export default function Restan() {
   return (
  
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden bg-white dark:bg-zinc-900">
    
 <link
   rel="stylesheet"
@@ -33,7 +34,6 @@ export default function Restan() {
   <WhyOurRestaurant/>
     <OrderCard/>
     <Menu/>
-          <OnlineOrder/>
     <Opening/>
      <MeetOurChef/>
      <NewsAndBlogs/>
@@ -144,15 +144,25 @@ Pages
 
     <div className="group relative inline-block">
 
-  <a onClick={() => {
-    router.push("/MenuPage")
-  }} className="flex items-center text-white">
+  <a href="#menu" className="flex items-center text-white">
     Menu
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
 
 
-
+  <div className="absolute left-0 mt-2 w-65 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
+    <ul className="py-2 ml-5 text-[16px]">
+      <li><a href="#style1" className="block px-4 py-2 ">Menu Style One</a></li>
+      <li><a href="#style2" className="block px-4 py-2 ">Menu Style Two</a></li>
+      <li><a href="#style3" className="block px-4 py-2 ">Menu Style Three</a></li>
+      <li>
+        <a href="#dark" className="block px-4 py-2 hover:bg-yellow-100 flex justify-between items-center">
+          Dark Version
+          <i className="fa fa-chevron-right text-[12px]"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
 
     
@@ -237,7 +247,7 @@ function Heading() {
 function Booking() {
   return (
 
- <div className="relative z-20 flex flex-col bg-white dark:bg-black w-full">
+ <div className="relative z-20 flex flex-col bg-white dark:bg-zinc-900 w-full -mb-20">
 <div className="flex flex-col lg:flex-row gap-10">
     <div className="flex flex-col justify-start items-start gap-10 px-4 md:px-10 w-full lg:w-auto">
       <div className="bg-white -mt-15  rounded-3xl text-black w-[425px] flex flex-col justify-center items-start p-3 shadow-md -ml-6">
@@ -349,7 +359,7 @@ alt="spoon and fork icon"
 
 export  function WhyOurRestaurant() {
   return (
-    <section className="bg-white dark:bg-gray-900 py-25 mt-18">
+    <section className="bg-white dark:bg-zinc-900 py-25 mt-18">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-center items-start text-center gap-0   border-gray-200 ">
        
         <div className="flex-1 px-6 py-10 border-r border-t rounded-t-4xl border-black">
@@ -396,7 +406,7 @@ export  function WhyOurRestaurant() {
 
 function OrderCard() {
   return (
-    <div className="bg-white dark:bg-gray-900 -mt-20 -mb-50 ">
+    <div className="bg-white dark:bg-zinc-900 -mt-20 -mb-50 pb-40 ">
     <div
       className="relative flex flex-col md:flex-row items-center justify-between bg-cover bg-center py-20 px-8 overflow-hidden w-[90%] md:w-[80%] mx-auto my-20 rounded-4xl"
       style={{
@@ -461,7 +471,7 @@ function Menu() {
   const [activeCategory, setActiveCategory] = useState('MAIN DISHES');
 
   return (
-    <div className="mt-80 text-center">
+    <div className="mt-80 text-center dark:bg-zinc-900 pt-30">
       
       <div className="flex justify-center items-center gap-4">
         <img
@@ -1373,56 +1383,15 @@ function Menu() {
 
 
 
-function OnlineOrder() {
-  return (
-    <div className="bg-[#131313] mt-25 w-[90%]  text-white flex flex-col  md:flex-row items-center justify-center mx-auto px-8 md:px-20 py-18 overflow-hidden gap-10">
-      <div className="flex justify-center items-center">
-        <img
-          src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F16.png&w=1080&q=75"
-          alt="Phones"
-          className="w-[380px] md:w-[480px]"
-        />
-      </div>
-      <div className="max-w-xl mt-10 md:mt-0 md:ml-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-marcellus leading-snug">
-          Are you Ready to Start <br /> your online Order?
-        </h2>
-        <p className="text-white opacity-70 mb-8 leading-relaxed">
-          Bndulgence diminution so discovered mr apartments. Are off under folly
-          death wrote cause her way spite. Plan upon yet way get cold spot its
-          week. Almost do am or limits hearts. Resolve parties but why she
-          shewing. She sang know now
-        </p>
-        <div className="flex gap-4">
-          <button className="flex items-center gap-2 bg-white text-black font-semibold py-3 px-5 rounded-full ">
-            <i className="fab fa-apple"></i> App Store
-          </button>
-          <button className="flex items-center gap-2 bg-[#b48b57] text-white font-semibold py-3 px-5 rounded-full ">
-            <i className="fab fa-google-play"></i> Play Store
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-
-
-
-
-
-
-
-
 
 
 function Opening() {
   return (
-    <div className="bg-white dark:bg-gray-900 flex flex-col md:flex-row justify-start items-center w-full overflow-x-hidden min-h-[800px] px-6 py-12 ">
+    <div className="bg-white dark:bg-zinc-900 flex flex-col md:flex-row justify-start items-center w-full overflow-x-hidden min-h-[800px] px-6 py-12 ">
       <div className="flex justify-start ml-45 h-[350px] w-[500px]">
         <iframe className="w-full max-w-4xl aspect-video shadow-lg"src="https://www.youtube.com/embed/F3zw1Gvn4Mk"></iframe>
       </div>
-      <div className="flex flex-col text-black dark:text-white pt-10 md:pt-20 md:ml-12 bg-white dark:bg-gray-900 ml-15 text-3xl font-medium font-mono">
+      <div className="flex flex-col text-black dark:text-white pt-10 md:pt-20 md:ml-12 bg-white dark:bg-zinc-900 ml-15 text-3xl font-medium font-mono">
         <h2>Opening Hours</h2>
         <p className="text-xs font-sans pt-3 opacity-50">
           A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails.<br /> 
@@ -1474,7 +1443,7 @@ function Opening() {
 
 function MeetOurChef() {
   return (
-    <div className="bg-[#ebe9e6] dark:bg-gray-900 py-20 px-10 text-center pb-40 -mt-20 pt-20">
+    <div className="bg-[#ebe9e6] dark:bg-zinc-900 py-20 px-10 text-center pb-40 -mt-20 pt-20">
       <div className="flex items-center justify-center gap-4">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
       <p className="text-[#836849] text-2xl font-medium
@@ -1547,7 +1516,7 @@ className="rounded-full w-72 h-72 object-cover"
 
 function NewsAndBlogs() {
   return (
-    <div className="bg-white dark:bg-gray-900 flex flex-col justify-center mb-50 py-20 px-10 text-center">
+    <div className="bg-white dark:bg-zinc-900 flex flex-col justify-center mb-50 py-20 px-10 text-center">
        <div className="flex items-center justify-center gap-2">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
       <p className="text-[#836849] text-2xl font-medium 
@@ -1660,7 +1629,7 @@ function NewsAndBlogs() {
 
 function Footer() {
   return(
-    <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 pt-12 px-6 md:px-12 pt-70 -mt-70">
+    <div className="bg-white dark:bg-zinc-900 text-gray-800 dark:text-gray-200 pt-12 px-6 md:px-12 pt-70 -mt-70">
     <div className="bg-zinc-800 w-full w-auto">
       <div className="ml-46 justify-center items-center h-15 w-[900px] -mt-20 flex">
       </div>
