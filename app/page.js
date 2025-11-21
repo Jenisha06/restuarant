@@ -1,4 +1,3 @@
-
 'use client';
 import { useState } from 'react';
 
@@ -8,15 +7,20 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
+
+
+
 export default function Restan() {
   return (
  
-    <div className="overflow-x-hidden bg-white dark:bg-zinc-900">
+    <div >
    
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
+
+
 
  <>
       <title>Best Restaurant</title>
@@ -34,6 +38,7 @@ export default function Restan() {
   <WhyOurRestaurant/>
     <OrderCard/>
     <Menu/>
+    <OnlineOrder/>
     <Opening/>
      <MeetOurChef/>
      <NewsAndBlogs/>
@@ -45,7 +50,7 @@ export default function Restan() {
 
 function HeroSection() {
   return (
-    <div className="relative h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/restan.jpg')" }}>
+    <div className="h-[70vh] sm:h-[100vh] bg-cover bg-center relative " style={{ backgroundImage: "url('/restan.jpg')" }}>
      
       <div className="absolute inset-0 bg-black/50"></div>
 
@@ -64,8 +69,8 @@ function HeroSection() {
 function Header() {
   return (
     
-<div className="flex justify-evenly font-medium  pt-4 border-b border-white pb-3">
-  <div className="flex gap-3 items-center -mx-30">
+<div className="hidden sm:flex justify-evenly font-medium pt-4 border-b border-white/50 pb-3">
+  <div className="flex gap-4 items-center -mx-30">
 
       <img src="call-icon.webp" className="h-5"></img>
     <a href="" target="_blank"  >
@@ -78,7 +83,7 @@ function Header() {
 </a>
 </div>
 <div className="ml-100">
-<p><i className="fas fa-map-marker-alt"></i> 175 10h Street, Office 375 Berlin, De 21562</p>
+<p><i class="fas fa-map-marker-alt"></i> 175 10h Street, Office 375 Berlin, De 21562</p>
 </div>
 
 </div>
@@ -87,9 +92,27 @@ function Header() {
 
 function Navbar() {
   const router = useRouter();
+ 
+
+  // 1. State to control the menu's visibility
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Helper function to handle navigation and close the menu
+  const navigateAndClose = (path) => {
+    router.push(path);
+    setIsMobileMenuOpen(false); // Close menu after navigating
+  };
+  
+
+
   return (
-    <div className="flex flex-row justify-between items-center text-white font-semibold text-lg pt-6 px-20 ">
-    <div className="flex gap-9">  
+    <div className=" bg-white sm:bg-transparent flex  justify-between items-center text-white font-semibold text-lg pt-6 px-20  ">
+
+    <div className="hidden sm:flex gap-9">  
 
 
 
@@ -106,12 +129,12 @@ function Navbar() {
   
   <a href="#pages" className="flex items-center text-white">
 Pages
-    <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
+    <i className="fa fa-chevron-down text-[15px] px-1.5 "></i>
   </a>
 
 
-  <div className="absolute  left-0 mt-2 w-70 ml-10  bg-white text-black rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
-    <ul className="py-2 ml-5 text-[16px]">
+  <div className="absolute  left-0 mt-2 w-70 ml-10  bg-white text-black rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-20">
+    <ul className="py-4 ml-5 text-[16px]">
 <li>
   <a onClick={() => {
     router.push("/AboutUs")
@@ -132,9 +155,9 @@ Pages
       <li><a href="#Contact" className="block px-4 py-2 ">Contact us</a></li>
         <li><a onClick={() => {
     router.push("/Register")
-  }}  className="block px-4 py-2 ">Register</a></li>
+  }} className="block px-4 py-2 ">Register</a></li>
           <li><a onClick={() => {
-    router.push("/login")
+    router.push("/Login")
   }}  className="block px-4 py-2 ">Login</a></li>
            
     </ul>
@@ -144,39 +167,130 @@ Pages
 
     <div className="group relative inline-block">
 
-  <a href="#menu" className="flex items-center text-white">
+  <a onClick={() => {
+    router.push("/MenuPage")
+  }} className="flex items-center text-white">
     Menu
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
 
 
-  <div className="absolute left-0 mt-2 w-65 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
-    <ul className="py-2 ml-5 text-[16px]">
-      <li><a href="#style1" className="block px-4 py-2 ">Menu Style One</a></li>
-      <li><a href="#style2" className="block px-4 py-2 ">Menu Style Two</a></li>
-      <li><a href="#style3" className="block px-4 py-2 ">Menu Style Three</a></li>
-      <li>
-        <a href="#dark" className="block px-4 py-2 hover:bg-yellow-100 flex justify-between items-center">
-          Dark Version
-          <i className="fa fa-chevron-right text-[12px]"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
 </div>
 
     
     </div>
- 
-    <img src="restanLogo.webp" className="h-14 "></img>
-    <div className="flex gap-9">
+
+
+
+
+
+    
+ {/* 2. Mobile Header - Visible only on small screens (sm:hidden md:hidden) */}
+      <div className="flex justify-between w-full items-center gap-[85px] p-2 px-4 md:hidden">
+       
+        <button onClick={toggleMobileMenu} className="focus:outline-none z-40">
+          <i className="fa fa-bars text-[#04000b] text-2xl -ml-[70px] "></i>
+        </button>
+
+       
+        <img
+          src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo.png&w=1920&q=75"
+          className="h-[55px] "
+        />
+        
+        <div className="w-6"></div> 
+      </div>
+
+     
+      <div
+        className={`fixed top-0 left-0 w-80 h-full   bg-white text-black shadow-lg z-200 transform transition-transform duration-300 ease-in-out md:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        
+        <div className="flex justify-between items-center px-4 py-6 border-b border-gray-200">
+          <img 
+            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo.png&w=1920&q=75" 
+            alt="Restan Logo" 
+            className="h-15" 
+          />
+          <button onClick={toggleMobileMenu} className="text-black  focus:outline-none">
+           
+           <i className="fa fa-times fa-bars "></i>
+          
+          </button>
+        </div>
+
+      
+        <ul className="text-black font-medium">
+        
+          <li className="py-3 border-b border-gray-200 px-4">
+            <a href="#home" onClick={() => navigateAndClose("/")} className="flex justify-between items-center text-[17px] font-medium">
+              Home <i className="fa fa-chevron-right text-base"></i>
+            </a>
+          </li>
+
+          
+          <li className="py-3 border-b border-gray-200">
+            <a className="flex justify-between items-center text-[17px] font-medium px-4">
+              Pages <i className="fa fa-chevron-right text-base"></i>
+            </a>
+            
+            <ul className="ml-6 py-2  text-[1rem]">
+              <li className='py-2 px-4 border-b border-gray-100'>
+                <a onClick={() => navigateAndClose("/AboutUs")} className="block cursor-pointer">About Us</a>
+              </li>
+              <li className='py-2 px-4 border-b border-gray-100'>
+                <a onClick={() => navigateAndClose("/Chef")} className="block cursor-pointer">Chef</a>
+              </li>
+
+               <li className='py-2 px-4 border-b border-gray-100'>
+                <a onClick={() => navigateAndClose("/ChefDetails")} className="block cursor-pointer">Chef Details</a>
+              </li>
+              
+              <li className='py-2 px-4 border-b border-gray-100'>
+                <a onClick={() => navigateAndClose("/Login")} className="block cursor-pointer">Login</a>
+              </li>
+
+               <li className='py-2 px-4 border-b border-gray-100'>
+                <a onClick={() => navigateAndClose("/Register")} className="block cursor-pointer">Register</a>
+              </li>
+
+                <li className='py-2 px-4  '>
+                <a onClick={() => navigateAndClose("/Reservation")} className="block cursor-pointer">Reservation</a>
+              </li>
+            </ul>
+          </li>
+
+          
+          <li className="py-3 border-b border-gray-200  px-4">
+            <a onClick={() => navigateAndClose("/MenuPage")} className="flex justify-between items-center text-[17px] font-medium cursor-pointer">
+              Menu <i className="fa fa-chevron-right text-base"></i>
+            </a>
+          </li>
+          
+          <li className="py-3 border-b border-gray-200 px-4">
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-[17px] font-medium">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+
+
+
+
+
+
+
+    <img src="restanLogo.webp" className="hidden sm:block sm:h-[75px] "></img>
+    <div className=" hidden sm:flex gap-9">
    <div className="group relative inline-block">
   <a href="#blog" className="flex items-center text-white">
     Blog
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
 
-  <div className="absolute left-0 mt-2 w-72 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
+  <div className="  absolute left-0 mt-2 w-72 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
     <ul className="py-2 ml-5 text-[16px]">
       <li><a href="#standard" className="block px-4 py-2">Blog Standard</a></li>
       <li><a href="#sidebar" className="block px-4 py-2">Blog With Sidebar</a></li>
@@ -216,22 +330,35 @@ Pages
 function Heading() {
   return (
     <div>
-      <h1 className="text-8xl font-bold text-center mt-48 font-marcellus ">Best Restaurant</h1>
-     <div className="relative w-[180px] h-[180px] rounded-full border-2 border-white mx-auto flex items-center justify-center mt-16">
+      <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mt-20 sm:mt-32 md:mt-40 lg:mt-48 font-marcellus">
+  Best Restaurant
+</h1>
+     <div className="flex relative w-[180px] h-[180px] rounded-full border-2 border-white mx-auto  items-center justify-center mt-15">
   
-   <svg viewBox="0 0 200 200" className="absolute top-0 left-0 w-full h-full p-3">
+ <div className="relative w-[200px] h-[200px]">
+ 
+  <svg viewBox="0 0 200 200" className=" absolute top-0 left-0 w-full h-full p-3">
     <defs>
       <path
         id="circlePath"
-        d="M 100, 100 m -80, 0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
+        d="
+          M 100,100 
+          m 0,-80 
+          a 80,80 0 1,1 0,160 
+          a 80,80 0 1,1 0,-160
+        "
       />
     </defs>
-    <text fill="white" fontSize="22"  fontWeight="bold">
+    <text fill="white" fontSize="22" fontWeight="bold">
       <textPath href="#circlePath" startOffset="50%" textAnchor="middle">
         BEST FOOD SINCE · 1869
       </textPath>
     </text>
   </svg>
+
+ 
+</div>
+
 
 
 
@@ -247,17 +374,15 @@ function Heading() {
 function Booking() {
   return (
 
- <div className="relative z-20 flex flex-col bg-white dark:bg-zinc-900 w-full -mb-20">
-<div className="flex flex-col lg:flex-row gap-10">
-    <div className="flex flex-col justify-start items-start gap-10 px-4 md:px-10 w-full lg:w-auto">
-      <div className="bg-white -mt-15  rounded-3xl text-black w-[425px] flex flex-col justify-center items-start p-3 shadow-md -ml-6">
+ <div className="mt-40 relative flex flex-col justify-center items-center bg-white  sm:mt-0 sm:z-20">
+<div className="flex-col sm:flex-row flex gap-10">
+    <div className=" flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-start">
+      <div className="w-[400px]  bg-white -mt-15  rounded-3xl text-black sm:w-[425px] flex flex-col justify-center items-start p-3 shadow-md -ml-6">
         
-
-<div className="rounded-full bg-[hsla(32,28%,40%,1.00)]  w-20 h-20 flex items-center justify-center -mt-12 mb-3 ml-4">
-<img src="https://cdn-icons-png.flaticon.com/512/33/33899.png"
-alt="spoon and fork icon"
-  className="w-6 h-6 filter invert"
-/>
+<div className="rounded-full bg-white  z-20 w-25 h-25 flex items-center justify-center -mt-10 mb-3 ml-6 "></div>
+<div className="rounded-full bg-[#836849]  z-20 w-20 h-20 flex items-center justify-center -mt-25   mb-3 ml-9 ">
+ 
+<i class="fas fa-utensils text-white text-2xl"></i>
 </div>
        
         <h2 className="font-bold self-start text-2xl ml-2 pb-3 pl-3 mt-8 font-marcellus">Book a Table</h2>
@@ -297,7 +422,7 @@ alt="spoon and fork icon"
 
 
           <div className="flex justify-center items-center w-full">
-          <button className="bg-[hsla(32,28%,40%,1.00)] hover:bg-black text-white px-4 py-4 rounded-sm w-[50%] font-medium mt-5 mb-8">
+          <button className="bg-[#836849] hover:bg-black text-white px-4 py-4 rounded-sm w-[50%] font-medium mt-5 mb-8">
 
             Book A Table
           </button>
@@ -307,44 +432,45 @@ alt="spoon and fork icon"
       </div>
     </div>
     
-    <div className="text-black dark:text-white font-bold text-[28px] sm:text-[36px] lg:text-[40px] mt-10 lg:mt-20 font-marcellus px-4 ml-15">
-      <div className="flex items-center gap-2">
+    <div className="text-3xl   m-[50px] sm:ml-[100px] sm:w-full text-black font-bold sm:text-[40px] mt-20 font-marcellus text-center">
+      <div className=" flex">
       <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2Ffire.png&w=96&q=75"></img>Our Popular Category
 </div>
  
 
-        <section className="flex flex-col sm:flex-row gap-6 mt-6">
-      <div className="bg-gray-500 w-full sm:w-[210px] h-[270px] rounded-[5%] relative overflow-hidden">
+        <section className="   sm:flex sm:gap-6">
+      <div className="bg-gray-500 sm:w-[210px] sm:h-[270px] mt-7 rounded-[5%] relative overflow-hidden">
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F26.jpg&w=1920&q=75"
     className="rounded-2xl w-full h-full object-cover "
   />
-  <div className="absolute bottom-2 left-2 text-white">
-    <h2 className="text-[40%] font-bold text-amber-500">Desserts</h2>
-    <h1 className="text-lg font-bold text-[60%]">Cheesecake</h1>
+  <div className="absolute bottom-2 left-2 text-white ml-2">
+    <h2 className=" sm:text-[40%] font-bold text-amber-500">Desserts</h2>
+    <h1 className="text-lg font-bold sm:text-[60%]">Cheesecake</h1>
   </div>
 </div>
 
- <div className="bg-gray-500 w-full sm:w-[210px] h-[270px] rounded-[5%] relative overflow-hidden">
+
+ <div className="bg-gray-500 sm:w-[210px] sm:h-[270px] mt-7 rounded-[5%] relative overflow-hidden">
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F27.jpg&w=828&q=75"
     className="rounded-2xl w-full h-full object-cover"
   />
-  <div className="absolute bottom-2 left-2 text-white">
-    <h2 className="text-[40%] font-bold text-amber-500">Seafood</h2>
-    <h1 className="text-lg font-bold text-[60%]">Salmon fry</h1>
+  <div className="absolute bottom-2 left-2 text-white ml-2">
+    <h2 className="sm:text-[40%] font-bold text-amber-500">Seafood</h2>
+    <h1 className="text-lg font-bold sm:text-[60%]">Salmon fry</h1>
   </div>
 </div>
 
 
- <div className="bg-gray-500 w-full sm:w-[210px] h-[270px] rounded-[5%] relative overflow-hidden">
+ <div className="bg-gray-500 sm:w-[210px] sm:h-[270px] mt-7 rounded-[5%] relative overflow-hidden">
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F25.jpg&w=828&q=75"
     className="rounded-2xl w-full h-full object-cover"
   />
   <div className="absolute bottom-2 left-2 text-white ml-2">
-    <h2 className="text-[40%] font-bold text-amber-500">Main Dishes</h2>
-    <h1 className="text-lg font-bold text-[60%]">Chicken Alfredo</h1>
+    <h2 className="sm:text-[40%] font-bold text-amber-500">Main Dishes</h2>
+    <h1 className="text-lg font-bold sm:text-[60%]">Chicken Alfredo</h1>
   </div>
 </div>
 
@@ -359,42 +485,42 @@ alt="spoon and fork icon"
 
 export  function WhyOurRestaurant() {
   return (
-    <section className="bg-white dark:bg-zinc-900 py-25 mt-18">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-center items-start text-center gap-0   border-gray-200 ">
+    <section className="bg-white py-20 mt-[30px]">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col  md:flex-row justify-center text-left    border-gray-200 ">
        
-        <div className="flex-1 px-6 py-10 border-r border-t rounded-t-4xl border-black">
+        <div className="flex-1  px-10 py-12 border-l border-b sm:border-b-0 sm:border-l-0 border-r border-t rounded-t-4xl border-[#826a45]">
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F13.png&w=256&q=75"
             alt="Quality Foods"
-            className="h-24 w-24 mx-auto mb-6"
+            className="h-24 w-24  mb-6"
           />
-          <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">Quality Foods </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">
+          <h2 className="text-2xl font-semibold text-black mb-4">Quality Foods </h2>
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xs ">
             Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
           </p>
         </div>
 
-        <div className="flex-1 px-6 py-10 border-r border-b rounded-b-4xl border-black ">
+        <div className="flex-1 px-10  border-l py-12  sm:border-l-0 border-r border-b sm:rounded-b-4xl border-[#826a45] ">
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F14.png&w=256&q=75"
             alt="Fast Delivery"
-            className="h-24 w-24 mx-auto mb-6"
+            className="h-24 w-24  mb-6"
           />
-          <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">Fast Delivery </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">
+          <h2 className="text-2xl font-semibold text-black mb-4">Fast Delivery </h2>
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xs ">
             Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
           </p>
         </div>
 
         
-        <div className="flex-1 px-6 py-10 border-t rounded-t-4xl">
+        <div className="flex-1 px-10 py-12 border-l border-r border-b rounded-b-4xl sm:border-b-0 sm:border-r-0 sm:border-l-0 sm:border-t border-[#826a45] sm:rounded-t-4xl">
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F15.png&w=256&q=75"
             alt="Delicious Recipes"
-            className="h-24 w-24 mx-auto mb-6"
+            className="h-24 w-24  mb-6"
           />
-          <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">Delicious Recipes </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">
+          <h2 className="text-2xl font-semibold text-black mb-4">Delicious Recipes </h2>
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xs ">
             Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
           </p>
         </div>
@@ -406,22 +532,22 @@ export  function WhyOurRestaurant() {
 
 function OrderCard() {
   return (
-    <div className="bg-white dark:bg-zinc-900 -mt-20 -mb-50 pb-40 ">
+    <div className="bg-white -mt-20 -mb-50 ">
     <div
-      className="relative flex flex-col md:flex-row items-center justify-between bg-cover bg-center py-20 px-8 overflow-hidden w-[90%] md:w-[80%] mx-auto my-20 rounded-4xl"
+      className="relative  flex flex-col sm:flex-row items-center justify-between bg-cover w-[90%] bg-center py-38 px-30 overflow-hidden sm:w-[80%] mx-auto my-20 rounded-4xl mb-50 "
       style={{
         backgroundImage:
           "url('https://restan-nextjs.vercel.app/assets/img/shape/4.jpg')",
       }}
     >
-      <div className="relative w-1/2 flex items-center justify-center">
+      <div className="relative w-[300px] sm:w-1/2 flex items-center justify-center">
         <div className="relative">
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F15.png&w=1080&q=75"
             alt="Main Dish"
-            className="w-[330px] rounded-full "
+            className="  sm:w-[330px] rounded-full "
           />
-          <div className="absolute -top-10 -right-10 bg-white w-[120px] h-[120px] rounded-full flex flex-col items-center justify-center shadow-md opacity-90">
+          <div className="absolute -top-10 -right-10 bg-white w-[120px] h-[120px] rounded-full flex sm:flex-col items-center justify-center shadow-md opacity-90">
             <p className="text-black text-lg font-medium">Save</p>
             <p className="text-black text-3xl font-bold">55%</p>
           </div>
@@ -429,21 +555,21 @@ function OrderCard() {
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F1.png&w=1080&q=75"
             alt="Dish 1"
-            className="absolute -top-24 -left-20 w-[170px] rounded-full "
+            className="hidden sm:block absolute sm:-top-24 sm:-left-20 sm:w-[170px] sm:rounded-full"
           />
 
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F12.png&w=1080&q=75"
             alt="Dish 2"
-            className="absolute -bottom-15 -left-10 w-[120px] rounded-full shadow-lg"
+            className=" hidden sm:block absolute -bottom-15 -left-10 w-[120px] rounded-full shadow-lg"
           />
         </div>
       </div>
 
-      <div className="w-1/2 pl-16">
+      <div className=" mt-10  sm:w-1/2 sm:pl-16">
      
-        <p className="text-black tracking-wide mb-2 text-lg font-medium flex items-center font-marcellus">
-          TODAY SPECIAL OFFER <span className="ml-3"> <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img></span>
+        <p className="text-black tracking-wide mb-2 text-lg  flex items-center font-marcellus font-semibold ">
+          TODAY SPECIAL OFFER <span className="sm:ml-3 "> <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img></span>
           
         </p>
         
@@ -471,28 +597,28 @@ function Menu() {
   const [activeCategory, setActiveCategory] = useState('MAIN DISHES');
 
   return (
-    <div className="mt-80 text-center dark:bg-zinc-900 pt-30">
+    <div className="mt-80 text-center">
       
       <div className="flex justify-center items-center gap-4">
         <img
           src="https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png"
-          className="h-4"
+          className=" hidden sm:block sm:h-4 "
           
         />
-        <p className="text-[#836849] text-[23px] font-medium font-marcellus">FOOD MENU</p>
+        <p className=" text-[#836849] text-[23px] font-medium font-marcellus">FOOD MENU</p>
         <img
           src="https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png"
-          className="h-4"
+          className="hidden sm:block sm:h-4"
           alt="right icon"
         />
       </div>
 
-      <h1 className="text-5xl font-marcellus font-bold text-black dark:text-white mt-6 mb-9">
+      <h1 className="text-4xl sm:text-5xl font-marcellus font-bold text-black mt-6 mb-9">
         Our Specials Menu
       </h1>
 
      
-      <div className="flex justify-center gap-6 bg-white py-6 text-[18px] font-marcellus font-medium border border-gray-800   rounded-2xl w-max mx-auto  px-7">
+      <div className="flex  flex-col sm:flex-row justify-center sm:gap-6 bg-white py-6 sm:text-[18px] font-marcellus font-medium border border-gray-800   rounded-2xl w-max mx-auto  px-7">
         {categories.map((category) => (
           <button
             key={category}
@@ -1114,7 +1240,7 @@ function Menu() {
       </p>
 
       <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
+        <i class="fas fa-shopping-cart "></i> Add to Cart
       </button>
     </div>
   </div>
@@ -1381,58 +1507,87 @@ function Menu() {
   )
 }
 
+function OnlineOrder() {
+  return (
+    <div className="bg-[#131313] mt-25 w-[90%]  text-white flex flex-col rounded-2xl  md:flex-row items-center justify-center mx-auto px-8 md:px-20 py-18 overflow-hidden gap-10">
+      <div className="flex justify-center items-center">
+        <img
+          src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F16.png&w=1080&q=75"
+          alt="Phones"
+          className="w-[380px] md:w-[480px]"
+        />
+      </div>
+      <div className="max-w-xl mt-10 md:mt-0 md:ml-10">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-marcellus leading-snug">
+          Are you Ready to Start <br /> your online Order?
+        </h2>
+        <p className="text-white opacity-70 mb-8 leading-relaxed">
+          Bndulgence diminution so discovered mr apartments. Are off under folly
+          death wrote cause her way spite. Plan upon yet way get cold spot its
+          week. Almost do am or limits hearts. Resolve parties but why she
+          shewing. She sang know now
+        </p>
+        <div className="flex gap-4">
+          <button className="flex items-center gap-2 bg-white text-black font-semibold py-3 px-5 rounded-full ">
+            <i className="fab fa-apple"></i> App Store
+          </button>
+          <button className="flex items-center gap-2 bg-[#b48b57] text-white font-semibold py-3 px-5 rounded-full ">
+            <i className="fab fa-google-play"></i> Play Store
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 
 
 
 function Opening() {
   return (
-    <div className="bg-white dark:bg-zinc-900 flex flex-col md:flex-row justify-start items-center w-full overflow-x-hidden min-h-[800px] px-6 py-12 ">
-      <div className="flex justify-start ml-45 h-[350px] w-[500px]">
-        <iframe className="w-full max-w-4xl aspect-video shadow-lg"src="https://www.youtube.com/embed/F3zw1Gvn4Mk"></iframe>
-      </div>
-      <div className="flex flex-col text-black dark:text-white pt-10 md:pt-20 md:ml-12 bg-white dark:bg-zinc-900 ml-15 text-3xl font-medium font-mono">
-        <h2>Opening Hours</h2>
-        <p className="text-xs font-sans pt-3 opacity-50">
-          A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails.<br /> 
-          The Patio Time Bar opens in the center..
-        </p>
-        <div className="flex flex-row">
-
-        <div>
-          <div className="text-xs font-mono leading-loose space-y-4">
-            <div className="flex items-center">
-              <span>Sunday to Tuesday:</span>
-              <div className="flex-1 border-b-1 ml-2 opacity-[30%] dark:border-gray-500"></div>
-              <div>10:00 - 09:00</div>
-            </div>
-
-            <div className="flex items-center">
-              <span>Wednesday to Thursday:</span>
-              <div className="flex-1 border-b-1 ml-2 opacity-[30%] pl-20"></div>
-              <div>11:30 - 10:30</div>
-            </div>
-
-            <div className="flex items-center">
-              <span>Friday & Saturday:</span>
-              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
-              <div>10:30 - 12:00</div>
-            </div>
-            <div className="flex flex-row items-center space-x-3">
-            <div className="bg-[#826a45] flex justify-start items-center p-4 rounded-full object-cover h-15 w-15">
-              <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F6.png&w=128&q=75" className="h-7"/>
-            </div>
-            <div className="flex flex-col leading-relaxed">
-            <h4 className="text-black dark:text-white font-sans -mt-5 text-sm opacity-[50%]">Call Anytime</h4>
-            <p className="justify-start text-xl -mb-4">+964733-378901</p>
-            </div></div>
-          </div>
-        </div>
-      </div>
+     <div className='mx-[5vh] mt-[100px] sm:mx-[16vh] h-[700px]'> 
+            <h2 className='hidden sm:block text-[#04000b] sm:opacity-10 font-marcellus sm:text-9xl sm:font-semibold ml-15'>RESTAN</h2>
+            <div className="flex flex-col  sm:flex-row">
+<div className="w-[400px] h-[380px]  relative sm:w-[696px] sm:h-[392px] sm:pb-[65%] overflow-hidden sm:ml-15 ">
+      <iframe
+        src="https://www.youtube.com/embed/F3zw1Gvn4Mk?autoplay=1&loop=1&playlist=F3zw1Gvn4Mk&controls=0&preload=metadata&enablejsapi=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+        title="Mr Fox Restaurant Promo Video"
+        
       
-        <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F4.png&w=3840&q=75" className="h-50 dark:invert opacity-[20%] mt-7"/>
-      </div>
+        className="absolute top-0 left-0 w-full h-[50%]"
+       
+      />
     </div>
+
+ <div className=" w-full py-6  bg-white sm:-mt-[50px] sm:-ml-[100px] text-black sm:w-[570px] h-max sm:py-15 flex flex-col justify-center items-start px-15 shadow-md z-10 ">
+ 
+
+  <h2 className="text-3xl font-bold mb-3 font-marcellus">Opening Hours</h2>
+  <p className="text-[14px] mb-6 leading-relaxed text-gray-600 ">
+    A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails. The Patio Time Bar opens in the center..
+  </p>
+
+  <div className="space-y-2 text-[15px]  font-semibold">
+   <p>Sunday to Tuesday:<span className="text-gray-500 "> ______________________ </span>10:00 - 09:00</p> 
+    <p>Wednesday to Thursday:<span className="text-gray-500 "> ______________________ </span> 11:30 - 10:30</p>
+    <p>Friday & Saturday:<span className="text-gray-500 "> ______________________ </span> 10:30 - 12:00</p>
+  </div>
+
+  <div className="sm:mt-6 flex items-center">
+    <div className="bg-[#826a45] rounded-full h-15 w-15 flex items-center justify-center ">
+      <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F6.png&w=128&q=75" className="h-10 w-10 "></img>
+    </div>
+    <div className="flex flex-col ml-5">
+    <p className="text-gray-500 text-sm">Call Anytime</p>
+    <p className="text-[15px] font-bold text-[#04000b] font-marcellus">+964733-378901</p>
+    </div>
+  </div>
+</div>
+
+    </div>
+    
+
+        </div>
   );
 }
 
@@ -1443,20 +1598,20 @@ function Opening() {
 
 function MeetOurChef() {
   return (
-    <div className="bg-[#ebe9e6] dark:bg-zinc-900 py-20 px-10 text-center pb-40 -mt-20 pt-20">
+    <div className="bg-[#ebe9e6] py-20 px-10 text-center pb-40 mt-20 ">
       <div className="flex items-center justify-center gap-4">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
-      <p className="text-[#836849] text-2xl font-medium
+      <p className="text-[#836849] sm:text-2xl font-medium 
       font-merriweather">MASTER CHEFS</p>
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img>
 
       </div>
-    <h1 className="text-6xl font-serif font-bold text-black dark:text-white mt-6 mb-9"> Meet Our Special Chefs </h1>
-    <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-16 md:gap-24 flex-wrap">
+    <h1 className=" text-4xl sm:text-6xl font-serif font-bold text-black mt-6 mb-9"> Meet Our Special Chefs </h1>
+    <div className="flex flex-col sm:flex-row justify-center gap-30 ">
 
    <div className="flex flex-col items-center mt-5">
   
-  <div className="rounded-full border border-gray-800 dark:border-gray-300 w-80 h-80 flex items-center justify-center relative">
+  <div className="rounded-full border border-gray-800 w-80 h-80 flex items-center justify-center relative">
     <img
       src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F1.jpg&w=1920&q=75"
       className="rounded-full w-72 h-72 object-cover"
@@ -1473,7 +1628,7 @@ function MeetOurChef() {
 
  <div className="flex flex-col items-center mt-5">
   
-  <div className="rounded-full border border-gray-800 dark:border-gray-300 w-80 h-80 flex items-center justify-center relative">
+  <div className="rounded-full border border-gray-800 w-80 h-80 flex items-center justify-center relative">
     <img
       src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F2.jpg&w=1920&q=75" 
 className="rounded-full w-72 h-72 object-cover"
@@ -1490,7 +1645,7 @@ className="rounded-full w-72 h-72 object-cover"
 
  <div className="flex flex-col items-center mt-5">
   
-  <div className="rounded-full border border-gray-800 dark:border-gray-300 w-80 h-80 flex items-center justify-center relative">
+  <div className="rounded-full border border-gray-800 w-80 h-80 flex items-center justify-center relative">
     <img
        src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F3.jpg&w=1920&q=75" 
       className="rounded-full w-72 h-72 object-cover"
@@ -1516,23 +1671,23 @@ className="rounded-full w-72 h-72 object-cover"
 
 function NewsAndBlogs() {
   return (
-    <div className="bg-white dark:bg-zinc-900 flex flex-col justify-center mb-50 py-20 px-10 text-center">
+    <div className="bg-white flex flex-col justify-center mb-50 py-20 px-10 text-center">
        <div className="flex items-center justify-center gap-2">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
-      <p className="text-[#836849] text-2xl font-medium 
+      <p className="text-[#836849] sm:text-2xl font-medium 
       font-merriweather">NEWS & BLOG</p>
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img>
 
       </div>
-    <h1 className="text-5xl font-serif font-bold text-black dark:text-white mt-6 mb-9 items-center"> Our Latest News & Blog </h1>
+    <h1 className=" text-4xl sm:text-5xl font-serif font-bold text-black mt-6 mb-9 items-center"> Our Latest News & Blog </h1>
 
 
-<div className="flex flex-col md:flex-row flex-wrap mx-auto gap-6 justify-center mt-10">
-<div className="relative w-full md:w-[28rem] mx-auto">
+<div className="flex flex-col sm:flex-row mx-auto sm:gap-10 justify-center mt-10">
+<div className="  relative sm:w-[600px]  sm:mx-auto">
   
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F1.jpg&w=1920&q=75"
-    className="w-full h-64 md:h-80 object-cover  "
+    className="sm:w-[full] sm:h-[510px] object-cover "
     alt="Blog Image"
   />
 
@@ -1571,11 +1726,11 @@ function NewsAndBlogs() {
   </div>
   
 </div>
-<div className="relative w-full md:w-[28rem] mx-auto">
+<div className="relative sm:w-[600px] mx-auto">
   
   <img
   src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F2.jpg&w=1920&q=75"
-    className="w-full h-64 md:h-80 object-cover"
+    className="sm:w-[full] sm:h-[510px] object-cover"
     alt="Blog Image"
   />
 
@@ -1626,10 +1781,9 @@ function NewsAndBlogs() {
 
 
 
-
 function Footer() {
   return(
-    <div className="bg-white dark:bg-zinc-900 text-gray-800 dark:text-gray-200 pt-12 px-6 md:px-12 pt-70 -mt-70">
+    <div className="bg-white  text-gray-800 dark:text-gray-200 pt-12 px-6 md:px-12 pt-70 -mt-70">
     <div className="bg-zinc-800 w-full w-auto">
       <div className="ml-46 justify-center items-center h-15 w-[900px] -mt-20 flex">
       </div>
@@ -1662,7 +1816,7 @@ function Footer() {
 
 <div className="flex flex-col ml-5">
   <h2 className="font-mono font-medium text-xl ml-7 mb-2 flex-col text-white">Contact Info</h2>
-  <p className="opacity-[70%] text-xs font-thin ml-5 leading-loose mb-4 text-white">Company Profile<br />About<br/>Help Center<br/>Career<br/>Features<br/>Contact</p>
+  <p className="opacity-70 text-xs font-thin ml-5 leading-loose mb-4 text-white">Company Profile<br />About<br/>Help Center<br/>Career<br/>Features<br/>Contact</p>
   </div>
 
   <div className="flex flex-col ml-3">
@@ -1714,7 +1868,7 @@ function Footer() {
       </div>
 
 
-      <div className="flex flex-row justify-start gap-12 pt-7 items-start">
+      <div className="  flex flex-row justify-start gap-12 pt-7 items-start">
         <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F9.png&w=1920&q=75" className="h-25 o-[50%]"/>
         <img src="restanLogo.webp" className="h-12 mt-5"></img>
         <p className="ml-auto flex-right pr-10 text-sm mt-7 o-[90%]">© Copyright 2025. Restan. All Rights Reserved</p>
