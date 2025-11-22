@@ -2,8 +2,6 @@
 import { useState } from 'react';
 
 
-
-
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -94,17 +92,16 @@ function Navbar() {
   const router = useRouter();
  
 
-  // 1. State to control the menu's visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Helper function to handle navigation and close the menu
+  
   const navigateAndClose = (path) => {
     router.push(path);
-    setIsMobileMenuOpen(false); // Close menu after navigating
+    setIsMobileMenuOpen(false); 
   };
   
 
@@ -145,20 +142,22 @@ Pages
 
       <li><a onClick={() => {
     router.push("/Chef")
-  }} className="block px-4 py-2 ">Chef</a></li>
+  }} className="block px-4 py-2 cursor-pointer ">Chef</a></li>
       <li><a onClick={() => {
     router.push("/ChefDetails")
-  }}  className="block px-4 py-2 ">Chef Details</a></li>
+  }}  className="block px-4 py-2 cursor-pointer ">Chef Details</a></li>
       <li><a onClick={() => {
     router.push("/Reservation")
-  }} className="block px-4 py-2 ">Reservation</a></li>
-      <li><a href="#Contact" className="block px-4 py-2 ">Contact us</a></li>
+  }} className="block px-4 py-2  cursor-pointer">Reservation</a></li>
+      <li><a onClick={() => {
+    router.push("/ContactUsButton")
+  }} className="block px-4 py-2  cursor-pointer">Contact us</a></li>
         <li><a onClick={() => {
     router.push("/Register")
-  }} className="block px-4 py-2 ">Register</a></li>
+  }} className="block px-4 py-2  cursor-pointer">Register</a></li>
           <li><a onClick={() => {
     router.push("/Login")
-  }}  className="block px-4 py-2 ">Login</a></li>
+  }}  className="block px-4 py-2  cursor-pointer">Login</a></li>
            
     </ul>
   </div>
@@ -169,7 +168,7 @@ Pages
 
   <a onClick={() => {
     router.push("/MenuPage")
-  }} className="flex items-center text-white">
+  }} className="flex items-center text-white cursor-pointer">
     Menu
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
@@ -185,7 +184,7 @@ Pages
 
 
     
- {/* 2. Mobile Header - Visible only on small screens (sm:hidden md:hidden) */}
+ {/*mobile responsive*/}
       <div className="flex justify-between w-full items-center gap-[85px] p-2 px-4 md:hidden">
        
         <button onClick={toggleMobileMenu} className="focus:outline-none z-40">
@@ -270,7 +269,9 @@ Pages
           </li>
           
           <li className="py-3 border-b border-gray-200 px-4">
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-[17px] font-medium">Contact Us</a>
+            <a onClick={() => navigateAndClose("/ContactUsButton")} className="flex justify-between items-center text-[17px] font-medium cursor-pointer">
+             Contact us <i className="fa fa-chevron-right text-base"></i>
+            </a>
           </li>
         </ul>
       </div>
@@ -285,25 +286,26 @@ Pages
     <img src="restanLogo.webp" className="hidden sm:block sm:h-[75px] "></img>
     <div className=" hidden sm:flex gap-9">
    <div className="group relative inline-block">
-  <a href="#blog" className="flex items-center text-white">
+  <a href="#blog" className="flex items-center text-white cursor-pointer">
     Blog
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
 
   <div className="  absolute left-0 mt-2 w-72 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
-    <ul className="py-2 ml-5 text-[16px]">
-      <li><a href="#standard" className="block px-4 py-2">Blog Standard</a></li>
-      <li><a href="#sidebar" className="block px-4 py-2">Blog With Sidebar</a></li>
-      <li><a href="#grid2" className="block px-4 py-2">Blog Grid Two Column</a></li>
-      <li><a href="#grid3" className="block px-4 py-2">Blog Grid Three Column</a></li>
-      <li><a href="#single" className="block px-4 py-2">Blog Single</a></li>
-      <li><a href="#singleSidebar" className="block px-4 py-2">Blog Single With Sidebar</a></li>
-      <li><a href="#darkBlog" className="block px-4 py-2">Dark Version</a></li>
+    <ul className="py-2 ml-5 text-[16px] cursor-pointer">
+      <li><a onClick={() => {
+    router.push("/BlogStandard")
+  }} className="block px-4 py-2 cursor-pointer">Blog Standard</a></li>
+   
+
+    <li><a onClick={() => {
+    router.push("/")
+  }} className="block px-4 py-2 cursor-pointer">Blog with side bar</a></li>
     </ul>
   </div>
 </div>
     <div className="group relative inline-block">
-  <a href="#shop" className="flex items-center text-white">
+  <a href="#shop" className="flex items-center text-white cursor-pointer">
     Shop
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
@@ -311,16 +313,21 @@ Pages
 
   <div className="absolute left-0 mt-2 w-72 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
     <ul className="py-2 ml-5 text-[16px]">
-      <li><a href="#shopmain" className="block px-4 py-2">Shop</a></li>
+      <li><a onClick={() => {
+    router.push("/Shop")
+  }} className="block px-4 py-2">Shop</a></li>
       <li><a href="#shop2" className="block px-4 py-2">Shop Single Two</a></li>
-      <li><a href="#cart" className="block px-4 py-2">Cart</a></li>
-      <li><a href="#checkout" className="block px-4 py-2">Checkout</a></li>
-      <li><a href="#darkshop" className="block px-4 py-2">Dark Version</a></li>
+      <li><a onClick={() => {
+    router.push("/Cart")
+  }} className="block px-4 py-2">Cart</a></li>
+      
     </ul>
   </div>
 </div>
 
-<a href="#contact" className="text-white ml-6">Contact Us</a>
+<a onClick={() => {
+    router.push("/ContactUsButton")
+  }} className="text-white ml-6 cursor-pointer">Contact Us</a>
 
     </div>
     
@@ -374,10 +381,12 @@ function Heading() {
 function Booking() {
   return (
 
- <div className="mt-40 relative flex flex-col justify-center items-center bg-white  sm:mt-0 sm:z-20">
+ <div className="mt-40 relative flex flex-col justify-center items-center bg-white  sm:mt-0 sm:z-20 dark:bg-[#E4E4E4
+
+]  ">
 <div className="flex-col sm:flex-row flex gap-10">
     <div className=" flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-start">
-      <div className="w-[400px]  bg-white -mt-15  rounded-3xl text-black sm:w-[425px] flex flex-col justify-center items-start p-3 shadow-md -ml-6">
+      <div className="w-[400px]  bg-white -mt-15  rounded-3xl text-black sm:w-[425px] flex flex-col justify-center items-start p-3 shadow-md -ml-6 dark:bg-[#1C1C1C] dark:text-white ">
         
 <div className="rounded-full bg-white  z-20 w-25 h-25 flex items-center justify-center -mt-10 mb-3 ml-6 "></div>
 <div className="rounded-full bg-[#836849]  z-20 w-20 h-20 flex items-center justify-center -mt-25   mb-3 ml-9 ">
@@ -391,12 +400,12 @@ function Booking() {
           type="tel"
           placeholder="Phone"
 
-          className="bg-white outline-gray-500 p-3 border border-gray-300 rounded-sm w-[90%] "
+          className="bg-white outline-gray-500 p-3 border border-gray-300 rounded-sm w-[90%] dark:bg-gray-100 dark:text-black "
           />
 
          
 
-          <select className=" p-3 text-gray-950 border border-gray-300 rounded-sm w-[90%]">
+          <select className=" p-3 text-gray-950 border border-gray-300 rounded-sm w-[90%] dark:bg-gray-100 dark:text-black">
 
           <option value="1">1 Person</option>
           <option value="2">2 Person</option>
@@ -411,7 +420,7 @@ function Booking() {
           className="bg-white p-3 text-gray-500 outline-gray-500 border border-gray-300 rounded-sm w-[90%]"
           />
 
-          <select className="border border-gray-300 rounded-sm w-[90%] p-3 text-gray-950">
+          <select className="border border-gray-300 rounded-sm w-[90%] p-3 text-gray-950 dark:bg-gray-100 dark:text-black">
 
           <option value="1">10:00 PM</option>
           <option value="2">11:00 PM</option>
@@ -597,7 +606,7 @@ function Menu() {
   const [activeCategory, setActiveCategory] = useState('MAIN DISHES');
 
   return (
-    <div className="mt-80 text-center">
+    <div className="w-[90%] mt-80 text-center mx-auto">
       
       <div className="flex justify-center items-center gap-4">
         <img
@@ -618,7 +627,7 @@ function Menu() {
       </h1>
 
      
-      <div className="flex  flex-col sm:flex-row justify-center sm:gap-6 bg-white py-6 sm:text-[18px] font-marcellus font-medium border border-gray-800   rounded-2xl w-max mx-auto  px-7">
+      <div className="flex  flex-col sm:flex-row justify-center sm:gap-6 bg-white py-6 sm:text-[18px] font-marcellus font-medium border border-gray-800   rounded-2xl w-max mx-auto  px-7 dark:bg-[#1C1C1C]">
         {categories.map((category) => (
           <button
             key={category}
@@ -645,30 +654,30 @@ function Menu() {
     <img
       src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F1.jpg&w=1920&q=75"
       alt="Braised Chicken Legs"
-      className="w-full h-56 object-cover"
+      className="w-full h-60 object-cover"
     />
 
-    <div className="p-4">
-      <div className="flex items-center justify-between mb-2">
+    <div className="p-4 dark:bg-[#1C1C1C] ">
+      <div className="flex items-center justify-between mb-2 ">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
         Braised Chicken Legs
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -678,30 +687,30 @@ function Menu() {
     <img
       src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F2.jpg&w=1920&q=75"
       alt="Grilled Salmon"
-      className="w-full h-56 object-cover"
+      className="w-full h-60 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.8</span>
-          <span className="ml-1 text-gray-500">(3.2K)</span>
+          <span className="font-semibold dark:text-white">4.8</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(3.2K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$25</span>
-          <span className="text-gray-800 font-semibold">$18</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$25</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$18</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
        Bone Steak
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chilli Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -711,30 +720,30 @@ function Menu() {
     <img
       src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F3.jpg&w=828&q=75"
       alt="Braised Chicken Legs"
-      className="w-full h-56 object-cover"
+      className="w-full h-60 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
        Fish Tacos with Chipotle Crema
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -746,30 +755,30 @@ function Menu() {
     <img
       src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F4.jpg&w=828&q=75"
       alt="Braised Chicken Legs"
-      className="w-full h-56 object-cover"
+      className="w-full h-60 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
       Broken Lasagna & Parmesan
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -781,30 +790,30 @@ function Menu() {
     <img
       src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F5.jpg&w=828&q=75"
       alt="Braised Chicken Legs"
-      className="w-full h-56 object-cover"
+      className="w-full h-60 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
         Seaed Scallops with Butter
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -816,30 +825,30 @@ function Menu() {
     <img
       src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F6.jpg&w=828&q=75"
       alt="Braised Chicken Legs"
-      className="w-full h-56 object-cover"
+      className="w-full h-60 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
        Double-Stack Mushroom
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -867,27 +876,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
        Vanilla Cupcakes
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -900,27 +909,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
           <span className="font-semibold">4.8</span>
-          <span className="ml-1 text-gray-500">(3.2K)</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(3.2K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$25</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$25</span>
           <span className="text-gray-800 font-semibold">$18</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
        Chocolate Brownie
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chilli Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -933,27 +942,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
        Croissants Sweet Rolls Muffin
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -968,27 +977,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white ">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white ">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white ">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
       White Chocolate Cheesecake
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1003,27 +1012,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
         Lemon Meringue Pie
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1038,27 +1047,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
       <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
       Mixed Berry Mousse
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1083,27 +1092,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
      Salmon Fry
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1116,27 +1125,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.8</span>
-          <span className="ml-1 text-gray-500">(3.2K)</span>
+          <span className="font-semibold dark:text-white">4.8</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(3.2K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$25</span>
-          <span className="text-gray-800 font-semibold">$18</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$25</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$18</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
       Pangasius or Basa
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chilli Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1149,27 +1158,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
      Spicy Stuffed Clams
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1184,27 +1193,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
       Specia Cajun Red Crab
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1219,27 +1228,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
       The cephalopod mollusks
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart "></i> Add to Cart
       </button>
     </div>
@@ -1254,27 +1263,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
       Crustaceans such as lobsters
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1301,27 +1310,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
   Cabernet Sauvignon
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1334,27 +1343,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.8</span>
-          <span className="ml-1 text-gray-500">(3.2K)</span>
+          <span className="font-semibold dark:text-white">4.8</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(3.2K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$25</span>
-          <span className="text-gray-800 font-semibold">$18</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$25</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$18</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
    Americano Coffee
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chilli Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1367,27 +1376,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
   Hot chocolate Shake
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1402,27 +1411,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
     Watermelon Juice
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1437,27 +1446,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
       Seared Scallops with Butter
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1472,27 +1481,27 @@ function Menu() {
       className="w-full h-56 object-cover"
     />
 
-    <div className="p-4">
+    <div className="p-4 dark:bg-[#1C1C1C]">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center text-gray-700 text-sm">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.9</span>
-          <span className="ml-1 text-gray-500">(5.7K)</span>
+          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm">$35</span>
-          <span className="text-gray-800 font-semibold">$34</span>
+          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
+          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
         </div>
       </div>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
+      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
    Soft Drinks
       </h3>
-      <p className="text-gray-600 text-sm mb-4">
+      <p className="text-gray-600 text-sm mb-4 dark:text-white">
         4 Chicken Legs • Chili Sauce • Soft Drinks
       </p>
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
         <i class="fas fa-shopping-cart"></i> Add to Cart
       </button>
     </div>
@@ -1546,7 +1555,7 @@ function OnlineOrder() {
 function Opening() {
   return (
      <div className='mx-[5vh] mt-[100px] sm:mx-[16vh] h-[700px]'> 
-            <h2 className='hidden sm:block text-[#04000b] sm:opacity-10 font-marcellus sm:text-9xl sm:font-semibold ml-15'>RESTAN</h2>
+            <h2 className='hidden sm:block text-[#04000b] sm:opacity-10 font-marcellus sm:text-9xl sm:font-semibold ml-15 dark:text-[#1C1C1C]'>RESTAN</h2>
             <div className="flex flex-col  sm:flex-row">
 <div className="w-[400px] h-[380px]  relative sm:w-[696px] sm:h-[392px] sm:pb-[65%] overflow-hidden sm:ml-15 ">
       <iframe
@@ -1559,11 +1568,11 @@ function Opening() {
       />
     </div>
 
- <div className=" w-full py-6  bg-white sm:-mt-[50px] sm:-ml-[100px] text-black sm:w-[570px] h-max sm:py-15 flex flex-col justify-center items-start px-15 shadow-md z-10 ">
+ <div className=" w-full py-6  bg-white sm:-mt-[50px] sm:-ml-[100px] text-black sm:w-[570px] h-max sm:py-15 flex flex-col justify-center items-start px-15 shadow-md z-10 dark:bg-[#1C1C1C] dark:text-white">
  
 
   <h2 className="text-3xl font-bold mb-3 font-marcellus">Opening Hours</h2>
-  <p className="text-[14px] mb-6 leading-relaxed text-gray-600 ">
+  <p className="text-[14px] mb-6 leading-relaxed text-gray-600  dark:text-white/10 ">
     A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails. The Patio Time Bar opens in the center..
   </p>
 
@@ -1578,8 +1587,8 @@ function Opening() {
       <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F6.png&w=128&q=75" className="h-10 w-10 "></img>
     </div>
     <div className="flex flex-col ml-5">
-    <p className="text-gray-500 text-sm">Call Anytime</p>
-    <p className="text-[15px] font-bold text-[#04000b] font-marcellus">+964733-378901</p>
+    <p className="text-gray-500 text-sm  dark:text-white">Call Anytime</p>
+    <p className="text-[15px] font-bold text-[#04000b] font-marcellus  dark:text-white">+964733-378901</p>
     </div>
   </div>
 </div>
@@ -1598,20 +1607,20 @@ function Opening() {
 
 function MeetOurChef() {
   return (
-    <div className="bg-[#ebe9e6] py-20 px-10 text-center pb-40 mt-20 ">
-      <div className="flex items-center justify-center gap-4">
+    <div className="bg-[#ebe9e6] py-20 px-10 text-center pb-40 mt-20 dark:bg-[#1C1C1C]">
+      <div className="flex items-center justify-center gap-4 ">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
       <p className="text-[#836849] sm:text-2xl font-medium 
-      font-merriweather">MASTER CHEFS</p>
+      font-merriweather dark:text-white">MASTER CHEFS</p>
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img>
 
       </div>
-    <h1 className=" text-4xl sm:text-6xl font-serif font-bold text-black mt-6 mb-9"> Meet Our Special Chefs </h1>
+    <h1 className=" text-4xl sm:text-6xl font-serif font-bold text-black mt-6 mb-9 dark:text-white"> Meet Our Special Chefs </h1>
     <div className="flex flex-col sm:flex-row justify-center gap-30 ">
 
    <div className="flex flex-col items-center mt-5">
   
-  <div className="rounded-full border border-gray-800 w-80 h-80 flex items-center justify-center relative">
+  <div className="rounded-full border border-gray-800 w-80 h-80 flex items-center justify-center relative dark:border-white">
     <img
       src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F1.jpg&w=1920&q=75"
       className="rounded-full w-72 h-72 object-cover"
@@ -1628,7 +1637,7 @@ function MeetOurChef() {
 
  <div className="flex flex-col items-center mt-5">
   
-  <div className="rounded-full border border-gray-800 w-80 h-80 flex items-center justify-center relative">
+  <div className="rounded-full border border-gray-800 w-80 h-80 flex items-center justify-center relative dark:border-white">
     <img
       src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F2.jpg&w=1920&q=75" 
 className="rounded-full w-72 h-72 object-cover"
@@ -1637,7 +1646,7 @@ className="rounded-full w-72 h-72 object-cover"
   </div>
 
  
-  <div className="bg-[#7b5a36] text-white px-10 py-4 text-center font-montserrat clip-ribbon -mt-[110px]">
+  <div className="bg-[#7b5a36] text-white px-10 py-4 text-center font-montserrat clip-ribbon -mt-[110px] ">
     <p className="text-2xl font-semibold m-0">Mendia Juxef</p>
     <p className="text-sm tracking-wide mt-1">BURGER KING</p>
   </div>
@@ -1645,7 +1654,7 @@ className="rounded-full w-72 h-72 object-cover"
 
  <div className="flex flex-col items-center mt-5">
   
-  <div className="rounded-full border border-gray-800 w-80 h-80 flex items-center justify-center relative">
+  <div className="rounded-full border border-gray-800 w-80 h-80 flex items-center justify-center relative dark:border-white">
     <img
        src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F3.jpg&w=1920&q=75" 
       className="rounded-full w-72 h-72 object-cover"
@@ -1692,25 +1701,25 @@ function NewsAndBlogs() {
   />
 
 
-  <div className="relative bg-white shadow-md p-8 w-[92%] mx-auto -mt-20 text-left">
+  <div className="relative bg-white shadow-md p-8 w-[92%] mx-auto -mt-20 text-left  dark:text-white dark:bg-[#1C1C1C] ">
 
     <div className="absolute top-0 right-6 -translate-y-1/2 bg-[#836849]  text-white text-center py-4 px-6 ">
-      <p className="text-lg font-bold leading-none">24</p>
+      <p className="text-lg font-bold leading-none ">24</p>
       <p className="text-[10px] tracking-wider">DEC</p>
     </div>
 
    
-    <p className="text-sm text-gray-600 tracking-wide mb-2">
-      <span className="font-medium">BY MD SOHAG</span> • BURGER , FOOD
+    <p className="text-sm text-gray-600 tracking-wide mb-2 dark:text-white">
+      <span className="font-medium dark:text-white">BY MD SOHAG</span> • BURGER , FOOD
     </p>
 
-    <h2 className="text-2xl font-semibold text-black leading-snug mb-4">
+    <h2 className="text-2xl font-semibold text-black leading-snug mb-4 dark:text-white">
       Picked up a Brussels burger<br />Sprouts with ham
     </h2>
 
     <a
       href="#blog"
-      className="flex items-center gap-2 text-[15px] font-medium text-gray-800 hover:text-black"
+      className="flex items-center gap-2 text-[15px] font-medium text-gray-800 hover:text-black dark:text-white"
     >
       READ MORE
       <svg
@@ -1735,7 +1744,7 @@ function NewsAndBlogs() {
   />
 
 
-  <div className="relative bg-white shadow-md p-8 w-[92%] mx-auto -mt-20 text-left">
+  <div className="relative bg-white shadow-md p-8 w-[92%] mx-auto -mt-20 text-left dark:bg-[#1A1A1A]">
 
     <div className="absolute top-0 right-6 -translate-y-1/2 bg-[#836849]  text-white text-center py-4 px-6">
       <p className="text-lg font-bold leading-none">18</p>
@@ -1743,17 +1752,17 @@ function NewsAndBlogs() {
     </div>
 
    
-    <p className="text-sm text-gray-600 tracking-wide mb-2">
+    <p className="text-sm text-gray-600 tracking-wide mb-2 dark:text-white">
       <span className="font-medium">BY MD SOHAG</span> • BURGER , FOOD
     </p>
 
-    <h2 className="text-2xl font-semibold text-black leading-snug mb-4">
+    <h2 className="text-2xl font-semibold text-black leading-snug mb-4 dark:text-white">
     This prefabricated passive <br />house is highly sustainable
     </h2>
 
     <a
       href="#blog"
-      className="flex items-center gap-2 text-[15px] font-medium text-gray-800 hover:text-black"
+      className="flex items-center gap-2 text-[15px] font-medium text-gray-800 hover:text-black dark:text-white"
     >
       READ MORE
       <svg
@@ -1780,100 +1789,98 @@ function NewsAndBlogs() {
 }
 
 
+ function Footer() {
+  return (
+    <div className="bg-white text-gray-800 mt-15 dark:text-gray-200 pt-12 px-6 md:px-12 pt-70 -mt-70">
+      <div className="bg-zinc-800 w-full">
+        <div className="ml-0 sm:ml-46 justify-center items-center h-15 w-full sm:w-[900px] -mt-10 sm:-mt-20 flex" />
+        <div className="justify-center items-center flex">
+          <div className="bg-[#1B1B1B] w-full sm:max-w-[900px] mx-auto justify-start p-6 sm:p-20 items-center flex flex-col sm:flex-row pt-10 sm:pt-15 -mt-10 sm:-mt-30">
+            <div className="flex flex-col sm:flex-row justify-start w-full">
+              <div className="flex flex-col text-white mb-6 sm:mb-0">
+                <div className="border-b sm:border-r sm:pr-10 border-gray-400 pb-4 sm:pb-0">
+                  <h2 className="font-marcellus font-medium text-xl mb-2">About Us</h2>
+                  <p className="opacity-70 text-xs font-marcellus leading-relaxed mb-4">
+                    Continued at zealously <br /> necessary is Surrounded sir <br />
+                    motionless she end literature.<br />
+                    Gay direction neglected.
+                  </p>
+                  <div className="flex flex-row gap-3">
+                    <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center items-center">
+                      <img src="https://cdn-icons-png.flaticon.com/128/20/20837.png" className="object-contain invert h-4" />
+                    </div>
+                    <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center items-center">
+                      <img src="https://cdn-icons-png.flaticon.com/128/733/733635.png" className="object-contain invert h-4" />
+                    </div>
+                    <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center items-center">
+                      <img src="https://cdn-icons-png.flaticon.com/128/1384/1384028.png" className="object-contain invert h-4" />
+                    </div>
+                    <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center items-center">
+                      <img src="https://cdn-icons-png.flaticon.com/128/2111/2111532.png" className="object-contain invert h-4" />
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-function Footer() {
-  return(
-    <div className="bg-white  text-gray-800 dark:text-gray-200 pt-12 px-6 md:px-12 pt-70 -mt-70">
-    <div className="bg-zinc-800 w-full w-auto">
-      <div className="ml-46 justify-center items-center h-15 w-[900px] -mt-20 flex">
-      </div>
-      <div className="justify-center items-center flex ">
-      <div className="bg-[#1B1B1B] h-flex max-w-[900px] mx-auto justify-start p-20 items-center flex pt-15 -mt-30 flex">
-        <div className="flex justify-start flex-row">
-          <div className="flex flex-col text-white">
-          <div className="border-r pr-10 border-gray-400">
-          <h2 className="font-mono font-medium text-xl -mr-10 mb-2">About Us</h2>
-            <p className="o-[70%] text-xs font-thin -mr-10 leading-relaxed mb-4">Continued at zealously <br /> necessary is Surrounded sir <br/>
-            motionless she end literature.<br />
-            Gay direction neglected.</p>
+              <div className="flex flex-col mt-6 sm:mt-0 sm:ml-5">
+                <h2 className="font-marcellus font-medium text-xl mb-2 text-white">Contact Info</h2>
+                <p className="opacity-70 text-xs font-thin leading-loose mb-4 text-white">
+                  Company Profile<br />About<br />Help Center<br />Career<br />Features<br />Contact
+                </p>
+              </div>
 
-            <div className="flex-row flex gap-3">
-            <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center flex-row items-center">
-            <img src="https://cdn-icons-png.flaticon.com/128/20/20837.png" className="object-contain invert h-4"/>
+              <div className="flex flex-col mt-6 sm:mt-0 sm:ml-3">
+                <h2 className="font-marcellus font-medium text-xl mb-2 text-white">Explore</h2>
+                <div className="text-xs font-thin leading-relaxed mb-4">
+                  <div className="flex flex-row gap-2">
+                    <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center rounded-[20%]">
+                      <img src="https://cdn-icons-png.flaticon.com/128/484/484167.png" className="object-contain invert h-4" />
+                    </div>
+                    <p className="opacity-70 text-white font-marcellus">175 10h Street, Office 375<br /> Berlin, De 21562</p>
+                  </div>
+
+                  <div className="flex flex-row gap-2 mt-4">
+                    <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center rounded-[20%]">
+                      <img src="https://cdn-icons-png.flaticon.com/128/484/484167.png" className="object-contain invert h-4" />
+                    </div>
+                    <p className="opacity-70 text-white font-marcellus">+123 34598768<br /> +554 34598734</p>
+                  </div>
+
+                  <div className="flex flex-row gap-2 mt-4">
+                    <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center rounded-[20%]">
+                      <img src="https://cdn-icons-png.flaticon.com/128/646/646135.png" className="object-contain invert h-4" />
+                    </div>
+                    <p className="opacity-70 text-white font-marcellus">food@restan.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col mt-6 sm:mt-0 sm:ml-5">
+                <h2 className="font-mono font-medium text-xl mb-2 text-white font-marcellus">Newsletter</h2>
+                <p className="opacity-70 text-xs font-marcellus leading-loose mb-4 text-white">
+                  Join our subscribers list to get the latest news and special offers.
+                </p>
+                <input
+                  type="text"
+                  placeholder="Your Email"
+                  className="border-b border-gray-300 outline-gray-500 text-white text-sm border-opacity-[70%] w-full sm:w-[90%]"
+                />
+                <div className="flex items-center pt-2">
+                  <input type="checkbox" id="agree" className="h-3 w-3 accent-blue-600" />
+                  <p className="text-xs text-white ml-2 font-marcellus">I agree to the Privacy Policy</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center flex-row items-center">
-            <img src="https://cdn-icons-png.flaticon.com/128/733/733635.png" className="object-contain invert h-4"/>
-            </div>
-            <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center flex-row items-center">
-            <img src="https://cdn-icons-png.flaticon.com/128/1384/1384028.png" className="object-contain invert h-4"/>
-            </div>
-            <div className="bg-[#4e4946ff] h-7 w-7 flex justify-center flex-row items-center">
-            <img src="https://cdn-icons-png.flaticon.com/128/2111/2111532.png" className="object-contain invert h-4"/>
-            </div>
-            </div>   
           </div>
-          </div>
-
-<div className="flex flex-col ml-5">
-  <h2 className="font-mono font-medium text-xl ml-7 mb-2 flex-col text-white">Contact Info</h2>
-  <p className="opacity-70 text-xs font-thin ml-5 leading-loose mb-4 text-white">Company Profile<br />About<br/>Help Center<br/>Career<br/>Features<br/>Contact</p>
-  </div>
-
-  <div className="flex flex-col ml-3">
-  <h2 className="font-mono font-medium text-xl ml-7 mb-2 text-white">Explore</h2>
-  <div className="text-xs font-thin ml-7 leading-relaxed mb-4">
-    
-
-    <div className="flex flex-row gap-2">
-    <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center rounded-[20%]">
-    <img src="https://cdn-icons-png.flaticon.com/128/484/484167.png" className="object-contain invert h-4"/>
-    </div>
-      <p className="-mt-1 opacity-70 text-white">175 10h Street, Office 375<br/> Berlin, De 21562</p>
-    </div>
-
-<div className="flex flex-row gap-2">
-    <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center mt-5 rounded-[20%]">
-    <img src="https://cdn-icons-png.flaticon.com/128/484/484167.png" className="object-contain invert h-4"/>
-    </div>
-      <p className="opacity-70 mt-4 text-white">+123 34598768<br/> +554 34598734</p>
-    </div>
-
-<div className="flex flex-row gap-2">
-    <div className="bg-[#826a45] h-7 w-7 flex justify-center items-center mt-5 rounded-[20%]">
-    <img src="https://cdn-icons-png.flaticon.com/128/646/646135.png" className="object-contain invert h-4"/>
-    </div>
-      <p className="opacity-70 mt-6 text-white">food@restan.com</p>
-    </div>
-
-  </div>
-  
-  </div>
-<div className="flex flex-col ml-5">
-  <h2 className="font-mono font-medium text-xl ml-7 mb-2 flex-col text-white">Newsletter</h2>
-  <p className="o-[70%] text-xs font-thin ml-7 leading-loose mb-4 text-white">Join our subscribers list to get the latest news and special offers.</p>
-  <div className="">
-    <input
-          type="text"
-          placeholder="Your Email"
-          className="border-b border-gray-300 outline-gray-500 ml-5 text-white text-sm border-opacity-[70%] w-[90%] "
-          />
-<div className="flex items-center pt-2">
-  <input type="checkbox" id="agree" className="h-3 w-3 ml-5 accent-blue-600"/>
-  <p className="text-xs text-white ml-2">I agree to the Privacy Policy</p>
-</div>
-  </div>
-  </div>
         </div>
+
+        <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-6 sm:gap-12 pt-7 items-center sm:items-start text-center sm:text-left">
+          <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F9.png&w=1920&q=75" className="h-20 opacity-50" />
+          <img src="restanLogo.webp" className="h-12 mt-5" />
+          <p className="text-sm font-marcellus mt-4 sm:mt-7 opacity-90 sm:ml-auto sm:pr-10">© Copyright 2025. Restan. All Rights Reserved</p>
         </div>
       </div>
-
-
-      <div className="  flex flex-row justify-start gap-12 pt-7 items-start">
-        <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F9.png&w=1920&q=75" className="h-25 o-[50%]"/>
-        <img src="restanLogo.webp" className="h-12 mt-5"></img>
-        <p className="ml-auto flex-right pr-10 text-sm mt-7 o-[90%]">© Copyright 2025. Restan. All Rights Reserved</p>
-      </div>
-    </div>
     </div>
   );
 }
+
