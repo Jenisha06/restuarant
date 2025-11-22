@@ -1,7 +1,8 @@
 
+
 export default function Aboutusnav() {
   return (
-         <div className="flex  font-medium  pt-4  pb-3 bg-[hsl(32,28%,40%)] text-white">
+         <div className="hidden sm:flex  sm:font-medium  sm:pt-4  sm:pb-3 sm:bg-[hsl(32,28%,40%)] sm:text-white">
   <div className="flex gap-3 justify-center items-center ml-25">
 
       <img src="call-icon.webp" className="h-5 "></img>
@@ -14,7 +15,7 @@ export default function Aboutusnav() {
   Email:food@restan.com
 </a>
 </div>
-<div className="flex gap-3 items-center ml-145 border-r border-white pr-8">
+<div className="flex gap-3 items-center ml-145 border-r border-white  pr-8">
   <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2Fflag.png&w=64&q=75" className="h-6"></img>
   <p  className="text-white">English 
     <i className="fa fa-chevron-down text-[15px] px-1.5 text-white  "></i>
