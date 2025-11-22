@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import MainImage from '../components/MainImage';
 
 
-export default function ChefPage() {
+export default function Reservation() {
   return (<div>
     <link
   rel="stylesheet"
@@ -13,7 +13,7 @@ export default function ChefPage() {
    
  <Aboutusnav/>
  <CommonNavbar/>
-  <MainImage MainHead={"Chef Page"} SubHead={"Chef Page"}/>
+  <MainImage MainHead={"Reservation"} SubHead={"Reservation"}/>
  <Booking/>
  
  <Footer/>
@@ -97,4 +97,5 @@ function Booking(){
         </div>
     )
 }
+
 
