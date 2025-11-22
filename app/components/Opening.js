@@ -1,51 +1,51 @@
+
+
+
 export default function Opening() {
   return (
-    <div className="bg-white flex justify-start items-center md:flex-row w-full overflow-x-hidden min-h-[800px]">
-      <div className="flex justify-start ml-45 h-[350px] w-[500px]">
-        <iframe className="w-full max-w-4xl aspect-video shadow-lg"src="https://www.youtube.com/embed/F3zw1Gvn4Mk"></iframe>
-      </div>
-      <div className="flex flex-col text-black pt-20 bg-white  ml-15 text-3xl font-medium font-mono">
-        <h2>Opening Hours</h2>
-        <p className="text-xs font-sans pt-3 opacity-50">
-          A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails.<br /> 
-          The Patio Time Bar opens in the center..
-        </p>
-        <div className="flex flex-row">
-
-        <div>
-          <div className="text-xs pt-3 font-mono leading-loose">
-            <div className="flex items-center w-[80%]">
-              <span>Sunday to Tuesday:</span>
-              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
-              <div>10:00 - 09:00</div>
-            </div>
-
-            <div className="flex items-center w-[80%]">
-              <span>Wednesday to Thursday:</span>
-              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
-              <div>11:30 - 10:30</div>
-            </div>
-
-            <div className="flex items-center w-[80%] mb-7">
-              <span>Friday & Saturday:</span>
-              <div className="flex-1 border-b-1 ml-2 opacity-[30%]"></div>
-              <div>10:30 - 12:00</div>
-            </div>
-            <div className="flex flex-row items-center space-x-3">
-            <div className="bg-[#826a45] flex justify-start items-center p-4 rounded-full object-cover h-15 w-15">
-              <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F6.png&w=128&q=75" className="h-7"/>
-            </div>
-            <div className="flex flex-col leading-relaxed">
-            <h4 className="text-black font-sans -mt-5 text-sm opacity-[50%]">Call Anytime</h4>
-            <p className="justify-start text-xl -mb-4">+964733-378901</p>
-            </div></div>
-          </div>
-        </div>
-      </div>
+     <div className='mx-[5vh] mt-[100px] sm:mx-[16vh] h-[700px] mb-[50px]'> 
+            <h2 className='hidden sm:block text-[#04000b] sm:opacity-10 font-marcellus sm:text-9xl sm:font-semibold ml-15'>RESTAN</h2>
+            <div className="flex flex-col  sm:flex-row">
+<div className="w-[400px] h-[380px]  relative sm:w-[696px] sm:h-[392px] sm:pb-[65%] overflow-hidden sm:ml-15 ">
+      <iframe
+        src="https://www.youtube.com/embed/F3zw1Gvn4Mk?autoplay=1&loop=1&playlist=F3zw1Gvn4Mk&controls=0&preload=metadata&enablejsapi=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+        title="Mr Fox Restaurant Promo Video"
+        
       
-        <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2F4.png&w=3840&q=75" className="h-50 opacity-[20%] mt-7"/>
-      </div>
+        className="absolute top-0 left-0 w-full h-[50%]"
+       
+      />
     </div>
+
+ <div className=" w-full py-6  bg-white sm:-mt-[50px] sm:-ml-[100px] text-black sm:w-[570px] h-max sm:py-15 flex flex-col justify-center items-start px-15 shadow-md z-10 ">
+ 
+
+  <h2 className="text-3xl font-bold mb-3 font-marcellus">Opening Hours</h2>
+  <p className="text-[14px] mb-6 leading-relaxed text-gray-600 ">
+    A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails. The Patio Time Bar opens in the center..
+  </p>
+
+  <div className="space-y-2 text-[15px]  font-semibold">
+   <p>Sunday to Tuesday:<span className="text-gray-500 "> ______________________ </span>10:00 - 09:00</p> 
+    <p>Wednesday to Thursday:<span className="text-gray-500 "> ______________________ </span> 11:30 - 10:30</p>
+    <p>Friday & Saturday:<span className="text-gray-500 "> ______________________ </span> 10:30 - 12:00</p>
+  </div>
+
+  <div className="sm:mt-6 flex items-center">
+    <div className="bg-[#826a45] rounded-full h-15 w-15 flex items-center justify-center ">
+      <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F6.png&w=128&q=75" className="h-10 w-10 "></img>
+    </div>
+    <div className="flex flex-col ml-5">
+    <p className="text-gray-500 text-sm">Call Anytime</p>
+    <p className="text-[15px] font-bold text-[#04000b] font-marcellus">+964733-378901</p>
+    </div>
+  </div>
+</div>
+
+    </div>
+    
+
+        </div>
   );
 }
 
