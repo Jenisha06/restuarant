@@ -2,6 +2,7 @@
 import MeetOurChef from '../components/MeetOurChef';
 import Opening from '../components/Opening';
 import Footer from '../components/Footer';
+import CommonNavbar from '../components/CommonNavbar';
 
 
 export default function AboutUsPage() {
@@ -25,7 +26,7 @@ export default function AboutUsPage() {
 
 function Aboutusnav() {
   return (
-         <div className="flex  font-medium  pt-4  pb-3 bg-[hsl(32,28%,40%)] text-white">
+         <div className="hidden sm:flex  sm:font-medium  sm:pt-4  sm:pb-3 sm:bg-[hsl(32,28%,40%)] sm:text-white">
   <div className="flex gap-3 justify-center items-center ml-25">
 
       <img src="call-icon.webp" className="h-5 "></img>
@@ -59,53 +60,7 @@ function Aboutusnav() {
 }
 
 
-function CommonNavbar() {
-  return (
-    <div className="h-27 bg-black border-b border-white items-center flex ">
-<img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Flogo-light.png&w=750&q=75" className="h-16 ml-23 items-center"></img>
-<div className="flex gap-8 ml-60 text-lg font-medium">
-      <a href="#home" className="text-white " >Home
-      <i className="fa fa-chevron-down text-[15px] px-1.5 text-white  "></i>
 
-    </a>
-
-
-     <a href="#home" className="text-white " >Pages
-      <i className="fa fa-chevron-down text-[15px] px-1.5 text-white  "></i>
-
-    </a>
-
-
-     <a href="#home" className="text-white " >Menu
-      <i className="fa fa-chevron-down text-[15px] px-1.5 text-white  "></i>
-
-    </a>
-
-
-
-     <a href="#home" className="text-white " >Blog
-      <i className="fa fa-chevron-down text-[15px] px-1.5 text-white  "></i>
-
-    </a>
-
-
-
-     <a href="#home" className="text-white " >Shop
-      <i className="fa fa-chevron-down text-[15px] px-1.5 text-white  "></i>
-
-    </a>
-</div>
-<div className="flex flex-row">
-  <div className="bg-white h-13 w-13 rounded-full ml-39 items-center flex justify-center">
-   <i class="fas fa-shopping-cart text-black text-xl"></i>
-
-  </div>
-  <button className="text-white  font-medium border-2 ml-6 py-3 px-14">Reservation</button>
-
-</div>
-    </div>
-  )
-}
 
 function MainImage() {
   return (
@@ -137,22 +92,22 @@ function MainImage() {
 
 function Partners() {
   return (
-<div className="relative w-full h-64 mt-28 mb-28">
+<div className="relative w-full h-64 mt-28 mb-28 flex items-center justify-center">
  
   <img
     src="https://restan-nextjs.vercel.app/assets/img/shape/1.png"
     alt="Decorative Background"
-    className="absolute inset-0 w-full h-80 object-cover "
+    className="absolute  w-full h-80 object-cover "
   />
 
 
-  <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-black">
+  <div className="absolute  flex flex-col justify-center items-center text-center text-black">
    
-    <div className="flex items-center space-x-2 mb-25">
+    <div className="flex items-center  mb-25">
       <img
         src="https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png"
         alt="Left Icon"
-        className="h-4"
+        className="hidden sm:block sm:h-4 sm:mr-2"
       />
       <p className="font-marcellus text-[20px] text-[#836849] font-semibold ">
         OUR TRUSTED 8K HAPPY PARTNER
@@ -160,35 +115,35 @@ function Partners() {
       <img
         src="https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png"
         alt="Right Icon"
-        className="h-4"
+        className="hidden sm:block sm:h-4 sm:ml-2"
       />
     </div>
 
-    <div className="flex  justify-items-center items-center mx-40 gap-16">
+    <div className="  flex mx-5  justify-items-center items-center sm:mx-40 gap-16">
       <img
         src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fbrand%2F1.png&w=1080&q=75"
         alt="Partner 1"
-        className="h-24"
+        className="h-30"
       />
       <img
         src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fbrand%2F2.png&w=1080&q=75"
         alt="Partner 2"
-        className="h-24"
+        className="h-30"
       />
       <img
         src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fbrand%2F5.png&w=1080&q=75"
         alt="Partner 3"
-        className="h-24"
+        className="h-30"
       />
       <img
         src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fbrand%2F4.png&w=1080&q=75"
         alt="Partner 4"
-        className="h-24"
+        className="h-30"
       />
       <img
         src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fbrand%2F1.png&w=1080&q=75"
         alt="Partner 5"
-        className="h-24"
+        className="h-30"
       />
     </div>
   </div>
@@ -203,21 +158,21 @@ function Invite() {
    <div className="relative flex flex-col lg:flex-row items-center  bg-[#f9f7f3] py-20 px-6 ">
 
  
-  <div className="relative flex gap-6 mb-30">
+  <div className="relative flex gap-6 mb-30 sm:ml-30">
     <img
       src="https://restan-nextjs.vercel.app/assets/img/about/2.jpg"
       
-      className="w-[360px] h-[460px] object-cover "
+      className="w-full h-[500px] sm:w-[380px] sm:h-[480px] sm:object-cover "
     />
     <img
       src="https://restan-nextjs.vercel.app/assets/img/about/3.jpg"
      
-      className="w-[360px] h-[460px] object-cover  "
+      className="hidden sm:block sm:w-[380px] sm:h-[480px] sm:object-cover  "
     />
   </div>
 
   
-  <div className="absolute right-0 top-1/2  bg-white -mt-45 mr-30 p-10 max-w-xl lg:max-w-2xl">
+  <div className="   sm:absolute sm:right-0 sm:top-1/2  bg-white sm:-mt-45 sm:mr-30 p-10 sm:max-w-xl lg:max-w-2xl">
     <div className="flex items-center gap-2 mb-3">
       <p className="text-[#836849] font-semibold text-[17px] ">ABOUT US</p>
       <img
