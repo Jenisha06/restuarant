@@ -55,13 +55,13 @@ function MainImage() {
 function ChefCard() {
   return (
     <div className="bg-[#ebe9e6] flex justify-center items-center py-20 px-10">
-      <div className="flex  rounded-3xl  max-w-6xl w-full">
+      <div className=" sm:flex  rounded-3xl  max-w-6xl w-full">
         <img
           src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fteam%2F1.jpg&w=828&q=75"
         
-          className="w-1/2 object-cover rounded-3xl"
+          className="w-[95%] sm:w-1/2 sm:object-cover rounded-3xl"
         />
-        <div className="w-1/2 px-14 py-12 flex flex-col justify-center">
+        <div className="sm:w-1/2 px-14 py-12 flex flex-col justify-center">
           <h1 className="text-4xl font-marcellus font-semibold mb-4">
             Alexander Petllo
           </h1>
@@ -115,13 +115,13 @@ function ChefCard() {
 
 function Details(){
   return (
-    <div className='flex flex-row mt-20 ml-25'>
-      <div className='flex flex-col mb-25 '>
+    <div className='ml-10 flex flex-col sm:flex-row mt-20 sm:ml-25'>
+      <div className='mb-15 flex flex-col sm:mb-25 '>
        <h3 className="text-3xl font-marcellus font-semibold mb-7 ">Education</h3>
 <div className=' border-l'>
   <div className='flex flex-row items-center '>
  <div className='rounded-full h-4 w-4  border-[#836849] border-2 -ml-2 bg-white'></div>
-  <h2 className='font-marcellus text-[18px] font-semibold mb-2 ml-5 '>Residential College</h2>
+  <h2 className='font-marcellus text-[20px] font-semibold mb-2 ml-5 '>Residential College</h2>
   </div>
   <p className='font-marcellus mb-2  ml-5'>BA Honours - Biology</p>
   <p className="text-gray-500 mb-7  ml-5">2004 - 2008</p>
@@ -130,7 +130,7 @@ function Details(){
  
    <div className='flex flex-row items-center '>
  <div className='rounded-full h-4 w-4  border-[#836849] border-2 -ml-2 bg-white'></div>
-  <h2 className='font-marcellus text-[18px] font-semibold mb-2 ml-5 '>Univeristy of lowa</h2>
+  <h2 className='font-marcellus text-[20px] font-semibold mb-2 ml-5 '>Univeristy of lowa</h2>
   </div>
   <p className='font-marcellus mb-2  ml-5'>Master's degree - Macroeconomics</p>
   <p className="text-gray-500 mb-2  ml-5">2009 - 2012</p>
@@ -140,12 +140,12 @@ function Details(){
 
 
 
- <div className='flex flex-col mb-25 ml-15 '>
+ <div className='mb-15 flex flex-col sm:mb-25 sm:ml-25 '>
        <h3 className="text-3xl font-marcellus font-semibold mb-7 ">Experience</h3>
 <div className=' border-l'>
   <div className='flex flex-row items-center '>
  <div className='rounded-full h-4 w-4  border-[#836849] border-2 -ml-2 bg-white'></div>
-  <h2 className='font-marcellus text-[18px] font-semibold mb-2 ml-5 '>Senior Chef</h2>
+  <h2 className='font-marcellus text-[20px] font-semibold mb-2 ml-5 '>Senior Chef</h2>
   </div>
   <p className='font-marcellus mb-2  ml-5'>Dubai Arab Hotel</p>
   <p className="text-gray-500 mb-7  ml-5">31 Aug,2013</p>
@@ -154,7 +154,7 @@ function Details(){
  
    <div className='flex flex-row items-center '>
  <div className='rounded-full h-4 w-4  border-[#836849] border-2 -ml-2 bg-white'></div>
-  <h2 className='font-marcellus text-[18px] font-semibold mb-2 ml-5 '>Master of Restaurant</h2>
+  <h2 className='font-marcellus text-[20px] font-semibold mb-2 ml-5 '>Master of Restaurant</h2>
   </div>
   <p className='font-marcellus mb-2  ml-5'>Muskaan Food Factory</p>
   <p className="text-gray-500 mb-2  ml-5">12 Dec 2018</p>
@@ -162,22 +162,22 @@ function Details(){
 </div>
 
 
-<div className='flex flex-col ml-35'>
+<div className='flex flex-col sm:ml-45'>
   <h2 className='text-3xl font-marcellus font-semibold mb-7 '>Personal Skills</h2>
-  <p className='font-marcellus font-bold mb-4'>Fast Food </p>
+  <p className='font-marcellus text-[17px] font-bold mb-4'>Fast Food </p>
   <div className='flex'>
-  <div className='w-100 h-[5px] bg-[#836849] mt-5 rounded-2xl mb-7'></div>
+  <div className='w-110 h-[5px] bg-[#836849] mt-5 rounded-2xl mb-7'></div>
   <div className='w-8 h-6 bg-black text-white text-sm items-center flex justify-center font-medium rounded-[5px] -mt-2'>88%</div>
   </div>
   
-  <p className='font-marcellus font-bold mb-4'>Sea Food </p>
+  <p className='font-marcellus text-[17px] font-bold mb-4'>Sea Food </p>
   <div className='flex'>
-  <div className='w-120 h-[5px] bg-[#836849] mt-5 rounded-2xl mb-7'></div>
+  <div className='w-130 h-[5px] bg-[#836849] mt-5 rounded-2xl mb-7'></div>
  <div className='w-8 h-6 bg-black text-white text-sm items-center flex justify-center font-medium rounded-[5px] -mt-2'>95%</div>
 </div>
-  <p className='font-marcellus font-bold mb-4'>Drinks & Juice </p>
+  <p className='font-marcellus text-[17px] font-bold mb-4'>Drinks & Juice </p>
   <div className='flex'>
-  <div className='w-90 h-[5px] bg-[#836849] mt-5 rounded-2xl mb-7'></div>
+  <div className='w-100 h-[5px] bg-[#836849] mt-5 rounded-2xl mb-7'></div>
    <div className='w-8 h-6 bg-black text-white text-sm items-center flex justify-center font-medium rounded-[5px] -mt-2'>80%</div>
    </div>
 </div>
