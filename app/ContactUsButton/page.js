@@ -1,0 +1,214 @@
+import Aboutusnav from '../components/Aboutusnav';
+import CommonNavbar from '../components/CommonNavbar';
+import Footer from '../components/Footer';
+
+
+
+export default function ContactPage() {
+  return (<div>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+   
+ <Aboutusnav/>
+ <CommonNavbar/>
+ <MainImage/>
+ <SendMessage/>
+ <ContactForm/>
+ <Opening/>
+ <Footer/>
+
+ 
+ 
+  </div>)
+}
+
+
+function MainImage() {
+  return (
+ <div className="relative w-full h-96">
+ 
+  <img
+    src="https://restan-nextjs.vercel.app/assets/img/shape/5.jpg"
+    alt="About Us Background"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+
+
+  
+  <div className="relative z-20 flex flex-col justify-center items-center h-full text-white text-center">
+    <h1 className="text-5xl font-bold mb-4 font-marcellus">Contact Us</h1>
+    <div className="flex items-center font-medium text-sm">
+      <i className="fas fa-home text-white text-base "></i>
+      <p className="ml-2">Home</p>
+      <i className="fa fa-chevron-right text-white text-xs px-1.5 "></i>
+      <p>Contact </p>
+    </div>
+  </div>
+</div>
+
+
+  )
+}
+
+function SendMessage() {
+  return (
+    <div className=" relative sm:w-full flex  flex-col sm:flex-row justify-center items-center py-20">
+      
+      <img
+        src="https://restan-nextjs.vercel.app/_next/static/media/map.4bceacab.png"
+        className="absolute w-full h-full object-cover"
+      />
+
+   
+      <div className="relative z-10 flex flex-col sm:flex-row sm:gap-20 ">
+
+        <div className="w-[95%] bg-white/70 sm:w-[30%] rounded-2xl px-12 py-10 text-center border border-gray-200">
+          <img
+            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2Fphone.png&w=640&q=75"
+            className="mx-auto mb-4 w-20"
+          />
+          <h2 className="text-2xl font-semibold">Hotline</h2>
+          <p className="mt-2 text-gray-700">+4733378901</p>
+        </div>
+
+        <div className="w-[95%]  bg-white/70 sm:w-[30%]  rounded-2xl px-12 py-10 text-center border border-gray-200">
+          <img
+            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2Fplaceholder.png&w=640&q=75"
+            className="mx-auto mb-4 w-20"
+          />
+          <h2 className="text-2xl font-semibold">Our Location</h2>
+          <p className="mt-2 text-gray-700">
+            55 Main Street, The Grand Avenue 2nd Block, New York City
+          </p>
+        </div>
+
+      
+        <div className="w-[95%] bg-white/70 sm:w-[30%]  rounded-2xl px-12 py-10 text-center border border-gray-200">
+          <img
+            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2Femail.png&w=640&q=75"
+            className="mx-auto mb-4 w-20"
+          />
+          <h2 className="text-2xl font-semibold">Official Email</h2>
+          <p className="mt-2 text-gray-700">info@restan.com</p>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+
+function ContactForm() {
+  return (
+    <div className="w-[90%] mx-auto flex justify-center py-20">
+      <div className="sm:w-[80%]  bg-white shadow-xl rounded-3xl p-10 md:p-16">
+
+        
+        <div className="text-center mb-10">
+          <p className=" text-[15px] sm:text-[20px] font-marcellus font-bold  text-[#8A6E46] flex items-center justify-center gap-3">
+
+            <img src="https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className='w-[120px]'></img>
+            KEEP IN TOUCH
+            <img src="https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className='w-[120px]'></img>
+          </p>
+
+          <h1 className="text-4xl sm:text-5xl font-semibold font-marcellus mt-4">
+            Send us a Message
+          </h1>
+        </div>
+
+       
+        <form className="flex flex-col gap-6">
+
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full bg-[#f3f3f3] rounded-md p-5 outline-none text-[18px] text-black"
+          />
+
+          <div className="flex flex-row gap-6">
+            <input
+              type="email"
+              placeholder="Email*"
+              className="w-full bg-[#f3f3f3] rounded-md p-5 outline-none text-[18px]"
+            />
+            <input
+              type="text"
+              placeholder="Phone"
+              className="w-full bg-[#f3f3f3] rounded-md p-5 outline-none text-[18px]"
+            />
+          </div>
+
+          <textarea
+            placeholder="Your Message *"
+            rows="6"
+            className="w-full bg-[#f3f3f3] rounded-md p-4 outline-none text-[18px]"
+          ></textarea>
+
+          <button className="bg-[#816640] text-white px-8 py-4 rounded-md w-[200px] flex items-center justify-center gap-2 font-semibold">
+            <i class="fa fa-paper-plane"></i>
+            Get In Touch
+          </button>
+        </form>
+
+      </div>
+    </div>
+  );
+}
+
+
+function Opening() {
+  return (
+     <div className='mx-[5vh] mt-[100px] sm:mx-[16vh] h-[700px]'> 
+            <h2 className='hidden sm:block text-[#04000b] sm:opacity-10 font-marcellus sm:text-9xl sm:font-semibold ml-15'>RESTAN</h2>
+            <div className="flex flex-col  sm:flex-row">
+<div className="w-[400px] h-[380px]  relative sm:w-[696px] sm:h-[392px] sm:pb-[65%] overflow-hidden sm:ml-15 ">
+      <iframe
+        src="https://www.youtube.com/embed/F3zw1Gvn4Mk?autoplay=1&loop=1&playlist=F3zw1Gvn4Mk&controls=0&preload=metadata&enablejsapi=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+        title="Mr Fox Restaurant Promo Video"
+        
+      
+        className="absolute top-0 left-0 w-full h-[50%]"
+       
+      />
+    </div>
+
+ <div className=" w-full py-6  bg-white sm:-mt-[50px] sm:-ml-[100px] text-black sm:w-[570px] h-max sm:py-15 flex flex-col justify-center items-start px-15 shadow-md z-10 ">
+ 
+
+  <h2 className="text-3xl font-bold mb-3 font-marcellus">Opening Hours</h2>
+  <p className="text-[14px] mb-6 leading-relaxed text-gray-600 ">
+    A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails. The Patio Time Bar opens in the center..
+  </p>
+
+  <div className="space-y-2 text-[15px]  font-semibold">
+   <p>Sunday to Tuesday:<span className="text-gray-500 "> ______________________ </span>10:00 - 09:00</p> 
+    <p>Wednesday to Thursday:<span className="text-gray-500 "> ______________________ </span> 11:30 - 10:30</p>
+    <p>Friday & Saturday:<span className="text-gray-500 "> ______________________ </span> 10:30 - 12:00</p>
+  </div>
+
+  <div className="sm:mt-6 flex items-center">
+    <div className="bg-[#826a45] rounded-full h-15 w-15 flex items-center justify-center ">
+      <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F6.png&w=128&q=75" className="h-10 w-10 "></img>
+    </div>
+    <div className="flex flex-col ml-5">
+    <p className="text-gray-500 text-sm">Call Anytime</p>
+    <p className="text-[15px] font-bold text-[#04000b] font-marcellus">+964733-378901</p>
+    </div>
+  </div>
+</div>
+
+    </div>
+    
+
+        </div>
+  );
+}
+
+
+
+
+
