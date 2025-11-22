@@ -202,7 +202,7 @@ Pages
 
      
       <div
-        className={`fixed top-0 left-0 w-80 h-full   bg-white text-black shadow-lg z-200 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 w-80 h-full   bg-white text-black shadow-lg z-500 transform transition-transform duration-300 ease-in-out md:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -381,12 +381,12 @@ function Heading() {
 function Booking() {
   return (
 
- <div className="mt-40 relative flex flex-col justify-center items-center bg-white  sm:mt-0 sm:z-20 dark:bg-[#E4E4E4
+ <div className="pt-40 relative flex flex-col justify-center items-center bg-white  sm:mt-0 sm:z-20 dark:bg-[#1C1C1C]
 
-]  ">
+ ">
 <div className="flex-col sm:flex-row flex gap-10">
     <div className=" flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-start">
-      <div className="w-[400px]  bg-white -mt-15  rounded-3xl text-black sm:w-[425px] flex flex-col justify-center items-start p-3 shadow-md -ml-6 dark:bg-[#1C1C1C] dark:text-white ">
+      <div className="w-[400px]  bg-white sm:-mt-60  rounded-3xl text-black sm:w-[425px] flex flex-col justify-center items-start p-3 shadow-md -ml-6  dark:text-white ">
         
 <div className="rounded-full bg-white  z-20 w-25 h-25 flex items-center justify-center -mt-10 mb-3 ml-6 "></div>
 <div className="rounded-full bg-[#836849]  z-20 w-20 h-20 flex items-center justify-center -mt-25   mb-3 ml-9 ">
@@ -441,9 +441,10 @@ function Booking() {
       </div>
     </div>
     
-    <div className="text-3xl   m-[50px] sm:ml-[100px] sm:w-full text-black font-bold sm:text-[40px] mt-20 font-marcellus text-center">
-      <div className=" flex">
-      <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2Ffire.png&w=96&q=75"></img>Our Popular Category
+    <div className="text-3xl sm:-mt-[25px]  m-[50px] sm:ml-[100px] sm:w-full text-black font-bold sm:text-[40px]  font-marcellus text-center">
+      <div className=" flex dark:text-white">
+      <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fshape%2Ffire.png&w=96&q=75" ></img>
+      Our Popular Category
 </div>
  
 
@@ -494,7 +495,7 @@ function Booking() {
 
 export  function WhyOurRestaurant() {
   return (
-    <section className="bg-white py-20 mt-[30px]">
+    <section className="bg-white py-20  dark:bg-[#1C1C1C]">
       <div className="max-w-7xl mx-auto px-6 flex flex-col  md:flex-row justify-center text-left    border-gray-200 ">
        
         <div className="flex-1  px-10 py-12 border-l border-b sm:border-b-0 sm:border-l-0 border-r border-t rounded-t-4xl border-[#826a45]">
@@ -503,20 +504,20 @@ export  function WhyOurRestaurant() {
             alt="Quality Foods"
             className="h-24 w-24  mb-6"
           />
-          <h2 className="text-2xl font-semibold text-black mb-4">Quality Foods </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs ">
+          <h2 className="text-2xl font-semibold text-black mb-4 dark:text-white">Quality Foods </h2>
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xs dark:text-white ">
             Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
           </p>
         </div>
 
-        <div className="flex-1 px-10  border-l py-12  sm:border-l-0 border-r border-b sm:rounded-b-4xl border-[#826a45] ">
+        <div className="flex-1 px-10  border-l py-12  sm:border-l-0 border-r border-b sm:rounded-b-4xl border-[#826a45]  ">
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F14.png&w=256&q=75"
             alt="Fast Delivery"
             className="h-24 w-24  mb-6"
           />
-          <h2 className="text-2xl font-semibold text-black mb-4">Fast Delivery </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs ">
+          <h2 className="text-2xl font-semibold text-black mb-4 dark:text-white ">Fast Delivery </h2>
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xs dark:text-white ">
             Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
           </p>
         </div>
@@ -528,8 +529,8 @@ export  function WhyOurRestaurant() {
             alt="Delicious Recipes"
             className="h-24 w-24  mb-6"
           />
-          <h2 className="text-2xl font-semibold text-black mb-4">Delicious Recipes </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs ">
+          <h2 className="text-2xl font-semibold text-black mb-4 dark:text-white ">Delicious Recipes </h2>
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xs dark:text-white ">
             Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
           </p>
         </div>
@@ -541,7 +542,7 @@ export  function WhyOurRestaurant() {
 
 function OrderCard() {
   return (
-    <div className="bg-white -mt-20 -mb-50 ">
+    <div className="bg-white -mt-20 -mb-50 dark:bg-[#1C1C1C]">
     <div
       className="relative  flex flex-col sm:flex-row items-center justify-between bg-cover w-[90%] bg-center py-38 px-30 overflow-hidden sm:w-[80%] mx-auto my-20 rounded-4xl mb-50 "
       style={{
@@ -606,7 +607,7 @@ function Menu() {
   const [activeCategory, setActiveCategory] = useState('MAIN DISHES');
 
   return (
-    <div className="w-[90%] mt-80 text-center mx-auto">
+    <div className="w-[100%]  pt-60 text-center   mx-auto dark:bg-[#1C1C1C]">
       
       <div className="flex justify-center items-center gap-4">
         <img
@@ -622,12 +623,12 @@ function Menu() {
         />
       </div>
 
-      <h1 className="text-4xl sm:text-5xl font-marcellus font-bold text-black mt-6 mb-9">
+      <h1 className="text-4xl sm:text-5xl font-marcellus font-bold text-black mt-6 mb-9 dark:text-white">
         Our Specials Menu
       </h1>
 
      
-      <div className="flex  flex-col sm:flex-row justify-center sm:gap-6 bg-white py-6 sm:text-[18px] font-marcellus font-medium border border-gray-800   rounded-2xl w-max mx-auto  px-7 dark:bg-[#1C1C1C]">
+      <div className="flex  flex-col sm:flex-row justify-center sm:gap-6 bg-white py-6 sm:text-[18px] font-marcellus font-medium border border-gray-800   rounded-2xl w-max mx-auto  px-7 ">
         {categories.map((category) => (
           <button
             key={category}
@@ -648,7 +649,7 @@ function Menu() {
         {activeCategory === 'MAIN DISHES' && (
           
 
-<div className="flex flex-wrap justify-center gap-6">
+<div className="flex flex-wrap justify-center gap-6 py-10 ">
 
   <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden ">
     <img
@@ -657,11 +658,11 @@ function Menu() {
       className="w-full h-60 object-cover"
     />
 
-    <div className="p-4 dark:bg-[#1C1C1C] ">
+    <div className="p-4 dark:bg-[#1C1C1C]  ">
       <div className="flex items-center justify-between mb-2 ">
-        <div className="flex items-center text-gray-700 text-sm">
+        <div className="flex items-center text-gray-700 text-sm ">
           <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
+          <span className="font-semibold ">4.9</span>
           <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
         </div>
         <div className="flex items-center space-x-2">
@@ -1680,7 +1681,7 @@ className="rounded-full w-72 h-72 object-cover"
 
 function NewsAndBlogs() {
   return (
-    <div className="bg-white flex flex-col justify-center mb-50 py-20 px-10 text-center">
+    <div className="bg-white flex flex-col justify-center mb-50 py-20 px-10 text-center dark:bg-[#1C1C1C]">
        <div className="flex items-center justify-center gap-2">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
       <p className="text-[#836849] sm:text-2xl font-medium 
@@ -1688,7 +1689,7 @@ function NewsAndBlogs() {
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img>
 
       </div>
-    <h1 className=" text-4xl sm:text-5xl font-serif font-bold text-black mt-6 mb-9 items-center"> Our Latest News & Blog </h1>
+    <h1 className=" text-4xl sm:text-5xl font-serif font-bold text-black mt-6 mb-9 items-center dark:text-white"> Our Latest News & Blog </h1>
 
 
 <div className="flex flex-col sm:flex-row mx-auto sm:gap-10 justify-center mt-10">
