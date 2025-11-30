@@ -60,7 +60,7 @@ function MenuBreakfast(){
             <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F1.jpg&w=256&q=75" className=" hidden sm:block rounded-full w-25 h-25" />
             <div>
                 <div className='flex'>
-              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Chicken Alfredo
+              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Chicken Alfredo</h3>
                 <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-32 "></span>
               <span className="border-t border-gray-300 flex-1 w-32 "></span>
               
@@ -68,7 +68,7 @@ function MenuBreakfast(){
              
             <p className="text-lg font-bold text-[#8a6a40] ml-5">$44 <span className="ml-2">$85</span></p>
           
-              </h3>
+              
               </div>
               <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
@@ -81,10 +81,10 @@ function MenuBreakfast(){
           <div className="flex items-center gap-4">
             <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F2.jpg&w=256&q=75" className="hidden sm:block  rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center gap-2 font-marcellus">Fish Chips  <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-46 "></span>
+              <h3 className="font-semibold text-xl flex items-center gap-2 font-marcellus">Fish Chips</h3>  <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-46 "></span>
               <span className="border-t border-gray-300 flex-1 w-46  "></span>
               </div>
-              <p className="text-lg font-bold text-[#8a6a40] ml-5">$36 <span className="ml-2">$70</span></p></h3>
+              <p className="text-lg font-bold text-[#8a6a40] ml-5">$36 <span className="ml-2">$70</span></p>
               <p className="text-gray-600">Atlantic / Chips / Salad / Tartare</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -96,11 +96,11 @@ function MenuBreakfast(){
           <div className="flex items-center gap-4">
             <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F3.jpg&w=256&q=75" className="hidden sm:block  rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Ebony Fillet Steak  <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-30 "></span>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Ebony Fillet Steak </h3> <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-30 "></span>
               <span className="border-t border-gray-300 flex-1 w-30 "></span>
               </div>
                <p className="text-lg font-bold text-[#8a6a40] ml-4">$44 <span className="ml-2">$85</span></p>
-              </h3>
+              
               <p className="text-gray-600">Truffle Mash / Pepper Sauce</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -112,11 +112,11 @@ function MenuBreakfast(){
           <div className="flex items-center gap-4">
             <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F4.jpg&w=256&q=75" className="hidden sm:block  rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Chicken Grill  <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-37 "></span>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Chicken Grill</h3>  <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-37 "></span>
               <span className="border-t border-gray-300 flex-1 w-37 "></span>
               </div>
                <p className="text-lg font-bold text-[#8a6a40] ml-6">$20 <span className="ml-2">$40</span></p>
-              </h3>
+     
               <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -149,7 +149,7 @@ function MenuLunch(){
             <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F6.jpg&w=256&q=75" className="hidden sm:block  rounded-full w-25 h-25" />
             <div>
                 <div className='flex'>
-              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Brownies
+              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Brownies</h3>
                 <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-45 "></span>
               <span className="border-t border-gray-300 flex-1 w-45 "></span>
               
@@ -157,7 +157,7 @@ function MenuLunch(){
              
             <p className="text-lg font-bold text-[#8a6a40] ml-8">$34 <span className="ml-2">$65</span></p>
           
-              </h3>
+            
               </div>
               <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
@@ -170,10 +170,10 @@ function MenuLunch(){
           <div className="flex items-center gap-4">
             <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F8.jpg&w=256&q=75" className="hidden sm:block  rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center gap-2 font-marcellus">Cheesecakes<div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-38 "></span>
+              <h3 className="font-semibold text-xl flex items-center gap-2 font-marcellus">Cheesecakes</h3> <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-38 "></span>
               <span className="border-t border-gray-300 flex-1 w-38  "></span>
               </div>
-              <p className="text-lg font-bold text-[#8a6a40] ml-6">$36 <span className="ml-2">$70</span></p></h3>
+              <p className="text-lg font-bold text-[#8a6a40] ml-6">$36 <span className="ml-2">$70</span></p>
               <p className="text-gray-600">Atlantic / Chips / Salad / Tartare</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -185,11 +185,11 @@ function MenuLunch(){
           <div className="flex items-center gap-4">
             <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F7.jpg&w=256&q=75" className="hidden sm:block  rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Muffins<div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-48 "></span>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Muffins </h3><div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-48 "></span>
               <span className="border-t border-gray-300 flex-1 w-48 "></span>
               </div>
                <p className="text-lg font-bold text-[#8a6a40] ml-7">$44 <span className="ml-2">$85</span></p>
-              </h3>
+           
               <p className="text-gray-600">Truffle Mash / Pepper Sauce</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -201,11 +201,11 @@ function MenuLunch(){
           <div className="flex items-center gap-4">
             <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F5.jpg&w=256&q=75" className="hidden sm:block  rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Cupcakes <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-43 "></span>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Cupcakes</h3> <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-43 "></span>
               <span className="border-t border-gray-300 flex-1 w-43 "></span>
               </div>
                <p className="text-lg font-bold text-[#8a6a40] ml-7">$20 <span className="ml-2">$40</span></p>
-              </h3>
+              
               <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -293,7 +293,7 @@ function SeafoodBeverage(){
             <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F6.jpg&w=256&q=75" className="hidden sm:block rounded-full w-25 h-25" />
             <div>
                 <div className='flex'>
-              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Salmon Fry
+              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Salmon Fry</h3>
                 <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-45 "></span>
               <span className="border-t border-gray-300 flex-1 w-45 "></span>
               
@@ -301,7 +301,7 @@ function SeafoodBeverage(){
              
             <p className="text-lg font-bold text-[#8a6a40] ml-8">$34 <span className="ml-2">$65</span></p>
           
-              </h3>
+           
               </div>
               <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
@@ -329,11 +329,11 @@ function SeafoodBeverage(){
           <div className="flex items-center gap-4">
             <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F7.jpg&w=256&q=75" className="hidden sm:block rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Clams<div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-48 "></span>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Clams</h3> <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-48 "></span>
               <span className="border-t border-gray-300 flex-1 w-48 "></span>
               </div>
                <p className="text-lg font-bold text-[#8a6a40] ml-7">$44 <span className="ml-2">$85</span></p>
-              </h3>
+           
               <p className="text-gray-600">Truffle Mash / Pepper Sauce</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -345,11 +345,11 @@ function SeafoodBeverage(){
           <div className="flex items-center gap-4">
             <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F5.jpg&w=256&q=75" className="hidden sm:block rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Red Crab<div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-43 "></span>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Red Crab</h3> <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-43 "></span>
               <span className="border-t border-gray-300 flex-1 w-43 "></span>
               </div>
                <p className="text-lg font-bold text-[#8a6a40] ml-7">$20 <span className="ml-2">$40</span></p>
-              </h3>
+            
               <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -388,7 +388,7 @@ function SeafoodBeverage(){
             <img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F6.jpg&w=256&q=75" className="hidden sm:block rounded-full w-25 h-25" />
             <div>
                 <div className='flex'>
-              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Wine
+              <h3 className="font-semibold font-marcellus text-xl flex items-center gap-2">Wine</h3>
                 <div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-45 "></span>
               <span className="border-t border-gray-300 flex-1 w-45 "></span>
               
@@ -396,7 +396,7 @@ function SeafoodBeverage(){
              
             <p className="text-lg font-bold text-[#8a6a40] ml-8">$34 <span className="ml-2">$65</span></p>
           
-              </h3>
+            
               </div>
               <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
@@ -409,10 +409,10 @@ function SeafoodBeverage(){
           <div className="flex items-center gap-4">
             <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F8.jpg&w=256&q=75" className=" hidden sm:block rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center gap-2 font-marcellus">Coffee<div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-38 "></span>
+              <h3 className="font-semibold text-xl flex items-center gap-2 font-marcellus">Coffee</h3><div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-38 "></span>
               <span className="border-t border-gray-300 flex-1 w-38  "></span>
               </div>
-              <p className="text-lg font-bold text-[#8a6a40] ml-6">$36 <span className="ml-2">$70</span></p></h3>
+              <p className="text-lg font-bold text-[#8a6a40] ml-6">$36 <span className="ml-2">$70</span></p>
               <p className="text-gray-600">Atlantic / Chips / Salad / Tartare</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -424,11 +424,11 @@ function SeafoodBeverage(){
           <div className="flex items-center gap-4">
             <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F7.jpg&w=256&q=75" className="hidden sm:block rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Hot chocolate<div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-48 "></span>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Hot chocolate</h3><div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-48 "></span>
               <span className="border-t border-gray-300 flex-1 w-48 "></span>
               </div>
                <p className="text-lg font-bold text-[#8a6a40] ml-7">$44 <span className="ml-2">$85</span></p>
-              </h3>
+             
               <p className="text-gray-600">Truffle Mash / Pepper Sauce</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -440,11 +440,11 @@ function SeafoodBeverage(){
           <div className="flex items-center gap-4">
             <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ffood%2F5.jpg&w=256&q=75" className="hidden sm:block rounded-full w-25 h-25" />
             <div>
-              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Milk Shake<div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-43 "></span>
+              <h3 className="font-semibold text-xl flex items-center font-marcellus gap-2">Milk Shake</h3><div className='flex flex-col gap-2'> <span className="border-t border-gray-300 flex-1 w-43 "></span>
               <span className="border-t border-gray-300 flex-1 w-43 "></span>
               </div>
                <p className="text-lg font-bold text-[#8a6a40] ml-7">$20 <span className="ml-2">$40</span></p>
-              </h3>
+          
               <p className="text-gray-600">Ricotta / Goat Cheese / Beetroot</p>
               <p className="text-gray-500 text-sm">Free Drinks</p>
             </div>
@@ -540,6 +540,7 @@ function Feedback() {
     </div>
   );
 }
+
 
 
 
