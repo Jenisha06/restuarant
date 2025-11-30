@@ -17,6 +17,7 @@ export default function ContactPage() {
   <MainImage MainHead={"Contact Page"} SubHead={"Contact page"}/>
  <SendMessage/>
  <ContactForm/>
+ <Map/>
  <Opening/>
  <Footer/>
 
@@ -24,7 +25,6 @@ export default function ContactPage() {
  
   </div>)
 }
-
 
 
 
@@ -134,6 +134,25 @@ function ContactForm() {
   );
 }
 
+function Map(){
+  return(
+  <div>
+<section className="w-full flex items-center justify-center py-10">
+  <div className="w-full px-5">
+
+    <div className="shadow-lg dark:shadow-none">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.080977236561!2d76.35092177502736!3d9.993575673853808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0872b2b9bfb4c3%3A0xdbc5c7e68c3ff12b!2sEmpire%20Mall!5e0!3m2!1sen!2sin!4v1731268000000"
+        width="100%"
+        height="500"
+        allowFullScreen=""
+      ></iframe>
+    </div>
+  </div>
+</section>
+</div>
+  )
+}
 
 function Opening() {
   return (
@@ -182,7 +201,6 @@ function Opening() {
         </div>
   );
 }
-
 
 
 
