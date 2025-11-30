@@ -1,5 +1,5 @@
 # Restaurant Website (Next.js)
-
+## vercel deployed link: https://restuarant-tdnm.vercel.app/
 - Dynamic food menu with reusable components
 - Chef showcase with custom ribbon shapes
 - Blog and news section with overlapping cards
