@@ -1,3 +1,25 @@
+# Restaurant Website (Next.js)
+
+- Dynamic food menu with reusable components
+- Chef showcase with custom ribbon shapes
+- Blog and news section with overlapping cards
+- Reservation and login/register pages
+- Responsive design with Tailwind CSS
+- Dark mode and Light mode
+
+## Project Structure
+
+app/ ├── AboutUs/ ├── BlogStandard/ ├── Cart/ ├── Chef/ ├── ChefDetails/ ├── ContactUsButton/ ├── Login/ ├── MenuPage/ ├── Register/ ├── Reservation/ ├── Shop/ ├── components/ ├── contact/ ├── favicon.ico ├── globals.css ├── layout.js └── page.js
+
+
+Technologies Used
+
+- Next.js 13+ (App Router)
+- React
+- Tailwind CSS
+- Custom `clip-path` shapes
+- Responsive design with utility classes
+  
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
