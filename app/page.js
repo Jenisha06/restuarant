@@ -1,10 +1,10 @@
 'use client';
 import { useState } from 'react';
-
-
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-
+import WhythisRestaurant from './components/WhythisRestaurant';
+import PopularCategoryCard from './components/PopularCategoryCard';
+import FoodCard from './components/FoodCard';
 
 
 
@@ -51,9 +51,7 @@ function HeroSection() {
     <div className="h-[70vh] sm:h-[100vh] bg-cover bg-center relative " style={{ backgroundImage: "url('/restan.jpg')" }}>
      
       <div className="absolute inset-0 bg-black/50"></div>
-
-      
-      <div className="relative z-10 text-white">
+        <div className="relative z-10 text-white">
        <Header/>
        <Navbar/>
        <Heading/>
@@ -70,18 +68,18 @@ function Header() {
 <div className="hidden sm:flex justify-evenly font-medium pt-4 border-b border-white/50 pb-3">
   <div className="flex gap-4 items-center -mx-30">
 
-      <img src="call-icon.webp" className="h-5"></img>
-    <a href="" target="_blank"  >
+      <img src="call-icon.webp" className="h-6"></img>
+    <a href="tel:+4733378901" target="_blank" className="text-[18px] font-medium" >
  Phone: +4733378901
 </a>
-<img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F7.png&w=64&q=75
-" className="h-5"></img>
-<a href="" target="_blank" >
+<img src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F7.png&w=64&q=75
+" className="h-6 ml-7"></img>
+<a href="mailto:food@restan.com" target="_blank" className="text-[18px] font-medium" >
   Email:food@restan.com
 </a>
 </div>
 <div className="ml-100">
-<p><i class="fas fa-map-marker-alt"></i> 175 10h Street, Office 375 Berlin, De 21562</p>
+<p className="text-[17px] font-medium " ><i className="fas fa-map-marker-alt "></i> 175 10h Street, Office 375 Berlin, De 21562</p>
 </div>
 
 </div>
@@ -90,15 +88,12 @@ function Header() {
 
 function Navbar() {
   const router = useRouter();
- 
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  
+   };
   const navigateAndClose = (path) => {
     router.push(path);
     setIsMobileMenuOpen(false); 
@@ -111,81 +106,63 @@ function Navbar() {
 
     <div className="hidden sm:flex gap-9">  
 
-
-
-
-    <a href="#home" >Home
+    <a  onClick={() => {
+    router.push("/")
+  }} className="text-[19px] cursor-pointer">Home
       <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
 
     </a>
 
-
-
-    
-    <div className="group relative inline-block">
+  <div className="relative group ">
   
-  <a href="#pages" className="flex items-center text-white">
+  <a href="#pages"  className="flex text-[19px] items-center text-white ">
 Pages
     <i className="fa fa-chevron-down text-[15px] px-1.5 "></i>
   </a>
 
 
-  <div className="absolute  left-0 mt-2 w-70 ml-10  bg-white text-black rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-20">
+  <div className="absolute left-0 mt-2 w-72  bg-white text-black rounded  invisible group-hover:visible  transition-all duration-300 z-20">
     <ul className="py-4 ml-5 text-[16px]">
 <li>
   <a onClick={() => {
     router.push("/AboutUs")
-  }} className="block px-4 py-2 cursor-pointer">
+  }} className="block px-4 py-2 cursor-pointer text-[18px]">
   About Us
 </a>
 </li>
-
-      <li><a onClick={() => {
+  <li><a onClick={() => {
     router.push("/Chef")
-  }} className="block px-4 py-2 cursor-pointer ">Chef</a></li>
+  }} className="block px-4 py-2 cursor-pointer text-[18px]">Chef</a></li>
       <li><a onClick={() => {
     router.push("/ChefDetails")
-  }}  className="block px-4 py-2 cursor-pointer ">Chef Details</a></li>
+  }}  className="block px-4 py-2 cursor-pointer text-[18px]">Chef Details</a></li>
       <li><a onClick={() => {
     router.push("/Reservation")
-  }} className="block px-4 py-2  cursor-pointer">Reservation</a></li>
+  }} className="block px-4 py-2  cursor-pointer text-[18px]">Reservation</a></li>
       <li><a onClick={() => {
     router.push("/ContactUsButton")
-  }} className="block px-4 py-2  cursor-pointer">Contact us</a></li>
+  }} className="block px-4 py-2  cursor-pointer text-[18px]">Contact us</a></li>
         <li><a onClick={() => {
     router.push("/Register")
-  }} className="block px-4 py-2  cursor-pointer">Register</a></li>
+  }} className="block px-4 py-2  cursor-pointer text-[18px]">Register</a></li>
           <li><a onClick={() => {
     router.push("/Login")
-  }}  className="block px-4 py-2  cursor-pointer">Login</a></li>
+  }}  className="block px-4 py-2  cursor-pointer text-[18px]">Login</a></li>
            
     </ul>
   </div>
 </div>
     
 
-    <div className="group relative inline-block">
-
-  <a onClick={() => {
+    
+<a onClick={() => {
     router.push("/MenuPage")
-  }} className="flex items-center text-white cursor-pointer">
+  }} className="flex items-center text-white cursor-pointer text-[19px]">
     Menu
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
-
-
-</div>
-
-    
-    </div>
-
-
-
-
-
-    
- {/*mobile responsive*/}
-      <div className="flex justify-between w-full items-center gap-[85px] p-2 px-4 md:hidden">
+ </div>
+ <div className="flex justify-between w-full items-center gap-[85px] p-2 px-4 md:hidden">
        
         <button onClick={toggleMobileMenu} className="focus:outline-none z-40">
           <i className="fa fa-bars text-[#04000b] text-2xl -ml-[70px] "></i>
@@ -277,49 +254,43 @@ Pages
       </div>
 
 
-
-
-
-
-
-
-    <img src="restanLogo.webp" className="hidden sm:block sm:h-[75px] "></img>
+<img src="restanLogo.webp" className="hidden sm:block sm:h-[75px] "></img>
     <div className=" hidden sm:flex gap-9">
-   <div className="group relative inline-block">
-  <a href="#blog" className="flex items-center text-white cursor-pointer">
+   <div className="group relative ">
+  <a href="#blog" className="flex items-center text-[19px] text-white cursor-pointer">
     Blog
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
 
-  <div className="  absolute left-0 mt-2 w-72 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
+  <div className="  absolute left-0 mt-2 w-72 bg-white text-black rounded shadow-lg  invisible group-hover:visible  z-10">
     <ul className="py-2 ml-5 text-[16px] cursor-pointer">
       <li><a onClick={() => {
     router.push("/BlogStandard")
-  }} className="block px-4 py-2 cursor-pointer">Blog Standard</a></li>
+  }} className="block px-4 py-2 cursor-pointer text-[18px]">Blog Standard</a></li>
    
 
     <li><a onClick={() => {
     router.push("/")
-  }} className="block px-4 py-2 cursor-pointer">Blog with side bar</a></li>
+  }} className="block px-4 py-2 cursor-pointer text-[18px]">Blog with side bar</a></li>
     </ul>
   </div>
 </div>
-    <div className="group relative inline-block">
-  <a href="#shop" className="flex items-center text-white cursor-pointer">
+    <div className="group relative ">
+  <a href="#shop" className="flex items-center text-[19px] text-white cursor-pointer">
     Shop
     <i className="fa fa-chevron-down text-[15px] px-1.5"></i>
   </a>
 
 
-  <div className="absolute left-0 mt-2 w-72 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 transition-all duration-300 z-10">
+  <div className="absolute left-0 mt-2 w-72 bg-white text-black rounded shadow-lg  invisible group-hover:visible  z-10">
     <ul className="py-2 ml-5 text-[16px]">
       <li><a onClick={() => {
     router.push("/Shop")
-  }} className="block px-4 py-2">Shop</a></li>
-      <li><a href="#shop2" className="block px-4 py-2">Shop Single Two</a></li>
+  }} className="block px-4 py-2 text-[18px]">Shop</a></li>
+     
       <li><a onClick={() => {
     router.push("/Cart")
-  }} className="block px-4 py-2">Cart</a></li>
+  }} className="block px-4 py-2 text-[18px]">Cart</a></li>
       
     </ul>
   </div>
@@ -337,39 +308,38 @@ Pages
 function Heading() {
   return (
     <div>
-      <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center mt-20 sm:mt-32 md:mt-40 lg:mt-48 font-marcellus">
+      <h1 className="text-4xl sm:text-[110px]  font-bold text-center mt-20 sm:mt-32 md:mt-40 font-marcellus">
   Best Restaurant
 </h1>
-     <div className="flex relative w-[180px] h-[180px] rounded-full border-2 border-white mx-auto  items-center justify-center mt-15">
+     <div className="w-[180px] h-[180px] flex sm:w-[210px] sm:h-[210px] rounded-full border-2  border-[#ffd8a3] mx-auto  items-center justify-center mt-[45px]">
   
- <div className="relative w-[200px] h-[200px]">
- 
-  <svg viewBox="0 0 200 200" className=" absolute top-0 left-0 w-full h-full p-3">
+<div className="relative w-[200px] h-[200px]">
+  <svg viewBox="0 0 200 200" className="absolute top-0 left-0 w-full h-full p-3">
     <defs>
       <path
         id="circlePath"
-        d="
-          M 100,100 
-          m 0,-80 
-          a 80,80 0 1,1 0,160 
-          a 80,80 0 1,1 0,-160
+        d=" M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0
         "
       />
     </defs>
-    <text fill="white" fontSize="22" fontWeight="bold">
-      <textPath href="#circlePath" startOffset="50%" textAnchor="middle">
+
+    <text
+      fill="white"
+      fontSize="18"
+      fontWeight="bold"
+      letterSpacing="4px"
+    >
+      <textPath
+        href="#circlePath"
+        startOffset="25%"
+        textAnchor="middle"
+      >
         BEST FOOD SINCE · 1869
       </textPath>
     </text>
   </svg>
-
- 
 </div>
 
-
-
-
-  
 
  
 </div>
@@ -381,31 +351,26 @@ function Heading() {
 function Booking() {
   return (
 
- <div className="pt-40 relative flex flex-col justify-center items-center bg-white  sm:mt-0 sm:z-20 dark:bg-[#1C1C1C]
+ <div className="pt-40 relative flex flex-col justify-center items-center bg-white  sm:mt-0 sm:z-20 dark:bg-[#121212]
 
  ">
 <div className="flex-col sm:flex-row flex gap-10">
     <div className=" flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-start">
-      <div className="w-[400px]  bg-white sm:-mt-60  rounded-3xl text-black sm:w-[425px] flex flex-col justify-center items-start p-3 shadow-md -ml-6  dark:text-white ">
+      <div className="w-[400px]  bg-white sm:-mt-60  rounded-3xl text-black sm:w-[470px] flex flex-col justify-center items-start p-3 shadow-md -ml-6  dark:text-white dark:bg-[#262525] ">
         
-<div className="rounded-full bg-white  z-20 w-25 h-25 flex items-center justify-center -mt-10 mb-3 ml-6 "></div>
+<div className="rounded-full bg-white  z-18 w-25 h-25 flex items-center justify-center -mt-10 mb-3 ml-6 "></div>
 <div className="rounded-full bg-[#836849]  z-20 w-20 h-20 flex items-center justify-center -mt-25   mb-3 ml-9 ">
  
 <i class="fas fa-utensils text-white text-2xl"></i>
 </div>
        
-        <h2 className="font-bold self-start text-2xl ml-2 pb-3 pl-3 mt-8 font-marcellus">Book a Table</h2>
-        <form className="flex-col flex items-start gap-5 text-left pl-5 w-full">
-          <input
-          type="tel"
-          placeholder="Phone"
-
-          className="bg-white outline-gray-500 p-3 border border-gray-300 rounded-sm w-[90%] dark:bg-gray-100 dark:text-black "
+        <h2 className="font-bold  text-[35px] ml-2 pb-3 pl-3 mt-8 font-marcellus">Book a table</h2>
+        <form className="flex-col flex items-start gap-5 text-left pl-5 pt-2 w-full">
+          <input type="tel" placeholder="Phone"
+        className="bg-white outline-gray-500 p-4 border border-gray-300 rounded-sm w-[90%] dark:bg-gray-100 dark:text-black  "
           />
 
-         
-
-          <select className=" p-3 text-gray-950 border border-gray-300 rounded-sm w-[90%] dark:bg-gray-100 dark:text-black">
+         <select className=" p-4 text-gray-900 border border-gray-300 rounded-sm w-[90%] dark:bg-gray-100 dark:text-black">
 
           <option value="1">1 Person</option>
           <option value="2">2 Person</option>
@@ -417,16 +382,16 @@ function Booking() {
           <input
           type="date"
           placeholder="Date"
-          className="bg-white p-3 text-gray-500 outline-gray-500 border border-gray-300 rounded-sm w-[90%]"
+          className="bg-white p-4 text-gray-500 outline-gray-500 border border-gray-300 rounded-sm w-[90%]"
           />
 
-          <select className="border border-gray-300 rounded-sm w-[90%] p-3 text-gray-950 dark:bg-gray-100 dark:text-black">
+          <select className="border border-gray-300 rounded-sm w-[90%] p-4 text-gray-950 dark:bg-gray-100 dark:text-black">
 
-          <option value="1">10:00 PM</option>
-          <option value="2">11:00 PM</option>
-          <option value="3">12:00 PM</option>
-          <option value="4">1:00 PM</option>
-          <option value="5">2:00 PM</option>
+          <option >10:00 PM</option>
+          <option >11:00 PM</option>
+          <option >12:00 PM</option>
+          <option >1:00 PM</option>
+          <option >2:00 PM</option>
           </select>
 
 
@@ -448,43 +413,25 @@ function Booking() {
 </div>
  
 
-        <section className="   sm:flex sm:gap-6">
-      <div className="bg-gray-500 sm:w-[210px] sm:h-[270px] mt-7 rounded-[5%] relative overflow-hidden">
-  <img
-    src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F26.jpg&w=1920&q=75"
-    className="rounded-2xl w-full h-full object-cover "
-  />
-  <div className="absolute bottom-2 left-2 text-white ml-2">
-    <h2 className=" sm:text-[40%] font-bold text-amber-500">Desserts</h2>
-    <h1 className="text-lg font-bold sm:text-[60%]">Cheesecake</h1>
-  </div>
-</div>
 
+<section className="sm:flex sm:gap-6">
+  <PopularCategoryCard
+        image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F26.jpg&w=1920&q=75"
+        category="Desserts"
+        name="Cheesecake"
+      />
+      <PopularCategoryCard
+        image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F27.jpg&w=828&q=75"
+        category="Seafood"
+        name="Salmon fry"
+      />
+      <PopularCategoryCard
+        image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F25.jpg&w=828&q=75"
+        category="Main Dishes"
+        name="Chicken Alfredo"
+      />
+</section>
 
- <div className="bg-gray-500 sm:w-[210px] sm:h-[270px] mt-7 rounded-[5%] relative overflow-hidden">
-  <img
-    src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F27.jpg&w=828&q=75"
-    className="rounded-2xl w-full h-full object-cover"
-  />
-  <div className="absolute bottom-2 left-2 text-white ml-2">
-    <h2 className="sm:text-[40%] font-bold text-amber-500">Seafood</h2>
-    <h1 className="text-lg font-bold sm:text-[60%]">Salmon fry</h1>
-  </div>
-</div>
-
-
- <div className="bg-gray-500 sm:w-[210px] sm:h-[270px] mt-7 rounded-[5%] relative overflow-hidden">
-  <img
-    src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F25.jpg&w=828&q=75"
-    className="rounded-2xl w-full h-full object-cover"
-  />
-  <div className="absolute bottom-2 left-2 text-white ml-2">
-    <h2 className="sm:text-[40%] font-bold text-amber-500">Main Dishes</h2>
-    <h1 className="text-lg font-bold sm:text-[60%]">Chicken Alfredo</h1>
-  </div>
-</div>
-
-        </section>
     </div>
 </div>
     </div>
@@ -493,46 +440,30 @@ function Booking() {
 }
 
 
+
+
 export  function WhyOurRestaurant() {
   return (
-    <section className="bg-white py-20  dark:bg-[#1C1C1C]">
+    <section className="bg-white py-50   dark:bg-[#121212]">
       <div className="max-w-7xl mx-auto px-6 flex flex-col  md:flex-row justify-center text-left    border-gray-200 ">
        
-        <div className="flex-1  px-10 py-12 border-l border-b sm:border-b-0 sm:border-l-0 border-r border-t rounded-t-4xl border-[#826a45]">
-          <img
-            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F13.png&w=256&q=75"
-            alt="Quality Foods"
-            className="h-24 w-24  mb-6"
-          />
-          <h2 className="text-2xl font-semibold text-black mb-4 dark:text-white">Quality Foods </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs dark:text-white ">
-            Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
-          </p>
+        <div className="flex  px-10 py-12 border-l border-b sm:border-b-0 sm:border-l-0 border-r border-t rounded-t-4xl border-[#826a45]">
+          
+        <WhythisRestaurant image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F13.png&w=256&q=75" alt_text="Quality Foods" heading="Quality Foods" para="Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated."/>
         </div>
 
         <div className="flex-1 px-10  border-l py-12  sm:border-l-0 border-r border-b sm:rounded-b-4xl border-[#826a45]  ">
-          <img
-            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F14.png&w=256&q=75"
-            alt="Fast Delivery"
-            className="h-24 w-24  mb-6"
-          />
-          <h2 className="text-2xl font-semibold text-black mb-4 dark:text-white ">Fast Delivery </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs dark:text-white ">
-            Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
-          </p>
+        <WhythisRestaurant image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F14.png&w=256&q=75"
+        alt_text="Fast Delivery" heading="Fast Delivery" para="Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated."
+/>
         </div>
 
         
         <div className="flex-1 px-10 py-12 border-l border-r border-b rounded-b-4xl sm:border-b-0 sm:border-r-0 sm:border-l-0 sm:border-t border-[#826a45] sm:rounded-t-4xl">
-          <img
-            src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F15.png&w=256&q=75"
-            alt="Delicious Recipes"
-            className="h-24 w-24  mb-6"
-          />
-          <h2 className="text-2xl font-semibold text-black mb-4 dark:text-white ">Delicious Recipes </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-xs dark:text-white ">
-            Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated.
-          </p>
+          <WhythisRestaurant
+        image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F15.png&w=256&q=75"
+      alt_text="Delicious Recipes" heading="Delicious Recipes" para="Belonging sir curiosity discovery extremity yet forfeited prevailed own off. Traveling by introduced of mr terminated."
+/>
         </div>
       </div>
     </section>
@@ -542,9 +473,9 @@ export  function WhyOurRestaurant() {
 
 function OrderCard() {
   return (
-    <div className="bg-white -mt-20 -mb-50 dark:bg-[#1C1C1C]">
+    <div className="bg-white  dark:bg-[#121212]">
     <div
-      className="relative  flex flex-col sm:flex-row items-center justify-between bg-cover w-[90%] bg-center py-38 px-30 overflow-hidden sm:w-[80%] mx-auto my-20 rounded-4xl mb-50 "
+      className="relative  flex flex-col sm:flex-row items-center justify-between bg-cover  bg-center py-42 px-30 overflow-hidden w-[95%] sm:w-[90%] mx-auto rounded-4xl  "
       style={{
         backgroundImage:
           "url('https://restan-nextjs.vercel.app/assets/img/shape/4.jpg')",
@@ -554,44 +485,44 @@ function OrderCard() {
         <div className="relative">
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F15.png&w=1080&q=75"
-            alt="Main Dish"
-            className="  sm:w-[330px] rounded-full "
+            alt="Main pic"
+            className="  sm:w-[350px] rounded-full "
           />
-          <div className="absolute -top-10 -right-10 bg-white w-[120px] h-[120px] rounded-full flex sm:flex-col items-center justify-center shadow-md opacity-90">
-            <p className="text-black text-lg font-medium">Save</p>
-            <p className="text-black text-3xl font-bold">55%</p>
+          <div className="absolute -top-10 -right-10 bg-white w-[120px] h-[120px] rounded-full flex sm:flex-col items-center justify-center shadow-md opacity-80 border-4 border-dashed border-[#826a45]">
+            <p className="text-black text-lg  font-marcellus font-bold">Save</p>
+            <p className="text-black text-3xl font-marcellus  font-bold">55%</p>
           </div>
 
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F1.png&w=1080&q=75"
             alt="Dish 1"
-            className="hidden sm:block absolute sm:-top-24 sm:-left-20 sm:w-[170px] sm:rounded-full"
+            className="hidden sm:block absolute sm:-top-24 sm:-left-20 sm:w-[190px] sm:rounded-full"
           />
 
           <img
             src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F12.png&w=1080&q=75"
             alt="Dish 2"
-            className=" hidden sm:block absolute -bottom-15 -left-10 w-[120px] rounded-full shadow-lg"
+            className=" hidden sm:block absolute -bottom-15 -left-10 w-[150px] rounded-full shadow-lg"
           />
         </div>
       </div>
 
       <div className=" mt-10  sm:w-1/2 sm:pl-16">
      
-        <p className="text-black tracking-wide mb-2 text-lg  flex items-center font-marcellus font-semibold ">
+        <p className="text-black tracking-wide mb-3 text-[20px]  flex items-center font-marcellus font-semibold ">
           TODAY SPECIAL OFFER <span className="sm:ml-3 "> <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img></span>
           
         </p>
         
-        <h2 className="text-5xl font-semibold leading-tight mb-5 text-black font-marcellus">
+        <h2 className="text-[50px] font-semibold leading-tight mb-5 text-black font-marcellus">
           Explore Irresistible <br /> Promotions!
         </h2>
-        <p className="text-gray-900 leading-relaxed mb-8 text-[16px]">
+        <p className="text-black   mb-8 text-[16px] leading-relaxed">
           Contrasted dissimilar get joy you instrument out reasonably. Again
           keeps at no meant stuff. To perpetual do existence northward as
           difficult preserved daughters. Continued at up to zealously necessary.
         </p>
-        <button className="bg-[#826a45] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#3b2a1f] transition">
+        <button className="bg-[#826a45] text-white px-8 py-5 rounded-full font-semibold text-lg hover:bg-black ">
           Order Today
         </button>
       </div>
@@ -605,9 +536,8 @@ function Menu() {
  
     const categories = ['MAIN DISHES', 'DESSERTS', 'SEA FOOD', 'BEVERAGE'];
   const [activeCategory, setActiveCategory] = useState('MAIN DISHES');
-
-  return (
-    <div className="w-[100%]  pt-60 text-center   mx-auto dark:bg-[#1C1C1C]">
+return (
+    <div className="w-[100%]  pt-30 text-center   mx-auto dark:bg-[#121212]">
       
       <div className="flex justify-center items-center gap-4">
         <img
@@ -628,15 +558,15 @@ function Menu() {
       </h1>
 
      
-      <div className="flex  flex-col sm:flex-row justify-center sm:gap-6 bg-white py-6 sm:text-[18px] font-marcellus font-medium border border-gray-800   rounded-2xl w-max mx-auto  px-7 ">
+      <div className="flex  flex-col sm:flex-row justify-center sm:gap-6 bg-white py-6 sm:text-[18px] font-marcellus font-medium border border-gray-800   rounded-2xl w-max mx-auto  px-7 dark:bg-[#121212] dark:border-[#ccc]">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-4 py-4 rounded cursor-pointer transition  ${
+            className={`px-4 py-4 rounded  cursor-pointer  ${
               activeCategory === category
-                ? 'bg-[#826a45] text-white'
-                : 'bg-white text-black '
+                ? 'bg-[#826a45] text-white '
+                : 'bg-white text-black dark:bg-[#121212] dark:text-white '
             }`}
           >
             {category}
@@ -651,862 +581,250 @@ function Menu() {
 
 <div className="flex flex-wrap justify-center gap-6 py-10 ">
 
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden ">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F1.jpg&w=1920&q=75"
-      alt="Braised Chicken Legs"
-      className="w-full h-60 object-cover"
-    />
+  
+  <FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F1.jpg&w=1920&q=75"
+  rating="4.9"
+   count="5.7"
+    mrp="$35"
+    discountPrize="$34"
+    ItemName="Braised Chicken Legs"
+  />
+  
+  <FoodCard
+    image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F2.jpg&w=1920&q=75"
+  rating="4.8"
+   count="3.2"
+    mrp="$25"
+    discountPrize="$23"
+    ItemName=" Bone Steak"
+  />
 
-    <div className="p-4 dark:bg-[#1C1C1C]  ">
-      <div className="flex items-center justify-between mb-2 ">
-        <div className="flex items-center text-gray-700 text-sm ">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold ">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-        Braised Chicken Legs
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F2.jpg&w=1920&q=75"
-      alt="Grilled Salmon"
-      className="w-full h-60 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.8</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(3.2K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$25</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$18</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-       Bone Steak
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chilli Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F3.jpg&w=828&q=75"
-      alt="Braised Chicken Legs"
-      className="w-full h-60 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-       Fish Tacos with Chipotle Crema
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F3.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Fish Tacos with Chipotle Crema"
+  
+/>
 
 
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F4.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Broken Lasagna & Parmesan"
+  
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F5.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Seaed Scallops with Butter"
 
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F4.jpg&w=828&q=75"
-      alt="Braised Chicken Legs"
-      className="w-full h-60 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-      Broken Lasagna & Parmesan
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
+/>
 
 
+ <FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F6.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Double-Stack Mushroom"
 
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F5.jpg&w=828&q=75"
-      alt="Braised Chicken Legs"
-      className="w-full h-60 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-        Seaed Scallops with Butter
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F6.jpg&w=828&q=75"
-      alt="Braised Chicken Legs"
-      className="w-full h-60 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-       Double-Stack Mushroom
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
+/>
 </div>
-
-  
-  
-
-
-
-
-
-
-
-        )}
+)}
         {activeCategory === 'DESSERTS' && (
          <div className="flex flex-wrap justify-center gap-6">
 
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden ">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F7.jpg&w=828&q=75"
-    
-      className="w-full h-56 object-cover"
-    />
+  
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F7.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Vanilla Cupcakes"
+  
+/>
 
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F8.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName=" Chocolate Brownie"
+  
+/>
+<FoodCard
+  image="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F9.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Croissants Sweet Rolls Muffin"
+  
+/>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-       Vanilla Cupcakes
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F8.jpg&w=828&q=75"
-      
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold">4.8</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(3.2K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$25</span>
-          <span className="text-gray-800 font-semibold">$18</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-       Chocolate Brownie
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chilli Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F9.jpg&w=828&q=75"
-      alt="Braised Chicken Legs"
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-       Croissants Sweet Rolls Muffin
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F10.jpg&w=828&q=75"
-     
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white ">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white ">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white ">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-      White Chocolate Cheesecake
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F11.jpg&w=828&q=75"
-      
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-        Lemon Meringue Pie
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F12.jpg&w=828&q=75"
-      alt="Braised Chicken Legs"
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1">
-      Mixed Berry Mousse
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F10.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="White Chocolate Cheesecake"
+  
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F11.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Lemon Meringue Pie"
+  
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F12.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Mixed Berry Mousse"
+  
+/>
 
 </div>
 
-  
-  
-
-
-
-
-        )}
+  )}
         {activeCategory === 'SEA FOOD' && (
           <div className="flex flex-wrap justify-center gap-6">
 
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden ">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F13.jpg&w=828&q=75"
-    
-      className="w-full h-56 object-cover"
-    />
+ <FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F13.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Salmon Fry"
+  
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F14.jpg&w=828&q=75"
+  rating="4.8"
+  count="3.2"
+  mrp="$25"
+  discountPrize="$18"
+  ItemName="Pangasius or Basa"
+ 
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F15.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Spicy Stuffed Clams"
 
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-     Salmon Fry
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F14.jpg&w=828&q=75"
-      
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.8</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(3.2K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$25</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$18</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-      Pangasius or Basa
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chilli Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F15.jpg&w=828&q=75"
-     
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-     Spicy Stuffed Clams
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F16.jpg&w=828&q=75"
-     
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-      Specia Cajun Red Crab
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F18.jpg&w=828&q=75"
-      
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-      The cephalopod mollusks
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart "></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F17.jpg&w=828&q=75"
-      
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-      Crustaceans such as lobsters
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F16.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Specia Cajun Red Crab"
+  
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F18.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="The cephalopod mollusks"
+  
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F17.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Crustaceans such as lobsters"
+  
+/>
 
 </div>
-
-  
-  
-
-
-
-
-         
-        )}
-        {activeCategory === 'BEVERAGE' && (
+ )}
+{activeCategory === 'BEVERAGE' && (
           
  <div className="flex flex-wrap justify-center gap-6">
 
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden ">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F19.jpg&w=828&q=75"
-    
-      className="w-full h-56 object-cover"
-    />
+ <FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F19.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Cabernet Sauvignon"
 
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
+/>
 
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-  Cabernet Sauvignon
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F20.jpg&w=828&q=75"
+  rating="4.8"
+  count="3.2"
+  mrp="$25"
+  discountPrize="$18"
+  ItemName="Americano Coffee"
+  
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F21.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Hot Chocolate Shake"
 
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F22.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Watermelon Juice"
+ 
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F23.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Seared Scallops with Butter"
 
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F20.jpg&w=828&q=75"
-      
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.8</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(3.2K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$25</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$18</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-   Americano Coffee
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chilli Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-  <div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F21.jpg&w=828&q=75"
-     
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-  Hot chocolate Shake
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F22.jpg&w=828&q=75"
-     
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-    Watermelon Juice
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F23.jpg&w=828&q=75"
-      
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-      Seared Scallops with Butter
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
-
-
-
-<div className="w-90  bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-    <img
-      src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F24.jpg&w=828&q=75"
-      
-      className="w-full h-56 object-cover"
-    />
-
-    <div className="p-4 dark:bg-[#1C1C1C]">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center text-gray-700 text-sm">
-          <span className="text-yellow-500 mr-1"><i class="fas fa-star"></i></span>
-          <span className="font-semibold dark:text-white">4.9</span>
-          <span className="ml-1 text-gray-500 dark:text-white">(5.7K)</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <span className="line-through text-gray-400 text-sm dark:text-white">$35</span>
-          <span className="text-gray-800 font-semibold dark:text-white">$34</span>
-        </div>
-      </div>
-
-      <h3 className="text-[20px] font-marcellus font-semibold text-gray-900 mb-1 dark:text-white">
-   Soft Drinks
-      </h3>
-      <p className="text-gray-600 text-sm mb-4 dark:text-white">
-        4 Chicken Legs • Chili Sauce • Soft Drinks
-      </p>
-
-      <button className="w-full border border-gray-300 hover:border-gray-400 text-gray-900 font-medium py-2 rounded-full flex items-center justify-center gap-2 transition-all dark:text-white">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-      </button>
-    </div>
-  </div>
+/>
+<FoodCard
+  image="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fmenu%2F24.jpg&w=828&q=75"
+  rating="4.9"
+  count="5.7"
+  mrp="$35"
+  discountPrize="$34"
+  ItemName="Soft Drinks"
+  
+/>
 
 </div>
 
@@ -1519,7 +837,8 @@ function Menu() {
 
 function OnlineOrder() {
   return (
-    <div className="bg-[#131313] mt-25 w-[90%]  text-white flex flex-col rounded-2xl  md:flex-row items-center justify-center mx-auto px-8 md:px-20 py-18 overflow-hidden gap-10">
+    <div className='dark:bg-[#121212] pt-20 pb-15'>
+    <div className="bg-[#131313]  w-[90%]  text-white flex flex-col rounded-2xl  md:flex-row items-center justify-center mx-auto px-8 md:px-20 py-18 overflow-hidden gap-10 ">
       <div className="flex justify-center items-center">
         <img
           src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fillustration%2F16.png&w=1080&q=75"
@@ -1528,24 +847,22 @@ function OnlineOrder() {
         />
       </div>
       <div className="max-w-xl mt-10 md:mt-0 md:ml-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-marcellus leading-snug">
+        <h2 className="text-4xl md:text-5xl font-bold mb-10 font-marcellus m">
           Are you Ready to Start <br /> your online Order?
         </h2>
         <p className="text-white opacity-70 mb-8 leading-relaxed">
-          Bndulgence diminution so discovered mr apartments. Are off under folly
-          death wrote cause her way spite. Plan upon yet way get cold spot its
-          week. Almost do am or limits hearts. Resolve parties but why she
-          shewing. She sang know now
+          Bndulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now
         </p>
         <div className="flex gap-4">
           <button className="flex items-center gap-2 bg-white text-black font-semibold py-3 px-5 rounded-full ">
             <i className="fab fa-apple"></i> App Store
           </button>
-          <button className="flex items-center gap-2 bg-[#b48b57] text-white font-semibold py-3 px-5 rounded-full ">
+          <button className="flex items-center gap-2 bg-[#826a45] text-white font-semibold py-3 px-5 rounded-full ">
             <i className="fab fa-google-play"></i> Play Store
           </button>
         </div>
       </div>
+    </div>
     </div>
   )
 }
@@ -1555,40 +872,38 @@ function OnlineOrder() {
 
 function Opening() {
   return (
-     <div className='mx-[5vh] mt-[100px] sm:mx-[16vh] h-[700px]'> 
-            <h2 className='hidden sm:block text-[#04000b] sm:opacity-10 font-marcellus sm:text-9xl sm:font-semibold ml-15 dark:text-[#1C1C1C]'>RESTAN</h2>
+     <div className='px-[5vh] pt-10 sm:px-[16vh] h-[700px] dark:bg-[#121212]'> 
+            <h2 className='hidden sm:block text-[#04000b] sm:opacity-10 font-marcellus sm:text-9xl sm:font-semibold ml-15 dark:text-[#1C1C1C] '>RESTAN</h2>
             <div className="flex flex-col  sm:flex-row">
 <div className="w-[400px] h-[380px]  relative sm:w-[696px] sm:h-[392px] sm:pb-[65%] overflow-hidden sm:ml-15 ">
       <iframe
         src="https://www.youtube.com/embed/F3zw1Gvn4Mk?autoplay=1&loop=1&playlist=F3zw1Gvn4Mk&controls=0&preload=metadata&enablejsapi=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
         title="Mr Fox Restaurant Promo Video"
-        
-      
-        className="absolute top-0 left-0 w-full h-[50%]"
+         className="absolute top-0 left-0 w-full h-[50%]"
        
       />
     </div>
 
- <div className=" w-full py-6  bg-white sm:-mt-[50px] sm:-ml-[100px] text-black sm:w-[570px] h-max sm:py-15 flex flex-col justify-center items-start px-15 shadow-md z-10 dark:bg-[#1C1C1C] dark:text-white">
+ <div className=" w-full py-6  bg-white sm:-mt-[50px] sm:-ml-[100px] text-black sm:w-[570px] h-max sm:py-15 flex flex-col justify-center px-15 shadow-md z-10 dark:bg-[#1C1C1C] dark:text-white">
  
 
-  <h2 className="text-3xl font-bold mb-3 font-marcellus">Opening Hours</h2>
-  <p className="text-[14px] mb-6 leading-relaxed text-gray-600  dark:text-white/10 ">
+  <h2 className="text-4xl font-bold mb-3 font-marcellus">Opening Hours</h2>
+  <p className="text-[16px] mb-6 leading-relaxed text-gray-600  dark:text-white/10 ">
     A relaxing and pleasant atmosphere, good jazz, dinner, and cocktails. The Patio Time Bar opens in the center..
   </p>
 
-  <div className="space-y-2 text-[15px]  font-semibold">
+  <div className=" text-[16px]  font-semibold">
    <p>Sunday to Tuesday:<span className="text-gray-500 "> ______________________ </span>10:00 - 09:00</p> 
     <p>Wednesday to Thursday:<span className="text-gray-500 "> ______________________ </span> 11:30 - 10:30</p>
     <p>Friday & Saturday:<span className="text-gray-500 "> ______________________ </span> 10:30 - 12:00</p>
   </div>
 
   <div className="sm:mt-6 flex items-center">
-    <div className="bg-[#826a45] rounded-full h-15 w-15 flex items-center justify-center ">
+    <div className="bg-[#826a45] rounded-full h-17 w-17 flex items-center justify-center ">
       <img src="	https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Ficon%2F6.png&w=128&q=75" className="h-10 w-10 "></img>
     </div>
     <div className="flex flex-col ml-5">
-    <p className="text-gray-500 text-sm  dark:text-white">Call Anytime</p>
+    <p className="text-gray-500 text-[13px]  dark:text-white">Call Anytime</p>
     <p className="text-[15px] font-bold text-[#04000b] font-marcellus  dark:text-white">+964733-378901</p>
     </div>
   </div>
@@ -1601,18 +916,13 @@ function Opening() {
   );
 }
 
-
-
-
-
-
 function MeetOurChef() {
   return (
-    <div className="bg-[#ebe9e6] py-20 px-10 text-center pb-40 mt-20 dark:bg-[#1C1C1C]">
+    <div className="bg-[#ebe9e6] py-20 px-10 text-center pb-40  dark:bg-[#121212]">
       <div className="flex items-center justify-center gap-4 ">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
       <p className="text-[#836849] sm:text-2xl font-medium 
-      font-merriweather dark:text-white">MASTER CHEFS</p>
+      font-marcellus dark:text-white">MASTER CHEFS</p>
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/18.5979b905.png" className="h-4"></img>
 
       </div>
@@ -1630,9 +940,9 @@ function MeetOurChef() {
   </div>
 
  
-  <div className="bg-[#7b5a36] text-white px-10 py-4 text-center font-montserrat clip-ribbon -mt-[110px]">
-    <p className="text-2xl font-semibold m-0">Alexander Petllo</p>
-    <p className="text-sm tracking-wide mt-1">ASSISTANT CHEF</p>
+  <div className="bg-[#826a45] text-white px-16 py-4 text-center font-montserrat clip-ribbon -mt-[110px]">
+    <p className="text-2xl font-semibold  font-marcellus">Alexander Petllo</p>
+    <p className="text-sm tracking-wide mt-1 font-marcellus">ASSISTANT CHEF</p>
   </div>
 </div>
 
@@ -1647,9 +957,9 @@ className="rounded-full w-72 h-72 object-cover"
   </div>
 
  
-  <div className="bg-[#7b5a36] text-white px-10 py-4 text-center font-montserrat clip-ribbon -mt-[110px] ">
-    <p className="text-2xl font-semibold m-0">Mendia Juxef</p>
-    <p className="text-sm tracking-wide mt-1">BURGER KING</p>
+  <div className="bg-[#826a45] text-white px-20  py-4  text-center font-montserrat clip-ribbon -mt-[110px] ">
+    <p className="text-2xl font-semibold  font-marcellus">Mendia Juxef</p>
+    <p className="text-sm tracking-wide mt-1 font-marcellus">BURGER KING</p>
   </div>
 </div>
 
@@ -1664,16 +974,12 @@ className="rounded-full w-72 h-72 object-cover"
   </div>
 
  
-  <div className="bg-[#7b5a36] text-white px-10 py-4 text-center font-montserrat clip-ribbon -mt-[110px]">
-    <p className="text-2xl font-semibold m-0">Petro Willaim</p>
-    <p className="text-sm tracking-wide mt-1">MAIN CHEF</p>
+  <div className="bg-[#826a45] text-white px-20  py-4  text-center font-montserrat clip-ribbon -mt-[110px]">
+    <p className="text-2xl font-semibold  font-marcellus">Petro Willaim</p>
+    <p className="text-sm tracking-wide mt-1 font-marcellus">MAIN CHEF</p>
   </div>
 </div>
-
-
-
- 
-    </div>
+</div>
  </div>
 
 )
@@ -1681,7 +987,7 @@ className="rounded-full w-72 h-72 object-cover"
 
 function NewsAndBlogs() {
   return (
-    <div className="bg-white flex flex-col justify-center mb-50 py-20 px-10 text-center dark:bg-[#1C1C1C]">
+    <div className="bg-white flex flex-col justify-center mb-50 py-20 px-10 text-center dark:bg-[#121212]">
        <div className="flex items-center justify-center gap-2">
       <img src="	https://restan-nextjs.vercel.app/_next/static/media/17.088ee553.png" className="h-4"></img>
       <p className="text-[#836849] sm:text-2xl font-medium 
@@ -1698,7 +1004,7 @@ function NewsAndBlogs() {
   <img
     src="https://restan-nextjs.vercel.app/_next/image?url=%2Fassets%2Fimg%2Fblog%2F1.jpg&w=1920&q=75"
     className="sm:w-[full] sm:h-[510px] object-cover "
-    alt="Blog Image"
+    alt="Image"
   />
 
 
@@ -1736,6 +1042,7 @@ function NewsAndBlogs() {
   </div>
   
 </div>
+
 <div className="relative sm:w-[600px] mx-auto">
   
   <img
@@ -1792,7 +1099,7 @@ function NewsAndBlogs() {
 
  function Footer() {
   return (
-    <div className="bg-white text-gray-800 mt-15 dark:text-gray-200 pt-12 px-6 md:px-12 pt-70 -mt-70">
+    <div className="bg-white text-gray-800  dark:text-gray-200 pt-20 px-6 md:px-12 pt-70 -mt-70 dark:bg-[#121212]">
       <div className="bg-zinc-800 w-full">
         <div className="ml-0 sm:ml-46 justify-center items-center h-15 w-full sm:w-[900px] -mt-10 sm:-mt-20 flex" />
         <div className="justify-center items-center flex">
@@ -1884,4 +1191,3 @@ function NewsAndBlogs() {
     </div>
   );
 }
-
